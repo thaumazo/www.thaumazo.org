@@ -9,7 +9,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import Link from "next/link";
 
 const Footer = () => {
-  const { copyright } = config.params;
+  // const { copyright } = config.params;
 
   return (
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
@@ -27,16 +27,20 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+        {/*
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
             <Social source={social.main} className="social-icons" />
           </div>
+        */}
         </div>
       </div>
+    {/*
       <div className="border-t border-border py-7 dark:border-darkmode-border">
         <div className="container text-center text-light dark:text-darkmode-light">
           <p dangerouslySetInnerHTML={markdownify(copyright)} />
         </div>
       </div>
+    */}
     </footer>
   );
 };

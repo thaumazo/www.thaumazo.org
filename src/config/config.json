@@ -1,15 +1,14 @@
 {
   "site": {
-    "title": "Nextplate",
+    "title": "Thaumazo",
     "base_url": "https://nextplate.netlify.app",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo": "/images/logo.svg",
+    "logo_darkmode": "/images/logo-dark.svg",
     "logo_width": "150",
     "logo_height": "27",
-    "logo_text": "Nextplate"
+    "logo_text": "Thaumazo"
   },
 
   "settings": {
@@ -28,7 +27,7 @@
   },
 
   "navigation_button": {
-    "enable": true,
+    "enable": false,
     "label": "Get Started",
     "link": "https://github.com/zeon-studio/nextplate"
   },

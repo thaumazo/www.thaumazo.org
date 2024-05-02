@@ -1,17 +1,17 @@
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction";
+// import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
-import Testimonials from "@/partials/Testimonials";
+// import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
-  const testimonial = getListPage("sections/testimonial.md");
-  const callToAction = getListPage("sections/call-to-action.md");
+  // const testimonial = getListPage("sections/testimonial.md");
+  // const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
   const {
     banner,
@@ -119,8 +119,12 @@ const Home = () => {
         </section>
       ))}
 
+    {/*
       <Testimonials data={testimonial} />
+    */}
+    {/*
       <CallToAction data={callToAction} />
+    */}
     </>
   );
 };
