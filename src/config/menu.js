@@ -1,17 +1,38 @@
-{
+
+const menu = {
   "main": [
+    /*
     {
       "name": "Home",
       "url": "/"
     },
+    */
+    {
+      "name": "Community",
+      "url": "/community"
+    },
+    {
+      "name": "Partners",
+      "url": "/partners"
+    },
+    {
+      "name": "Projects",
+      "url": "/Projects"
+    },
+
+    /*
     {
       "name": "About",
       "url": "/about"
     },
+    */
+    /*
     {
       "name": "Elements",
       "url": "/elements"
     },
+    */
+    /*
     {
       "name": "Pages",
       "url": "",
@@ -43,6 +64,7 @@
         }
       ]
     }
+    */
   ],
   "footer": [
    {
@@ -55,3 +77,5 @@
     }
   ]
 }
+
+export default menu;

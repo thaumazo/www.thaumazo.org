@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "Connect, Create, Change"
-  content: "At Thaumazo, we're more than a community; we're a force for global change. United by our commitment to the United Nations’ Sustainable Development Goals, we collaborate on innovative projects designed to create a sustainable future for all."
+  content: "Thaumazo is a community actively engaged in shaping a sustainable future. Driven by our commitment to the United Nations’ Sustainable Development Goals, we collaborate on innovative projects designed to ensure a healthier, more equitable world for everyone."
 #  image: "/images/banner.png"
   button:
     enable: true
