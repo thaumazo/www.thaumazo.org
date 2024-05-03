@@ -13,14 +13,12 @@ import { Post } from "@/types";
 import Link from "next/link";
 import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 
-const { blog_folder } = config.settings;
-
 // remove dynamicParams
 export const dynamicParams = false;
 
 // generate static params
 export const generateStaticParams: () => { single: string }[] = () => {
-  const posts: Post[] = getSinglePage(blog_folder);
+  const posts: Post[] = getSinglePage("projects");
 
   const paths = posts.map((post) => ({
     single: post.slug!,
@@ -30,7 +28,7 @@ export const generateStaticParams: () => { single: string }[] = () => {
 };
 
 const PostSingle = ({ params }: { params: { single: string } }) => {
-  const posts: Post[] = getSinglePage(blog_folder);
+  const posts: Post[] = getSinglePage("projects");
   const post = posts.filter((page) => page.slug === params.single)[0];
 
   const { frontmatter, content } = post;

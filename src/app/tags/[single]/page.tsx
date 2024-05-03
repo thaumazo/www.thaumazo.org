@@ -9,7 +9,7 @@ import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
 
-const { blog_folder } = config.settings;
+const blog_folder = "projects";
 type StaticParams = () => { single: string }[];
 
 // remove dynamicParams

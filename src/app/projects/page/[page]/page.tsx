@@ -8,19 +8,53 @@ import PageHeader from "@/partials/PageHeader";
 import PostSidebar from "@/partials/PostSidebar";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
-const { blog_folder, pagination } = config.settings;
+
+const { pagination } = config.settings;
+
+// remove dynamicParams
+export const dynamicParams = false;
+
+// generate static params
+export const generateStaticParams = () => {
+  const allPost: Post[] = getSinglePage("projects");
+  const allSlug: string[] = allPost.map((item) => item.slug!);
+  const totalPages = Math.ceil(allSlug.length / pagination);
+  let paths: { page: string }[] = [];
+
+  for (let i = 1; i < totalPages; i++) {
+    paths.push({
+      page: (i + 1).toString(),
+    });
+  }
+
+  return paths;
+};
+
+function spreadPages(num: number): number[] {
+  let pages = [];
+
+  for (let i = 2; i <= num; i++) {
+    pages.push(i);
+  }
+
+  return pages;
+}
 
 // for all regular pages
-const Posts = () => {
-  const postIndex: Post = getListPage(`${blog_folder}/_index.md`);
+const Posts = ({ params }: { params: { page: number } }) => {
+  const postIndex: Post = getListPage(`projects/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
-  const posts: Post[] = getSinglePage(blog_folder);
-  const allCategories = getAllTaxonomy(blog_folder, "categories");
-  const categories = getTaxonomy(blog_folder, "categories");
-  const tags = getTaxonomy(blog_folder, "tags");
+  const posts: Post[] = getSinglePage("projects");
+  const allCategories = getAllTaxonomy("projects", "categories");
+  const categories = getTaxonomy("projects", "categories");
+  const tags = getTaxonomy("projects", "tags");
   const sortedPosts = sortByDate(posts);
   const totalPages = Math.ceil(posts.length / pagination);
-  const currentPosts = sortedPosts.slice(0, pagination);
+  const currentPage =
+    params.page && !isNaN(Number(params.page)) ? Number(params.page) : 1;
+  const indexOfLastPost = currentPage * pagination;
+  const indexOfFirstPost = indexOfLastPost - pagination;
+  const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <>
@@ -43,8 +77,8 @@ const Posts = () => {
                 ))}
               </div>
               <Pagination
-                section={blog_folder}
-                currentPage={1}
+                section="projects"
+                currentPage={currentPage}
                 totalPages={totalPages}
               />
             </div>

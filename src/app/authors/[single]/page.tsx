@@ -27,8 +27,7 @@ const AuthorSingle = ({ params }: { params: { single: string } }) => {
   const author = authors.filter((page) => page.slug === params.single)[0];
   const { frontmatter, content } = author;
   const { title, social, meta_title, description, image } = frontmatter;
-  const { blog_folder } = config.settings;
-  const posts: Post[] = getSinglePage(blog_folder);
+  const posts: Post[] = getSinglePage("projects");
   const postFilterByAuthor: Post[] = posts.filter(
     (post) => slugify(post.frontmatter.author) === slugify(title),
   );

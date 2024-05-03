@@ -17,7 +17,7 @@ const menu = {
     },
     {
       "name": "Projects",
-      "url": "/Projects"
+      "url": "/projects"
     },
 
     /*

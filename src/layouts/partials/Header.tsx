@@ -116,10 +116,7 @@ const Header = () => {
                 <li className="nav-item">
                   <Link
                     href={menu.url}
-                    className={`nav-link block ${
-                      (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active"
-                    }`}
+                    className={"nav-link block" + (pathname === menu.url ? " active" : "")}
                   >
                     {menu.name}
                   </Link>

@@ -1,4 +1,5 @@
 import BlogCard from "@/components/BlogCard";
+import MDXContent from "@/helpers/MDXContent";
 import Pagination from "@/components/Pagination";
 import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
@@ -8,53 +9,19 @@ import PageHeader from "@/partials/PageHeader";
 import PostSidebar from "@/partials/PostSidebar";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
-
-const { blog_folder, pagination } = config.settings;
-
-// remove dynamicParams
-export const dynamicParams = false;
-
-// generate static params
-export const generateStaticParams = () => {
-  const allPost: Post[] = getSinglePage(blog_folder);
-  const allSlug: string[] = allPost.map((item) => item.slug!);
-  const totalPages = Math.ceil(allSlug.length / pagination);
-  let paths: { page: string }[] = [];
-
-  for (let i = 1; i < totalPages; i++) {
-    paths.push({
-      page: (i + 1).toString(),
-    });
-  }
-
-  return paths;
-};
-
-function spreadPages(num: number): number[] {
-  let pages = [];
-
-  for (let i = 2; i <= num; i++) {
-    pages.push(i);
-  }
-
-  return pages;
-}
+const { pagination } = config.settings;
 
 // for all regular pages
-const Posts = ({ params }: { params: { page: number } }) => {
-  const postIndex: Post = getListPage(`${blog_folder}/_index.md`);
+const Posts = () => {
+  const postIndex: Post = getListPage(`projects/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
-  const posts: Post[] = getSinglePage(blog_folder);
-  const allCategories = getAllTaxonomy(blog_folder, "categories");
-  const categories = getTaxonomy(blog_folder, "categories");
-  const tags = getTaxonomy(blog_folder, "tags");
+  const posts: Post[] = getSinglePage("projects");
+  const allCategories = getAllTaxonomy("projects", "categories");
+  const categories = getTaxonomy("projects", "categories");
+  const tags = getTaxonomy("projects", "tags");
   const sortedPosts = sortByDate(posts);
   const totalPages = Math.ceil(posts.length / pagination);
-  const currentPage =
-    params.page && !isNaN(Number(params.page)) ? Number(params.page) : 1;
-  const indexOfLastPost = currentPage * pagination;
-  const indexOfFirstPost = indexOfLastPost - pagination;
-  const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = sortedPosts.slice(0, pagination);
 
   return (
     <>
@@ -65,6 +32,17 @@ const Posts = ({ params }: { params: { page: number } }) => {
         image={image}
       />
       <PageHeader title={postIndex.frontmatter.title} />
+      <section className="my-2">
+        <div className="container">
+          <div className="row justify-center">
+            <div className="text-center md:col-10 lg:col-7">
+              <div className="content">
+                <MDXContent content={postIndex.content} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="section">
         <div className="container">
           <div className="row gx-5">
@@ -77,8 +55,8 @@ const Posts = ({ params }: { params: { page: number } }) => {
                 ))}
               </div>
               <Pagination
-                section={blog_folder}
-                currentPage={currentPage}
+                section="projects"
+                currentPage={1}
                 totalPages={totalPages}
               />
             </div>
