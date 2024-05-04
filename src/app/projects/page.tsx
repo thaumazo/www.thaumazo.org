@@ -5,11 +5,13 @@ import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import PageHeader from "@/partials/PageHeader";
+// import PageHeader from "@/partials/PageHeader";
 import PostSidebar from "@/partials/PostSidebar";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
 const { pagination } = config.settings;
+
+import Main from "@//custom/Main";
 
 // for all regular pages
 const Posts = () => {
@@ -31,18 +33,10 @@ const Posts = () => {
         description={description}
         image={image}
       />
-      <PageHeader title={postIndex.frontmatter.title} />
-      <section className="my-2">
-        <div className="container">
-          <div className="row justify-center">
-            <div className="text-center md:col-10 lg:col-7">
-              <div className="content">
-                <MDXContent content={postIndex.content} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Main
+        title={postIndex.frontmatter.title} 
+        content={postIndex.content}
+      />
       <section className="section">
         <div className="container">
           <div className="row gx-5">

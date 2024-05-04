@@ -18,6 +18,7 @@ const SeoMeta = ({
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  [key: string]: any; // Index signature to allow any other property
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
