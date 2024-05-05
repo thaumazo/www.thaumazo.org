@@ -1,6 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import MDXContent from "@/helpers/MDXContent";
-import Pagination from "@/components/Pagination";
+// import Pagination from "@/components/Pagination";
 import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
