@@ -1,6 +1,8 @@
 "use client";
 
-import searchData from ".json/search.json";
+/*/
+/ import searchData from ".json/search.json";
+const searchData = {};
 import React, { useEffect, useState } from "react";
 import SearchResult, { type ISearchItem } from "./SearchResult";
 
@@ -231,3 +233,4 @@ const SearchModal = () => {
 };
 
 export default SearchModal;
+*/
