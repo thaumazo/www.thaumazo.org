@@ -14,7 +14,7 @@ export default function Main({
   image = "",
 }) {
   return (
-    <main className="section pt-14">
+    <main className="pt-14">
       <div className="container">
         <div className="row justify-center">
           <div className="lg:col-7 md:col-9 mb-8 text-center">

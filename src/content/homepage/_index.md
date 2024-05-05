@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: "Join the Movement to Transform Our World!"
-    link: "/join"
+    link: "/contact"
 
 # Features
 features: []

@@ -37,6 +37,7 @@ const Posts = () => {
         title={postIndex.frontmatter.title} 
         content={postIndex.content}
       />
+      {/*
       <section className="section">
         <div className="container">
           <div className="row gx-5">
@@ -63,6 +64,7 @@ const Posts = () => {
           </div>
         </div>
       </section>
+      */}
     </>
   );
 };

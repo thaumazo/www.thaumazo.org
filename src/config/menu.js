@@ -19,6 +19,10 @@ const menu = {
       "name": "Projects",
       "url": "/projects"
     },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
 
     /*
     {
@@ -71,10 +75,6 @@ const menu = {
        "name": "Contact",
       "url": "/contact"
     },
-    {
-      "name": "Privacy Policy",
-      "url": "/privacy-policy"
-    }
   ]
 }
 
