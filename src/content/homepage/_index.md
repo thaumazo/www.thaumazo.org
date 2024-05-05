@@ -3,7 +3,7 @@
 banner:
   title: "Connect, Create, Change"
   content: "Thaumazo is a community actively engaged in shaping a sustainable future. Driven by our commitment to the United Nations’ Sustainable Development Goals, we collaborate on innovative projects designed to ensure a healthier, more equitable world for everyone."
-#  image: "/images/banner.png"
+  #  image: "/images/banner.png"
   button:
     enable: true
     label: "Join the Movement to Transform Our World!"
@@ -22,5 +22,4 @@ features: []
 #      enable: true
 #      label: "Get Started Now"
 #      link: "https://github.com/zeon-studio/nextplate"
-
 ---

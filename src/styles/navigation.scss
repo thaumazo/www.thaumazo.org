@@ -35,14 +35,13 @@ input#nav-toggle:checked ~ #nav-menu {
 //   @apply mx-3;
 // }
 
-
 .nav-link {
   @apply text-dark hover:text-primary dark:text-darkmode-dark dark:hover:text-darkmode-primary block p-3 font-semibold transition lg:px-2 lg:py-3;
 
   &.active {
     text-decoration: underline;
-    text-underline-offset: 3px; 
-    text-decoration-thickness: 2px; 
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
   }
 }
 

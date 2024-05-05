@@ -33,10 +33,7 @@ const Posts = () => {
         description={description}
         image={image}
       />
-      <Main
-        title={postIndex.frontmatter.title} 
-        content={postIndex.content}
-      />
+      <Main title={postIndex.frontmatter.title} content={postIndex.content} />
       {/*
       <section className="section">
         <div className="container">

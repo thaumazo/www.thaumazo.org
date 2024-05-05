@@ -27,14 +27,34 @@ export default function RootLayout({
         />
 
         {/* favicon */}
-      {/*
+        {/*
         <link rel="icon" type="image/svg+xml" href="/images/thaumazo.svg" />
         <link rel="icon" type="image/png" href="/images/thaumazo.png" />
       */}
-        <link rel="icon" href="/favicons/16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicons/32.png" sizes="32x32" type="image/png" />
-        <link rel="icon" href="/favicons/48.png" sizes="48x48" type="image/png" />
-        <link rel="icon" href="/favicons/64.png" sizes="64x64" type="image/png" />
+        <link
+          rel="icon"
+          href="/favicons/16.png"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicons/32.png"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicons/48.png"
+          sizes="48x48"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicons/64.png"
+          sizes="64x64"
+          type="image/png"
+        />
 
         {/* theme meta */}
         <meta name="theme-name" content="nextplate" />

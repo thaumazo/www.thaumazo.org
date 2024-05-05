@@ -1,4 +1,3 @@
-
 import SeoMeta from "@/partials/SeoMeta";
 
 import loadMD from "@/lib/loadMD";
@@ -14,5 +13,4 @@ export default async function CommunityPage() {
       <Main {...data} />
     </>
   );
-};
-
+}

@@ -1,4 +1,3 @@
-
 import SeoMeta from "@/partials/SeoMeta";
 
 import loadMD from "@/lib/loadMD";
@@ -17,27 +16,23 @@ export default async function CommunityPage() {
       <SeoMeta {...data} />
       <Main {...data} />
 
-
       <section className="container my-4">
         <div className="row justify-center">
           <div className="lg:col-7 md:col-9">
-
             <AutoForm
               // title="Contact us"
               fields={fields}
               action={formAction}
-              submit={{
-                // startIcon: <SaveIcon />,
-                // children: "Save changes",
-              }}
-            />         
-
+              submit={
+                {
+                  // startIcon: <SaveIcon />,
+                  // children: "Save changes",
+                }
+              }
+            />
           </div>
         </div>
       </section>
-
-
     </>
   );
-};
-
+}

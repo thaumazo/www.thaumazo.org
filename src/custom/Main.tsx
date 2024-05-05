@@ -1,10 +1,9 @@
-
 import { markdownify } from "@/lib/utils/textConverter";
 import Link from "next/link";
 import ImageFallback from "@/helpers/ImageFallback";
 
 export default function Main({
-  title = "", 
+  title = "",
   content = "",
   button = {
     enable: false,
@@ -30,9 +29,7 @@ export default function Main({
               <Link
                 className="btn btn-primary"
                 href={button!.link}
-                target={
-                  button!.link.startsWith("http") ? "_blank" : "_self"
-                }
+                target={button!.link.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener"
               >
                 {button!.label}

@@ -1,6 +1,5 @@
-
 const menu = {
-  "main": [
+  main: [
     /*
     {
       "name": "Home",
@@ -8,20 +7,20 @@ const menu = {
     },
     */
     {
-      "name": "Community",
-      "url": "/community"
+      name: "Community",
+      url: "/community",
     },
     {
-      "name": "Partners",
-      "url": "/partners"
+      name: "Partners",
+      url: "/partners",
     },
     {
-      "name": "Projects",
-      "url": "/projects"
+      name: "Projects",
+      url: "/projects",
     },
     {
-      "name": "Contact",
-      "url": "/contact"
+      name: "Contact",
+      url: "/contact",
     },
 
     /*
@@ -70,12 +69,12 @@ const menu = {
     }
     */
   ],
-  "footer": [
-   {
-       "name": "Contact",
-      "url": "/contact"
+  footer: [
+    {
+      name: "Contact",
+      url: "/contact",
     },
-  ]
-}
+  ],
+};
 
 export default menu;

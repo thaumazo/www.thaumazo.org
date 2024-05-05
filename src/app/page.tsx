@@ -82,10 +82,10 @@ const Home = () => {
         </section>
       ))}
 
-    {/*
+      {/*
       <Testimonials data={testimonial} />
     */}
-    {/*
+      {/*
       <CallToAction data={callToAction} />
     */}
     </>
