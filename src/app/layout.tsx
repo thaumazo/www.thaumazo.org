@@ -87,10 +87,14 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         {/* <TwSizeIndicator /> */}
         <Providers>
-          <Header />
-          {/* <SearchModal /> */}
-          <main>{children}</main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            {/* <SearchModal /> */}
+            <div className="flex-1">
+              {children}
+            </div>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
