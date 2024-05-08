@@ -21,7 +21,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@thaumazo/forms": "^0.3.3-canary.21",
+    "@thaumazo/forms": "^0.3.3-canary.22",
     "date-fns": "^3.6.0",
     "disqus-react": "^1.1.5",
     "github-slugger": "^2.0.0",
