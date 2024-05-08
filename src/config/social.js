@@ -1,5 +1,6 @@
-{
+const social = {
   "main": [
+  /*
     {
       "name": "facebook",
       "icon": "FaFacebook",
@@ -15,10 +16,13 @@
       "icon": "FaGithub",
       "link": "https://www.github.com/"
     },
+  */
     {
       "name": "linkedin",
       "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/"
+      "link": "https://ca.linkedin.com/company/thaumazo"
     }
   ]
 }
+
+export default social;
