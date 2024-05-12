@@ -21,7 +21,10 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@thaumazo/forms": "^0.3.3-canary.22",
+    "@aws-sdk/client-ses": "^3.572.0",
+    "@react-email/components": "^0.0.17",
+    "@react-email/render": "^0.0.13",
+    "@thaumazo/forms": "^0.3.3-canary.28",
     "date-fns": "^3.6.0",
     "disqus-react": "^1.1.5",
     "github-slugger": "^2.0.0",
@@ -31,14 +34,14 @@
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^5.0.1",
     "react-lite-youtube-embed": "^2.4.0",
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
     "swiper": "^11.1.1"
   },
@@ -56,7 +59,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "sass": "^1.75.0",
-    "sharp": "0.33.1",
+    "sharp": "^0.33.3",
     "tailwind-bootstrap-grid": "^5.1.0",
     "tailwindcss": "^3.4.3",
     "typescript": "5.4.5"
