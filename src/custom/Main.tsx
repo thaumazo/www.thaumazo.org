@@ -22,12 +22,12 @@ export default function Main({
               dangerouslySetInnerHTML={markdownify(title)}
             />
             <div
-              className="main-text mb-3"
+              className="main-text mb-4"
               dangerouslySetInnerHTML={markdownify(content ?? "")}
             />
             {button!.enable && (
               <Link
-                className="btn btn-primary"
+                className="mx-4 btn btn-primary"
                 href={button!.link}
                 target={button!.link.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener"
