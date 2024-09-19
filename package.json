@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.572.0",
+    "@emotion/react": "^11.13.3",
     "@react-email/components": "^0.0.17",
     "@react-email/render": "^0.0.13",
     "@thaumazo/forms": "^0.3.3-canary.28",

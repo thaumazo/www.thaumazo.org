@@ -1,32 +1,27 @@
 ---
-title: "Project Title"
-meta_title: "projecttitleoneword"
-description: "this is meta description"
+title: "Lucinda: Indigenous Art Fraud Prevention"
+meta_title: "lucinda"
+description: "Fraud prevention for Lucinda Turner"
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"
-tags: ["storytelling", "space-making"]
+tags: ["art", "indigenous"]
 draft: false
 
-sdgs: ["1", "3"]
-url: "www.thaumazo.org"
-status: ["liaising"]
-partners: ["Partner1"]
-liaison: ["CommunityMember"]
+sdgs: ["10", "12"]
+url: 
+status: ["Client", "Completed"]
+partners: []
+liaison: ["Daniel Lindenberger"]
 start_date: 2022-04-04T05:00:00Z
 end_date: 2022-04-04T05:00:00Z
 location: "Vancouver, BC"
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+Thaumazo's Fraudulent Native Art Initiative is dedicated to addressing the issue of fraudulent Indigenous art while providing vital support to Indigenous artists. This multifaceted project encompasses two key phases:
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+Phase 1 (Complete): The successful creation of a comprehensive Notion tool greatly supported Lucinda Turner in her work. This tool streamlined her efforts and underwent multiple rounds of refinements, positively impacting the Indigenous art community.
 
-## Creative Design
-
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
-
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+Phase 2 (Needs Partner): Currently seeking potential partners for implementation, this phase aims to engage Indigenous student volunteers through Riipen's Level UP program. By joining forces with like-minded organizations, we aim to empower Indigenous students and enhance the project's impact.
+Thaumazo is actively exploring collaborative opportunities to continue this important mission, protect the integrity of Indigenous art, and promote the work of Indigenous artists.

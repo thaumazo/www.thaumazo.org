@@ -11,7 +11,7 @@ draft: false
 
 sdgs: ["8", "9", "12"]
 url: 
-status: ["Partner", "Completed"]
+status: ["Partner", "Completed]
 partners: ["The Village"]
 liaison: ["Daniel Lindenberger", "Brenda Keesal"]
 start_date: 2023-04-01T05:00:00Z

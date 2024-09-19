@@ -19,3 +19,4 @@ end_date:
 location: "Vancouver, BC"
 ---
 
+A discussion group on how we interact and interface with ai with a human-first approach. 
