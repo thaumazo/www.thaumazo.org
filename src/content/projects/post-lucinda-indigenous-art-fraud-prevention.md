@@ -2,7 +2,7 @@
 title: "Lucinda: Indigenous Art Fraud Prevention"
 meta_title: "lucinda"
 description: "Fraud prevention for Lucinda Turner"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"
@@ -10,7 +10,7 @@ tags: ["art", "indigenous"]
 draft: false
 
 sdgs: ["10", "12"]
-url: 
+url: ""
 status: ["Client", "Completed"]
 partners: []
 liaison: ["Daniel Lindenberger"]

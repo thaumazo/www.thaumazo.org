@@ -10,7 +10,7 @@ tags: ["community", "ai"]
 draft: false
 
 sdgs: ["8", "9", "12"]
-url: 
+url: ""
 status: ["Partner", "Completed]
 partners: ["The Village"]
 liaison: ["Daniel Lindenberger", "Brenda Keesal"]

@@ -2,7 +2,7 @@
 title: "Crisis Forge"
 meta_title: "crisisforge"
 description: "Crisis training through technology"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"
@@ -10,7 +10,7 @@ tags: ["simulation", "crisis"]
 draft: false
 
 sdgs: ["3", "9", "17"]
-url: 
+url: ""
 status: ["Partner", "Approved"]
 partners: ["Air Arena", "UBC Emerging Media Lab", "Conversa Corps"]
 liaison: ["Daniel Lindenberger"]

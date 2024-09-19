@@ -2,7 +2,7 @@
 title: "HDC Visioning Event"
 meta_title: "hdcvision"
 description: "metavision event"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"
@@ -10,7 +10,7 @@ tags: ["event"]
 draft: false
 
 sdgs: ["17"]
-url: 
+url: ""
 status: ["Completed", "Client"]
 partners: ["Human Data Commons"]
 liaison: ["Daniel Lindenberger"]

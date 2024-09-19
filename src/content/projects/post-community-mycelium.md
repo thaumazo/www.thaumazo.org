@@ -2,7 +2,7 @@
 title: "Community Mycelium"
 meta_title: "communitymycelium"
 description: "software that connects distributed projects, people, and resources for social good"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"

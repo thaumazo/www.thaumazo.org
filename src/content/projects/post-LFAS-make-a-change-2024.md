@@ -2,7 +2,7 @@
 title: "LFAS: Make a Change 2024"
 meta_title: "lfasmakeachange"
 description: "lfas make a change"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"

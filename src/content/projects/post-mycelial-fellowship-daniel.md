@@ -2,7 +2,7 @@
 title: "Mycelial Fellowship"
 meta_title: "mycelialfellowship"
 description: "Mycelial fellowship"
-date: 2022-04-04T05:00:00Z
+date: 2024-09-17T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["Project"]
 author: "Rae J"
