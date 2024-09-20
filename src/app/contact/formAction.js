@@ -1,9 +1,9 @@
 "use server";
 
-import checkServerValidity from "@thaumazo/forms/validity/checkServerValidity";
+import checkServerValidity from "@kenstack/forms/validity/checkServerValidity";
 import fields from "./fields";
 
-import Email from "@thaumazo/forms/Email";
+import Email from "@kenstack/forms/Email";
 import { render } from '@react-email/render';
 import mailer from "@/utils/mailer";
 
@@ -23,7 +23,7 @@ export default async function formAction(state, formData) {
     return {error: "Setup error. CONTACT_EMAIL is not defined"}
   }
 
-  const html = render(<Email fields={fields} formData={formData}/>, {
+  const html = await render(<Email fields={fields} formData={formData}/>, {
     pretty: true,
   })
 

@@ -3,7 +3,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import loadMD from "@/lib/loadMD";
 import Main from "@//custom/Main";
 
-import AutoForm from "@thaumazo/forms/AutoForm";
+import AutoForm from "@kenstack/forms/AutoForm";
 import fields from "./fields";
 import formAction from "./formAction";
 
@@ -25,8 +25,7 @@ export default async function CommunityPage() {
               action={formAction}
               submit={
                 {
-                  // startIcon: <SaveIcon />,
-                  // children: "Save changes",
+                  className: "btn btn-primary",
                 }
               }
             />

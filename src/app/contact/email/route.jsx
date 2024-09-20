@@ -1,4 +1,4 @@
-import Email from "@thaumazo/forms/Email";
+import Email from "@kenstack/forms/Email";
 import { render } from '@react-email/render';
 import { NextResponse } from 'next/server'
 
@@ -30,7 +30,7 @@ testData.append("interest", "support");
 */
 
 export async function GET() {
-  const html = render(<Email fields={fields} formData={testData}/>, {
+  const html = await render(<Email fields={fields} formData={testData}/>, {
     pretty: true,
   });
 

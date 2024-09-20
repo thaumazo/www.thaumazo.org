@@ -1,11 +1,20 @@
+/*
+  listClass: "flex flex-col gap-2", // Class for the `ul` element
+  itemClass: "flex items-center space-x-2", // Class for each `li` element
+  containerclass
+  labelClass: "text-sm font-medium text-gray-700", // Class for the label
+  inputClass 
+*/
+
 const fields = {
   first_name: {
     required: true,
-    md: 6,
+    // md: 6,
+    containerClass: "md:col-span-6",
   },
   last_name: {
     required: true,
-    md: 6,
+    containerClass: "md:col-span-6",
   },
   email: {
     required: true,
@@ -22,6 +31,7 @@ const fields = {
     label: "I'm Interested In",
     required: true,
     field: "checkboxlist",
+    // listClass: "grid grid-cols-1 xl:grid-cols-2 gap-4",
     options: [
       ["event", "Attending a Thaumazo Event"],
       ["joining", "Joining the Thaumazo Community"],
@@ -41,6 +51,7 @@ const fields = {
   project: {
     label: "I'd like to find out about / discuss",
     field: "checkboxlist",
+    listClass: "grid grid-cols-1 lg:grid-cols-2 gap-4",
     options: [
       ["StoryTime", "StoryTime"],
       ["CommunityMycelium", "Community Mycelium"],
@@ -52,7 +63,6 @@ const fields = {
       ["PersonalPathways", "Personal Pathways"],
    ]
   },
-
 };
 
 export default fields;

@@ -1,0 +1,3 @@
+[submodule "kenstack"]
+	path = kenstack
+	url = https://github.com/ken-spencer/kenstack
