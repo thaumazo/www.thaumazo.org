@@ -7,6 +7,7 @@
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "_dev": "yarn generate-json && next dev",
+    "postinstall": "git submodule update --init --recursive && cd kenstack && npm install",
     "dev": "next dev",
     "_build": "yarn generate-json && next build",
     "build": "next build",
