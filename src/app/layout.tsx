@@ -1,4 +1,7 @@
 // import SearchModal from "@/components/SearchModal";
+import "@kenstack/styles/forms.scss";
+import "@kenstack/styles/buttons.scss";
+
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 // import TwSizeIndicator from "@/helpers/TwSizeIndicator";
@@ -6,7 +9,6 @@ import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.scss";
-import "@thaumazo/forms/global.css";
 
 export default function RootLayout({
   children,
