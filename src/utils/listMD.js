@@ -8,6 +8,7 @@ export default async function loadMD(localPath) {
 
   const markdownFiles = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+    .filter((entry) => !entry.name.includes("TODO"))
     .map((entry) => path.join(directory, entry.name));
 
   const retval = [];
@@ -15,9 +16,12 @@ export default async function loadMD(localPath) {
     const fileContents = await fs.readFile(filePath, "utf8");
     const result = matter(fileContents);
 
+    const slug = path.basename(filePath).replace(/\.md$/, "");
+
     retval.push({
       ...result.content,
       ...result.data,
+      slug,
     });
   }
   return retval;

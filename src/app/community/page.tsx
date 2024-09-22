@@ -16,8 +16,8 @@ export default async function CommunityPage() {
       <div className="container">
         <div className="row justify-center">
           <div className="lg:col-7 md:col-9  grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {people.map((person) => {
-              return <div>{person.title}</div>;
+            {people.map(({title, slug}) => {
+              return <div key={slug}>{title}</div>;
             })}
           </div>
         </div>
