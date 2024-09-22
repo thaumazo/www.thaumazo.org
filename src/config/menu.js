@@ -9,6 +9,7 @@ const menu = {
     {
       name: "Community",
       url: "/community",
+      /*
       "hasChildren": true,
       "children": [
         {
@@ -75,13 +76,13 @@ const menu = {
           "name": "Sophie Cotton",
           "url": "/community/sophie"
         },
-
-
       ]
+      */
     },
     {
       name: "Partners",
       url: "/partners",
+      /*
       "hasChildren": true,
       "children": [
         {
@@ -121,11 +122,12 @@ const menu = {
           "url": "/partners/welcome_collective"
         }
       ]
-      
+      */      
     },
     {
       name: "Projects",
       url: "/projects",
+      /*
       "hasChildren": true,
       "children": [
         {
@@ -176,8 +178,8 @@ const menu = {
           "name": "Welcome Collective - Portuguese Translation",
           "url": "/projects/wc_portuguese"
         },
-
       ]
+      */
     },
     {
       name: "Contact",

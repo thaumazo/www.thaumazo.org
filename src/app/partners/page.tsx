@@ -1,6 +1,6 @@
 import SeoMeta from "@/partials/SeoMeta";
 
-import loadMD from "@/lib/loadMD";
+import loadMD from "@/utils/loadMD";
 import Main from "@//custom/Main";
 
 // for all regular pages

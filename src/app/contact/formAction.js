@@ -5,7 +5,7 @@ import fields from "./fields";
 
 import Email from "@kenstack/forms/Email";
 import { render } from '@react-email/render';
-import mailer from "@/utils/mailer";
+import mailer from "@kenstack/utils/mailer";
 
 export default async function formAction(state, formData) {
 
