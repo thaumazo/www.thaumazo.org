@@ -14,8 +14,8 @@ url: ""
 status: ["Internal", "In Progress"]
 partners: ["The Village"]
 liaison: ["Brenda Keesal", "Rachael Madore"]
-start_date: 
-end_date: 
+start_date:
+end_date:
 location: "Montreal, QC"
 ---
 

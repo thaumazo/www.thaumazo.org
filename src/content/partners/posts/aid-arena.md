@@ -15,4 +15,5 @@ status: ["Liaising"]
 liaison: ["Christopher 'Jonesy' Jones"]
 projects: ["CrisisForge"]
 ---
+
 Aid Arena, facilitated by Conversa Corps, is a collaborative workspace designed for various crisis response teams. It operates on Slack, offering a pro-level environment for communication among vetted professionals across numerous sectors involved in crisis response. The platform aims to foster a community culture, allowing members to engage, browse, and collaborate effectively. Aid Arena serves as a year-round base camp, or "arena," where these teams can prepare and coordinate before crises occur, ensuring a more efficient response when action is needed

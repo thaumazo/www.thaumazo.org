@@ -14,9 +14,9 @@ url: ""
 status: ["Internal", "In Progress"]
 partners: []
 liaison: ["Daniel Lindenberger"]
-start_date: 
-end_date: 
+start_date:
+end_date:
 location: "Vancouver, BC"
 ---
 
-A discussion group on how we interact and interface with ai with a human-first approach. 
+A discussion group on how we interact and interface with ai with a human-first approach.

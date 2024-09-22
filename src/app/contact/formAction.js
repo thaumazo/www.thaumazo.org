@@ -4,11 +4,10 @@ import checkServerValidity from "@kenstack/forms/validity/checkServerValidity";
 import fields from "./fields";
 
 import Email from "@kenstack/forms/Email";
-import { render } from '@react-email/render';
+import { render } from "@react-email/render";
 import mailer from "@kenstack/utils/mailer";
 
 export default async function formAction(state, formData) {
-
   const fieldErrors = checkServerValidity(fields, formData);
   if (fieldErrors) {
     return {
@@ -20,12 +19,12 @@ export default async function formAction(state, formData) {
 
   const to = process.env.CONTACT_EMAIL;
   if (!to) {
-    return {error: "Setup error. CONTACT_EMAIL is not defined"}
+    return { error: "Setup error. CONTACT_EMAIL is not defined" };
   }
 
-  const html = await render(<Email fields={fields} formData={formData}/>, {
+  const html = await render(<Email fields={fields} formData={formData} />, {
     pretty: true,
-  })
+  });
 
   try {
     await mailer({
@@ -36,9 +35,14 @@ export default async function formAction(state, formData) {
     });
   } catch (e) {
     console.error("Error sending email", e);
-    return {error: "There was an unexpected problem handling your request. Please try again later."}
+    return {
+      error:
+        "There was an unexpected problem handling your request. Please try again later.",
+    };
   }
 
-  return { success: "Thank you for reaching out. We look forward to reviewing your submission." };
-
+  return {
+    success:
+      "Thank you for reaching out. We look forward to reviewing your submission.",
+  };
 }

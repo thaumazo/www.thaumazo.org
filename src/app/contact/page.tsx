@@ -23,11 +23,9 @@ export default async function CommunityPage() {
               // title="Contact us"
               fields={fields}
               action={formAction}
-              submit={
-                {
-                  className: "btn btn-primary",
-                }
-              }
+              submit={{
+                className: "btn btn-primary",
+              }}
             />
           </div>
         </div>

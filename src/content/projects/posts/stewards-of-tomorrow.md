@@ -14,8 +14,8 @@ url: ""
 status: ["Internal", "Approved"]
 partners: []
 liaison: ["Faizan Abbasi", "Daniel Lindenberger"]
-start_date: 
-end_date: 
+start_date:
+end_date:
 location: "Karachi, Pakistan"
 ---
 

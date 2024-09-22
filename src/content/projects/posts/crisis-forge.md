@@ -15,10 +15,9 @@ status: ["Partner", "Approved"]
 partners: ["Air Arena", "UBC Emerging Media Lab", "Conversa Corps"]
 liaison: ["Daniel Lindenberger"]
 start_date: 2024-02-12T05:00:00Z
-end_date: 
+end_date:
 location: "Denver, Colorado"
 ---
-
 
 Aid Arena is an initiative of Conversa Corps, which brings together members from various international governmental agencies, NGOs and other groups involved in crisis response to foster more effective collaboration, approaches and infrastructure during events.
 
@@ -42,4 +41,3 @@ Training 3) Work with partners to develop systems for each team, which at their 
 The goal would be the eventual creation of a White Team Agent capable of assisting during real world events, though this would require extensive testing.
 
 Initial stages of this project could be done relatively easily, with further stages likely requiring significant funding, which sounds like it is probably accessible via grants.
-

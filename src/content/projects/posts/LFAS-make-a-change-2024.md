@@ -37,4 +37,4 @@ In one case a team had us use GPT to help generate an introductory letter and ot
 
 ——
 
-In 2024, we will be expanding our role in supporting ideation and implementation around projects, attracting attention to the project teams and projects devised, and fostering more relationships with partner organizations for the student teams. 
+In 2024, we will be expanding our role in supporting ideation and implementation around projects, attracting attention to the project teams and projects devised, and fostering more relationships with partner organizations for the student teams.

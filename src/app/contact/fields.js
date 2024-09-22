@@ -39,9 +39,12 @@ const fields = {
       ["partnering", "Partnering with Thaumazo on a project"],
       ["finding", "Finding out more about a specific project / initiative"],
       ["support", "Supporting Thaumazo's Work"],
-      ["telling", "Telling Thaumazo about a Person, Organization, or Project of interest"],
+      [
+        "telling",
+        "Telling Thaumazo about a Person, Organization, or Project of interest",
+      ],
       ["opportunity", "Discussing an opportunity with Thaumazo"],
-    ]
+    ],
   },
   details: {
     label: "Any Further Details",
@@ -61,7 +64,7 @@ const fields = {
       ["AIAndUsWorkingGroup", "AI & Us Working Group"],
       ["StewardsOfTomorrow", "Stewards of Tomorrow"],
       ["PersonalPathways", "Personal Pathways"],
-   ]
+    ],
   },
 };
 

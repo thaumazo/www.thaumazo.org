@@ -19,4 +19,4 @@ end_date: 2022-04-04T05:00:00Z
 location: "Vancouver, BC"
 ---
 
-A Portuguese translation of Welcome Collective. 
+A Portuguese translation of Welcome Collective.

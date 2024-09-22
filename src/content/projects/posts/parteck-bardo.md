@@ -19,4 +19,4 @@ end_date: 2024-03-01T05:00:00Z
 location: "Vancouver, BC"
 ---
 
-Exploring the future of ParTecK. 
+Exploring the future of ParTecK.

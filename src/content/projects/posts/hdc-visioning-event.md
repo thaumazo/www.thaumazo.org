@@ -14,8 +14,8 @@ url: ""
 status: ["Completed", "Client"]
 partners: ["Human Data Commons"]
 liaison: ["Daniel Lindenberger"]
-start_date: 
-end_date: 
+start_date:
+end_date:
 location: "Vancouver, BC"
 ---
 

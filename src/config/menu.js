@@ -122,7 +122,7 @@ const menu = {
           "url": "/partners/welcome_collective"
         }
       ]
-      */      
+      */
     },
     {
       name: "Projects",
