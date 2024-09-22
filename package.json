@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.654.0",
+    "@heroicons/react": "^2.1.5",
     "@react-email/components": "^0.0.25",
     "@react-email/render": "^1.0.1",
     "date-fns": "^3.6.0",
@@ -38,9 +39,7 @@
     "react-icons": "^5.0.1",
     "react-lite-youtube-embed": "^2.4.0",
     "rehype-slug": "^6.0.0",
-    "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
-    "remark-html": "^16.0.1",
     "swiper": "^11.1.1"
   },
   "devDependencies": {

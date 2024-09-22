@@ -1,6 +1,7 @@
-import { markdownify } from "@/lib/utils/textConverter";
+// import { markdownify } from "@/lib/utils/textConverter";
 import Link from "next/link";
 import ImageFallback from "@/helpers/ImageFallback";
+import Markdown from "@kenstack/components/Markdown";
 
 export default function Main({
   title = "",
@@ -17,14 +18,8 @@ export default function Main({
       <div className="container">
         <div className="row justify-center">
           <div className="lg:col-7 md:col-9 mb-8 text-center">
-            <h1
-              className="mb-4 text-h3 lg:text-h1"
-              dangerouslySetInnerHTML={markdownify(title)}
-            />
-            <div
-              className="main-text mb-4"
-              dangerouslySetInnerHTML={markdownify(content ?? "")}
-            />
+            <h1 className="mb-4 text-h3 lg:text-h1">{title}</h1>
+            <Markdown className="main-text mb-4" content={content} />
             {button!.enable && (
               <Link
                 className="mx-4 btn btn-primary"
