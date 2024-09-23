@@ -1,7 +1,7 @@
 ---
 title: "FIPS Africa"
 meta_title: "fipsafrica"
-description: "agricultural infrastructure"
+description: "Agricultural infrastructure in Africa."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

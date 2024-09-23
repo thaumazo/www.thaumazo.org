@@ -1,7 +1,7 @@
 ---
 title: "UBC Emerging Media Lab"
 meta_title: "eml"
-description: "education lab focusing on emerging media"
+description: "Education lab focusing on emerging media at UBC."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

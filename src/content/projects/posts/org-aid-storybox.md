@@ -1,7 +1,7 @@
 ---
 title: "Org Aid: StoryBox"
 meta_title: "storybox"
-description: "storybox"
+description: "Storybox."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["Project"]

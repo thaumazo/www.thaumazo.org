@@ -1,7 +1,7 @@
 ---
 title: "Langley Fine Arts School"
 meta_title: "lfas"
-description: "school"
+description: "Fine arts school in Langley, BC."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

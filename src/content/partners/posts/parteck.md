@@ -1,7 +1,7 @@
 ---
 title: "ParTecK"
 meta_title: "parteck"
-description: "community events for knowledge and technology"
+description: "Community events for knowledge and technology."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

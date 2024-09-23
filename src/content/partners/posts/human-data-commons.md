@@ -1,7 +1,7 @@
 ---
 title: "Human Data Commons"
 meta_title: "humandatacommons"
-description: "technology rights and advocacy organization"
+description: "Technology rights and advocacy organization."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

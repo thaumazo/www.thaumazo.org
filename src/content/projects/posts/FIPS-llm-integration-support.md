@@ -1,7 +1,7 @@
 ---
 title: "FIPS: LLM Integration Support"
 meta_title: "fipsllmintegration"
-description: "this is meta description"
+description: "LLM use for supporting the African agriculture community."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["Project"]

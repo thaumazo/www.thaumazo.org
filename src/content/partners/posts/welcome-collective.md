@@ -1,7 +1,7 @@
 ---
 title: "Welcome Collective"
 meta_title: "welcomecollective"
-description: "assisting newcomers"
+description: "Assisting newcomers to Canada."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]

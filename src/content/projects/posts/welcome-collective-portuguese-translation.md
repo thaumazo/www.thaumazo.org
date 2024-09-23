@@ -1,7 +1,7 @@
 ---
 title: "Welcome Collective (Portuguese Translation)"
 meta_title: "welcomecollective"
-description: "A Portuguese translation of Welcome Collective"
+description: "A Portuguese translation of Welcome Collective."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["Project"]

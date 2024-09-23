@@ -1,7 +1,7 @@
 ---
 title: "Big Picture Learning"
 meta_title: "bigpicturelearning"
-description: "learning community"
+description: "Learning community."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["Partner"]
