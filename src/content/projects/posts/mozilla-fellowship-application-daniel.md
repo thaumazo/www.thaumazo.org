@@ -4,7 +4,7 @@ meta_title: "mozillafellowshipapplication"
 description: "Application to the mozilla fellowship to support Thaumazo activities."
 date: 2024-09-17T05:00:00Z
 image: ""
-categories: ["Project"]
+categories: ["project"]
 author: "Rae J"
 tags: ["fellowship", "funding", "application"]
 draft: false

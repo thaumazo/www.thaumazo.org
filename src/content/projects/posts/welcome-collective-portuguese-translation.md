@@ -4,7 +4,7 @@ meta_title: "welcomecollective"
 description: "A Portuguese translation of Welcome Collective."
 date: 2024-09-17T05:00:00Z
 image: ""
-categories: ["Project"]
+categories: ["project"]
 author: "Rae J"
 tags: ["translation"]
 draft: false

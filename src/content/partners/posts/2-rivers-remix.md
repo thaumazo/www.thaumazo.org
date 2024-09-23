@@ -4,7 +4,7 @@ meta_title: "2rivers"
 description: "Events organization to empower indigenous artists."
 date: 2022-04-04T05:00:00Z
 image: ""
-categories: ["Partner"]
+categories: ["partner"]
 author: "Rae J"
 tags: ["indigenous", "art"]
 draft: false

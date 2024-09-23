@@ -4,8 +4,8 @@ meta_title: "daniellindenberger"
 description: "this is meta description"
 date: 2024-09-12T05:00:00Z
 image: ""
-categories: ["Community"]
-author: "Rae J"
+categories: ["community"]
+author: "rae-j"
 tags: ["board member", "visionary"]
 draft: false
 

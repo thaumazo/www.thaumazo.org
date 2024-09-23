@@ -4,7 +4,7 @@ meta_title: "welcomecollective"
 description: "Assisting newcomers to Canada."
 date: 2022-04-04T05:00:00Z
 image: ""
-categories: ["Partner"]
+categories: ["partner"]
 author: "Rae J"
 tags: ["refugees"]
 draft: false

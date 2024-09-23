@@ -4,8 +4,8 @@ meta_title: ""
 description: "this is meta description"
 date: 2022-04-04T05:00:00Z
 image: ""
-categories: ["Application", "Data"]
-author: "John Doe"
+categories: ["community"]
+author: "rae-j"
 tags: ["nextjs", "tailwind"]
 draft: false
 ---

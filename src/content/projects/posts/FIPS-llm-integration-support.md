@@ -4,7 +4,7 @@ meta_title: "fipsllmintegration"
 description: "LLM use for supporting the African agriculture community."
 date: 2024-09-17T05:00:00Z
 image: ""
-categories: ["Project"]
+categories: ["project"]
 author: "Rae J"
 tags: ["llm", "agriculture"]
 draft: false

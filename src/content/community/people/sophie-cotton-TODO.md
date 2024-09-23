@@ -4,8 +4,8 @@ meta_title: "johndoe"
 description: "this is meta description"
 date: 2022-04-04T05:00:00Z
 image: ""
-categories: ["Community"]
-author: "Rae J"
+categories: ["community"]
+author: "rae-j"
 tags: ["storytelling", "space-making"]
 draft: false
 

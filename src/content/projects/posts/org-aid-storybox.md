@@ -4,7 +4,7 @@ meta_title: "storybox"
 description: "Storybox."
 date: 2024-09-17T05:00:00Z
 image: ""
-categories: ["Project"]
+categories: ["project"]
 author: "Rae J"
 tags: []
 draft: false
