@@ -12,9 +12,10 @@ import { Post } from "@/types";
 const { pagination } = config.settings;
 
 import Main from "@//custom/Main";
+import Posts from "./Posts";
 
 // for all regular pages
-const Posts = () => {
+export default async function page() {
   const postIndex: Post = getListPage(`projects/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
   const posts: Post[] = getSinglePage("projects");
@@ -34,6 +35,8 @@ const Posts = () => {
         image={image}
       />
       <Main title={postIndex.frontmatter.title} content={postIndex.content} />
+      <Posts />
+
       {/*
       <section className="section">
         <div className="container">
@@ -64,6 +67,4 @@ const Posts = () => {
       */}
     </>
   );
-};
-
-export default Posts;
+}
