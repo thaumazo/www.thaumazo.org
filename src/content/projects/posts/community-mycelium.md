@@ -5,7 +5,7 @@ description: "Software that connects distributed projects, people, and resources
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["project"]
-author: "Rae J"
+author: "rae-j"
 tags: ["platform", "community", "emergence", "mycelium"]
 draft: false
 

@@ -5,7 +5,7 @@ description: "Fraud prevention for Lucinda Turner, an indigenous artist in BC."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["project"]
-author: "Rae J"
+author: "rae-j"
 tags: ["art", "indigenous"]
 draft: false
 

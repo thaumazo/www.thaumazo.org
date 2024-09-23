@@ -5,7 +5,7 @@ description: "Metavision event for the Human Data Commons."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["project"]
-author: "Rae J"
+author: "rae-j"
 tags: ["event"]
 draft: false
 

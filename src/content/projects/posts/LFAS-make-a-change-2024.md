@@ -5,7 +5,7 @@ description: "Facilitating students at LFAS to address problems using the Sustai
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["project"]
-author: "Rae J"
+author: "rae-j"
 tags: ["sdgs", "education"]
 draft: false
 

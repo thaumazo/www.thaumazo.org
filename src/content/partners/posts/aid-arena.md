@@ -5,7 +5,7 @@ description: "Crisis response support."
 date: 2022-04-04T05:00:00Z
 image: ""
 categories: ["partner"]
-author: "Rae J"
+author: "rae-j"
 tags: ["crisis response", "platform"]
 draft: false
 
