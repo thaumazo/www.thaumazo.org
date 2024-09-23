@@ -3,7 +3,7 @@ title: "Org Aid: StoryBox"
 meta_title: "storybox"
 description: "storybox"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: []

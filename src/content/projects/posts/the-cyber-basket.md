@@ -3,7 +3,7 @@ title: "The Cyber Basket"
 meta_title: "cyberbasket"
 description: "Decolonized Digital Platform for Indigenous Artists."
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["storytelling", "space-making"]

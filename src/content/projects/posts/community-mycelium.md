@@ -3,7 +3,7 @@ title: "Community Mycelium"
 meta_title: "communitymycelium"
 description: "software that connects distributed projects, people, and resources for social good"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["platform", "community", "emergence", "mycelium"]

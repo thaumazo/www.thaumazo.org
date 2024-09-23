@@ -3,7 +3,7 @@ title: "ParTecK Bardo"
 meta_title: "parteckbardo"
 description: "exploring the future of parteck"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["community"]

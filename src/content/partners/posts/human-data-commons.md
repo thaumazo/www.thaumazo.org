@@ -3,8 +3,8 @@ title: "Human Data Commons"
 meta_title: "humandatacommons"
 description: "technology rights and advocacy organization"
 date: 2022-04-04T05:00:00Z
-image: "/images/image-placeholder.png"
-categories: ["Project"]
+image: ""
+categories: ["Partner"]
 author: "Rae J"
 tags: ["events", "technology"]
 draft: false

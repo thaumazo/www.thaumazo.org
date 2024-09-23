@@ -3,8 +3,8 @@ title: "FIPS Africa"
 meta_title: "fipsafrica"
 description: "agricultural infrastructure"
 date: 2022-04-04T05:00:00Z
-image: "/images/image-placeholder.png"
-categories: ["Project"]
+image: ""
+categories: ["Partner"]
 author: "Rae J"
 tags: ["agriculture"]
 draft: false

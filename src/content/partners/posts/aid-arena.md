@@ -3,8 +3,8 @@ title: "Air Arena"
 meta_title: "aidarena"
 description: "crisis response support"
 date: 2022-04-04T05:00:00Z
-image: "/images/image-placeholder.png"
-categories: ["Project"]
+image: ""
+categories: ["Partner"]
 author: "Rae J"
 tags: ["crisis response", "platform"]
 draft: false

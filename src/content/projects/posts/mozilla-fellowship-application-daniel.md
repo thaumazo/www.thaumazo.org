@@ -3,7 +3,7 @@ title: "Mozilla Fellowship Application"
 meta_title: "mozillafellowshipapplication"
 description: "application to the mozilla fellowship"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["fellowship", "funding", "application"]

@@ -3,7 +3,7 @@ title: "FIPS: LLM Integration Support"
 meta_title: "fipsllmintegration"
 description: "this is meta description"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["llm", "agriculture"]
@@ -12,7 +12,7 @@ draft: false
 sdgs: ["1", "2", "9", "10", "17"]
 url: "https://fipsafrica.org/"
 status: ["Client", "Approved"]
-partners: ["FIPS Africa"]
+partners: ["fips-africa"]
 liaison: ["Melanda Ochieng"]
 start_date:
 end_date:

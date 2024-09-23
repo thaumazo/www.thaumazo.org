@@ -3,7 +3,7 @@ title: "Daniel Lindenberger"
 meta_title: "daniellindenberger"
 description: "this is meta description"
 date: 2024-09-12T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Community"]
 author: "Rae J"
 tags: ["board member", "visionary"]
@@ -32,7 +32,7 @@ projects:
     "AI & Us",
     "Welcome Collective",
     "LFAS: Make a Change",
-    "CLL: An OPen Interactive Platform for Reducing Scope 3 Emissions at UBC",
+    "CLL: An Open Interactive Platform for Reducing Scope 3 Emissions at UBC",
     "Long COVID Support",
     "Stewards of Tomorrow",
     "Jericho Hill: Designing Tomorrow",

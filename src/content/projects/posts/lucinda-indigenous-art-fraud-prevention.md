@@ -3,7 +3,7 @@ title: "Lucinda: Indigenous Art Fraud Prevention"
 meta_title: "lucinda"
 description: "Fraud prevention for Lucinda Turner"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["art", "indigenous"]

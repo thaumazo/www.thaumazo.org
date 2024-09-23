@@ -3,7 +3,7 @@ title: "Stewards of Tomorrow"
 meta_title: "stewardsoftomorrow"
 description: "Intergenerational work towards sdgs"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["intergenerational", "sdgs"]

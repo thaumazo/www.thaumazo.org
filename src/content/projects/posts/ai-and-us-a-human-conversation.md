@@ -3,7 +3,7 @@ title: "AI & Us: A Human Conversation (Online Pilot)"
 meta_title: "aiandushumanconversation"
 description: "discussion group on ai"
 date: 2024-09-17T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Project"]
 author: "Rae J"
 tags: ["community", "ai"]
