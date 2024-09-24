@@ -24,7 +24,7 @@ const SeoMeta = ({
   const { base_url } = config.site;
   const pathname = usePathname();
 
-  const baseTitle = plainify(meta_title ? meta_title : title);
+  const baseTitle = meta_title ? meta_title : title;
   const seoTitle = "Thaumazo" + (baseTitle ? " : " + baseTitle : "");
 
   return (
