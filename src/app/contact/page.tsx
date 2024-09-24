@@ -1,7 +1,7 @@
 import SeoMeta from "@/partials/SeoMeta";
 
 import loadMD from "@/utils/loadMD";
-import Main from "@//custom/Main";
+import Main from "@//components/Main";
 
 import AutoForm from "@kenstack/forms/AutoForm";
 import fields from "./fields";
@@ -23,9 +23,11 @@ export default async function CommunityPage() {
               // title="Contact us"
               fields={fields}
               action={formAction}
-              submit={{
-                className: "btn btn-primary",
-              }}
+              submit={
+                {
+                  className: "btn btn-primary",
+                } as unknown as string
+              }
             />
           </div>
         </div>

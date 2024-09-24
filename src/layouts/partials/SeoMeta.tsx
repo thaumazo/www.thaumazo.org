@@ -24,12 +24,12 @@ const SeoMeta = ({
   const { base_url } = config.site;
   const pathname = usePathname();
 
+  const baseTitle = plainify(meta_title ? meta_title : title);
+  const seoTitle = "Thaumazo" + (baseTitle ? " : " + baseTitle : "");
+
   return (
     <>
-      {/* title */}
-      <title>
-        {plainify(meta_title ? meta_title : title ? title : config.site.title)}
-      </title>
+      <title>{seoTitle}</title>
 
       {/* canonical url */}
       {canonical && <link rel="canonical" href={canonical} itemProp="url" />}
@@ -47,12 +47,7 @@ const SeoMeta = ({
       <meta name="author" content={meta_author} />
 
       {/* og-title */}
-      <meta
-        property="og:title"
-        content={plainify(
-          meta_title ? meta_title : title ? title : config.site.title,
-        )}
-      />
+      <meta property="og:title" content={seoTitle} />
 
       {/* og-description */}
       <meta
@@ -66,12 +61,7 @@ const SeoMeta = ({
       />
 
       {/* twitter-title */}
-      <meta
-        name="twitter:title"
-        content={plainify(
-          meta_title ? meta_title : title ? title : config.site.title,
-        )}
-      />
+      <meta name="twitter:title" content={seoTitle} />
 
       {/* twitter-description */}
       <meta

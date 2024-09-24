@@ -1,4 +1,4 @@
-// import SearchModal from "@/components/SearchModal";
+// import SearchModal from "@/layouts/components/SearchModal";
 import "@kenstack/styles/forms.scss";
 import "@kenstack/styles/buttons.scss";
 

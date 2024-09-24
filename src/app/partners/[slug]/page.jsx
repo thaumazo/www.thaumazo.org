@@ -6,7 +6,7 @@ import Markdown from "@kenstack/components/Markdown";
 import { notFound } from "next/navigation";
 
 export default async function Page({ params: { slug } }) {
-  const data = await loadMD("projects/posts/" + slug);
+  const data = await loadMD("partners/posts/" + slug);
 
   if (data === false) {
     notFound();

@@ -1,7 +1,7 @@
 import SeoMeta from "@/partials/SeoMeta";
 
 import loadMD from "@/utils/loadMD";
-import Main from "@//custom/Main";
+import Main from "@//components/Main";
 
 import Posts from "./Posts";
 

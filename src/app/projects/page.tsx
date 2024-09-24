@@ -1,6 +1,6 @@
-import BlogCard from "@/components/BlogCard";
+import BlogCard from "@/layouts/components/BlogCard";
 import MDXContent from "@/helpers/MDXContent";
-// import Pagination from "@/components/Pagination";
+// import Pagination from "@/layouts/components/Pagination";
 import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
@@ -11,7 +11,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
 const { pagination } = config.settings;
 
-import Main from "@//custom/Main";
+import Main from "@/components/Main";
 import Posts from "./Posts";
 
 // for all regular pages

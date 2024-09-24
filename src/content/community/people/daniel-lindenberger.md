@@ -1,7 +1,7 @@
 ---
 title: "Daniel Lindenberger"
-meta_title: "daniellindenberger"
-description: "this is meta description"
+meta_title: ""
+description: ""
 date: 2024-09-12T05:00:00Z
 image: ""
 categories: ["community"]

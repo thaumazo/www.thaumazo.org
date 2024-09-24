@@ -1,7 +1,9 @@
 import SeoMeta from "@/partials/SeoMeta";
 
 import loadMD from "@/utils/loadMD";
-import Main from "@//custom/Main";
+import Main from "@/components/Main";
+
+import Posts from "./Posts";
 
 // for all regular pages
 export default async function CommunityPage() {
@@ -11,6 +13,7 @@ export default async function CommunityPage() {
     <>
       <SeoMeta {...data} />
       <Main {...data} />
+      <Posts />
     </>
   );
 }

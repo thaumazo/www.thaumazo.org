@@ -1,4 +1,4 @@
-import Social from "@/components/Social";
+import Social from "@/layouts/components/Social";
 import ImageFallback from "@/helpers/ImageFallback";
 import { plainify } from "@/lib/utils/textConverter";
 import Link from "next/link";

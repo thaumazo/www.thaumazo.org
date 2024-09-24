@@ -20,7 +20,13 @@ export default async function loadMD(localPath) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  console.log(matterResult);
+  // Only show draft content on development
+  if (
+    matterResult.data.draft === true &&
+    process.env.NODE_ENV !== "development"
+  ) {
+    return false;
+  }
 
   // Use remark to convert markdown into HTML string
   /*

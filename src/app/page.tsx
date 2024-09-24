@@ -8,7 +8,7 @@ import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
-import Main from "@/custom/Main";
+import Main from "@/components/Main";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");

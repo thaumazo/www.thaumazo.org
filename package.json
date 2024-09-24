@@ -13,7 +13,7 @@
     "build": "next build",
     "preview": "next start",
     "lint": "next lint",
-    "format": "prettier -w ./src",
+    "format": "prettier -w ./src | grep -v unchanged",
     "generate-json": "node scripts/jsonGenerator.js",
     "remove-darkmode": "node scripts/removeDarkmode.js && yarn format"
   },
