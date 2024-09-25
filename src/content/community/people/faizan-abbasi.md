@@ -19,10 +19,10 @@ roles:
     "Team Member",
     "Community Member",
   ]
-communities: ["Thaumazo", "Practical Utopias"]
+communities: ["thaumazo", "practical-utopias"]
 projects:
   [
-    "Stewards of Tomorrow"
+    "stewards-of-tomorrow"
   ]
 ---
 Empathy + Forever Learning + Growth mindset vs Imposter Syndrome.

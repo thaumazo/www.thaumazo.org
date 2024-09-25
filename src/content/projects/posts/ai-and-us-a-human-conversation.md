@@ -12,8 +12,8 @@ draft: false
 sdgs: ["8", "9", "12"]
 url: ""
 status: ["Partner", "Completed"]
-partners: ["The Village"]
-liaison: ["Daniel Lindenberger", "Brenda Keesal"]
+partners: ["the-village"]
+liaison: ["daniel-lindenberger", "brenda-keesal"]
 start_date: 2023-04-01T05:00:00Z
 end_date: 2023-08-31T05:00:00Z
 location: "Vancouver, BC"

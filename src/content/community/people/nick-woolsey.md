@@ -17,10 +17,10 @@ roles:
     "Project Member",
     "Community Member",
   ]
-communities: ["Thaumazo"]
+communities: ["thaumazo"]
 projects:
   [
-    "Learning Ally Prompt"
+    "learning-ally-prompt"
   ]
 ---
 As an artist and entrepreneur, I spent 15 years leading circus training events and creating online courses. I managed brand development, social media strategies, and photo and video production. 

@@ -12,13 +12,13 @@ draft: false
 sdgs: ["9", "16", "17"]
 url: "https://humandatacommons.org/parteck/"
 status: ["Project Partners"]
-liaison: ["Carissa Kazyss"]
+liaison: ["carissa-kazyss"]
 projects:
   [
-    "ParTecK Bardo",
-    "AI & Us: In Person 2",
-    "Mozilla Fellowship Application",
-    "AI & Us: In Person 1",
+    "parteck-bardo",
+    "ai-and-us-in-person-2",
+    "mozilla-fellowship-application-daniel",
+    "ai-and-us-in-person-1",
   ]
 ---
 

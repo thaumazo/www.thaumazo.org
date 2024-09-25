@@ -16,7 +16,7 @@ roles:
     "Director",
     "Community Member",
   ]
-communities: ["Thaumazo"]
+communities: ["thaumazo"]
 projects:
   [
   ]

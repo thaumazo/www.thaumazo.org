@@ -16,10 +16,10 @@ roles:
     "Community Member",
     "Liaison",
   ]
-communities: ["Thaumazo", "One Caring Human"]
+communities: ["thaumazo", "one-caring-human"]
 projects:
   [
-    "Through Human Eyes - Branding Support"
+    "through-human-eyes-branding-support"
   ]
 ---
 Kelly is an RMT, an educator, facilitator, life coach, storyteller, writer, collaborator, lover of life, people, animals and the planet, hugger of trees, hand holder of the olders, resounder of respite, duchess of nurturing touch and compassionate presence, proud mama of amazing humans, plants, and fur babies.

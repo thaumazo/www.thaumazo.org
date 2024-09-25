@@ -13,7 +13,7 @@ sdgs: ["3"]
 url: ""
 status: ["Internal", "Exploring"]
 partners: []
-liaison: ["Daniel Lindenberger"]
+liaison: ["daniel-lindenberger"]
 start_date: 2023-09-01T05:00:00Z
 end_date:
 location: "Vancouver, BC"

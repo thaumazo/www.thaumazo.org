@@ -13,7 +13,7 @@ sdgs: ["17"]
 url: ""
 status: ["Internal", "In Progress"]
 partners: []
-liaison: ["Daniel Lindenberger"]
+liaison: ["daniel-lindenberger"]
 start_date:
 end_date:
 location: "Vancouver, BC"

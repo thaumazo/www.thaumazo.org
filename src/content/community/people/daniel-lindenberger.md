@@ -1,7 +1,7 @@
 ---
 title: "Daniel Lindenberger"
 meta_title: "daniellindenberger"
-description: "this is meta description"
+description: "Visionary and board member of Thaumazo."
 date: 2024-09-24T05:00:00Z
 image: "/images/Daniel.jpg"
 categories: ["Community"]
@@ -22,15 +22,15 @@ roles:
     "Community Member",
     "Liaison",
   ]
-communities: ["Thaumazo", "Practical Utopias"]
+communities: ["thaumazo", "practical-utopias"]
 projects:
   [
-    "Lucinda Indigenous Art Fraud Prevention",
-    "FolkU - AI Talk",
-    "ParTecK Bardo",
-    "AI & Us",
-    "Welcome Collective - Portuguese Translation",
-    "LFAS: Make a Change",
+    "lucinda-indigenous-art-fraud-prevention",
+    "folku-ai-talk",
+    "parteck-bardo",
+    "ai-and-us",
+    "welcome-collective-portuguese-translation",
+    "lfas-make-a-change-2024",
   ]
 ---
 

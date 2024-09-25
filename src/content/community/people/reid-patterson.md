@@ -16,13 +16,13 @@ roles:
     "Project Member",
     "Community Member",
   ]
-communities: ["Thaumazo"]
+communities: ["thaumazo"]
 projects:
   [
-    "AI & Us Working Group",
-    "AI & Us Working Group - Education",
-    "Community Mycelium",
-    "Crisis Forge",
+    "ai-and-us-working-group",
+    "ai-and-us-working-group-education",
+    "community-mycelium",
+    "crisis-forge",
   ]
 ---
 Creative and innovative problem solver with superb technical communication skills.

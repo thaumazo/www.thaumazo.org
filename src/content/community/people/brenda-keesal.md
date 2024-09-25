@@ -19,10 +19,10 @@ roles:
     "Community Member",
     "Liaison",
   ]
-communities: ["Thaumazo", "The Village"]
+communities: ["thaumazo", "the-village"]
 projects:
   [
-    "AI & Us",
+    "ai-and-us",
   ]
 ---
 Brenda Keesal is a multi-modal artist, love activist and creator of transformative gatherings. Fusing her talent and vision with her love of people, her emotional-action work provokes, uplifts and inspires.

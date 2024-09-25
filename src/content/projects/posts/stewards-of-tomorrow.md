@@ -13,7 +13,7 @@ sdgs: ["4", "8", "9", "17"]
 url: ""
 status: ["Internal", "Approved"]
 partners: []
-liaison: ["Faizan Abbasi", "Daniel Lindenberger"]
+liaison: ["faizan-abbasi", "daniel-lindenberger"]
 start_date:
 end_date:
 location: "Karachi, Pakistan"
