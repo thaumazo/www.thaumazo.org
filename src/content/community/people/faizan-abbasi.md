@@ -20,11 +20,9 @@ roles:
     "Community Member",
   ]
 communities: ["thaumazo", "practical-utopias"]
-projects:
-  [
-    "stewards-of-tomorrow"
-  ]
+projects: ["stewards-of-tomorrow"]
 ---
+
 Empathy + Forever Learning + Growth mindset vs Imposter Syndrome.
 Still figuring out the ratios.
 I usually like operate between the Emergence & Chaos to find the relevant synapses of opportunities

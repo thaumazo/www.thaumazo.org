@@ -11,11 +11,7 @@ draft: true
 
 contact: ["reid@thaumazo.org"]
 linkedin: "https://www.linkedin.com/in/reidpat/"
-roles:
-  [
-    "Project Member",
-    "Community Member",
-  ]
+roles: ["Project Member", "Community Member"]
 communities: ["thaumazo"]
 projects:
   [
@@ -25,11 +21,12 @@ projects:
     "crisis-forge",
   ]
 ---
+
 Creative and innovative problem solver with superb technical communication skills.
 
 Currently working part time with Thaumazo as a full stack web developer, creating the technical foundations for AI related projects.
 
-I've recently left UBC, after spending nearly a decade there with my undergrad in Cognitive Systems, and later teaching code to K-12 educators with Geering Up and the Faculty of Education. 
+I've recently left UBC, after spending nearly a decade there with my undergrad in Cognitive Systems, and later teaching code to K-12 educators with Geering Up and the Faculty of Education.
 
 I'm deeply passionate about education, with expertise relating to pedagogy and technology, advocating how the education system needs to adapt to new technologies. (https://www.youtube.com/@reidpat)
 
