@@ -4,6 +4,8 @@ import matter from "gray-matter";
 // import { remark } from "remark";
 // import toHtml from "remark-html";
 
+import getImageMeta from "./getImageMeta";
+
 export default async function loadMD(localPath) {
   if (!localPath.endsWith(".md")) {
     localPath += ".md";
@@ -36,8 +38,15 @@ export default async function loadMD(localPath) {
   const html = processedContent.toString();
   */
 
+  let image = null;
+
+  if (matterResult.data.image) {
+    image = await getImageMeta(matterResult.data.image);
+  }
+
   return {
     content: matterResult.content,
     ...matterResult.data,
+    image,
   };
 }

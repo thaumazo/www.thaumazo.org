@@ -2,6 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 
+import getImageMeta from "./getImageMeta";
+
 export default async function loadMD(localPath) {
   const directory = path.resolve("./src/content", localPath);
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -23,9 +25,15 @@ export default async function loadMD(localPath) {
       continue;
     }
 
+    let image = null;
+    if (result.data.image) {
+      image = await getImageMeta(result.data.image);
+    }
+
     retval.push({
       ...result.content,
       ...result.data,
+      image,
       slug,
     });
   }
