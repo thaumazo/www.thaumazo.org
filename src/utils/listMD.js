@@ -8,7 +8,7 @@ export default async function loadMD(localPath) {
 
   const markdownFiles = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
-    .filter((entry) => !entry.name.includes("TODO"))
+    // .filter((entry) => !entry.name.includes("TODO"))
     .map((entry) => path.join(directory, entry.name));
 
   const retval = [];
