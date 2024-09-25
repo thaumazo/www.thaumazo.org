@@ -7,7 +7,7 @@ image: ""
 categories: ["community"]
 author: "rae-j"
 tags: ["storytelling", "space-making"]
-draft: false
+draft: true
 
 contact: ["name@gmail.com"]
 url: "www.thaumazo.org"

@@ -1,60 +1,68 @@
 ---
 title: "Daniel Lindenberger"
+<<<<<<< HEAD
+meta_title: "daniellindenberger"
+description: "this is meta description"
+date: 2024-09-24T05:00:00Z
+image: "/images/Daniel.jpg"
+categories: ["Community"]
+author: "Daniel Lindenberger"
+=======
 meta_title: ""
 description: ""
 date: 2024-09-12T05:00:00Z
 image: ""
 categories: ["community"]
 author: "rae-j"
+>>>>>>> a8432c2cae123ed0ef4f1c27f6e6d904cee1f379
 tags: ["board member", "visionary"]
 draft: false
 
 contact: ["daniel@thaumazo.org"]
-url: "https://www.linkedin.com/in/daniel-lindenberger-00824916/"
+linkedin: "https://www.linkedin.com/in/daniel-lindenberger-00824916/"
 roles:
   [
-    "community Member",
-    "Volunteer",
-    "Team Member",
-    "Team Lead",
-    Liaison,
     "Director",
     "Project Lead",
+    "Project Member",
+    "Team Lead",
+    "Team Member",
+    "Volunteer",
+    "Community Member",
+    "Liaison",
   ]
 communities: ["Thaumazo", "Practical Utopias"]
 projects:
   [
     "Lucinda Indigenous Art Fraud Prevention",
-    "Thaumazo Growth",
     "FolkU - AI Talk",
     "ParTecK Bardo",
-    "CURATE / METER / FLARES",
     "AI & Us",
-    "Welcome Collective",
+    "Welcome Collective - Portuguese Translation",
     "LFAS: Make a Change",
+<<<<<<< HEAD
+=======
     "CLL: An Open Interactive Platform for Reducing Scope 3 Emissions at UBC",
     "Long COVID Support",
+>>>>>>> a8432c2cae123ed0ef4f1c27f6e6d904cee1f379
     "Stewards of Tomorrow",
-    "Jericho Hill: Designing Tomorrow",
     "HDC Visioning Event",
-    "FIPS: LLM Integration Support",
     "Community Mycelium",
     "Org Aid: StoryBox",
-    "UVic Augmented Art Course Support",
-    "Hidden Cards",
     "CrisisForge",
-    "UC Emergent Member Engagement",
-    "Thaumazo Website",
-    "Storytime",
-    "Thrivin: People Acuity Proposal",
-    "Democracy Project",
-    "Employment Coach",
-    "The Cyber Basket",
   ]
 ---
 
-Filled with wonder, Daniel is a connector of communities, projects, and people through his various commitments in non-profit (Thaumazo), education (various projects at UBC), and industry sectors (Banging Rocks).
+Three key strands have woven through Daniel’s life since childhood: Community, Human Potential, and Technology.
 
-With high drive and impact, Daniel creates incubation spaces of play at every scale from fail-friendly prototyping to full implementations. He is the visionary behind Thaumazo (along with fellow board members), orchestrating the underlying mycelial network of work for social good.
+Through the late 80s and 90s, a vibrant youth culture of what would later be called “Cultural Creatives” (“weirdos” at the time) formed in Vancouver. This set a course for Daniel that placed community based on meaningful connection as a central piece of his life. His interest in community formation & function has included time as a board member of the Canadian Cohousing Association and the Group Pattern Language Project, whose open source “Group Works” pattern language deck has been translated into 5 languages and is in its second printing. As founding member of Source Facilitation Collective, he is a trained facilitator in Consensus, Sociocracy and Way of Council processes. 
 
-Specialties: Emerging media for positive social impact, project ideation & development. Consensus facilitation, conflict resolution, workshop development & leadership, programming, community building.
+Daniel’s exploration of human potential led him through a five month journaling journey in Nepal, India, into and out of the Kundalini Yoga community, through study of eastern religions and western magic, Jungian psychology and . Now, as cofounder at Thaumazo, Daniel is exploring how we reach our potential - individually and collectively, internally and globally by bringing people together around projects focused on the United Nations’ Sustainable Development Goals. 
+
+In 1984 Daniel’s family got a Tandy 1000 with no games, just a programming manual. Ever since he’s been fascinated with how we shape technology and how in turn it shapes us. More recently as Emerging Media Expert at UBC’s Emerging Media Lab, Daniel shared his passion for technology aimed towards education and the public good. Daniel consults with UBC’s Digital Experience Lab on the creation of an AI Incubation Team. One of the early community builders at CoronaWhy, he helped design & define Unmanagement and co-presented it at the 2020 GITMA Conference. 
+
+
+Increasingly, Daniel’s time and energy are focused on how we approach our personal, community and global growth with a sense of meaningful play and adventure. 
+
+Daniel is currently on a full-time Fellowship exploring emergent approaches to dealing with the Metacrisis, and is writing about it here: https://medium.com/thaumazo
+
