@@ -1,20 +1,11 @@
 ---
 title: "Daniel Lindenberger"
-<<<<<<< HEAD
 meta_title: "daniellindenberger"
 description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/Daniel.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
-=======
-meta_title: ""
-description: ""
-date: 2024-09-12T05:00:00Z
-image: ""
-categories: ["community"]
-author: "rae-j"
->>>>>>> a8432c2cae123ed0ef4f1c27f6e6d904cee1f379
 tags: ["board member", "visionary"]
 draft: false
 
@@ -40,16 +31,6 @@ projects:
     "AI & Us",
     "Welcome Collective - Portuguese Translation",
     "LFAS: Make a Change",
-<<<<<<< HEAD
-=======
-    "CLL: An Open Interactive Platform for Reducing Scope 3 Emissions at UBC",
-    "Long COVID Support",
->>>>>>> a8432c2cae123ed0ef4f1c27f6e6d904cee1f379
-    "Stewards of Tomorrow",
-    "HDC Visioning Event",
-    "Community Mycelium",
-    "Org Aid: StoryBox",
-    "CrisisForge",
   ]
 ---
 
