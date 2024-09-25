@@ -13,7 +13,7 @@ sdgs: ["1", "2", "9", "10", "17"]
 url: "https://fipsafrica.org/"
 status: ["Client", "Approved"]
 partners: ["fips-africa"]
-liaison: ["Melanda Ochieng"]
+liaison: ["melanda-ochieng"]
 start_date:
 end_date:
 location: "Nairobi, Kenya"

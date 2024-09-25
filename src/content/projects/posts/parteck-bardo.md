@@ -12,8 +12,8 @@ draft: false
 sdgs: ["16", "17"]
 url: ""
 status: ["Client", "In Progress"]
-partners: ["ParTecK"]
-liaison: ["Daniel Lindenberger"]
+partners: ["partecK"]
+liaison: ["daniel-lindenberger"]
 start_date: 2023-09-01T05:00:00Z
 end_date: 2024-03-01T05:00:00Z
 location: "Vancouver, BC"

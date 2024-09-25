@@ -12,12 +12,12 @@ draft: false
 sdgs: ["4", "8", "17"]
 url: "https://lfas.sd35.bc.ca/"
 status: ["Project Partners"]
-liaison: ["Travis Vandenberg"]
+liaison: ["travis-vandenberg"]
 projects:
   [
-    "LFAS: Make a Change 2024",
-    "LFAS: Make a Change 2023",
-    "Mozilla Fellowship Application",
+    "lfas-make-a-change-2024",
+    "lfas-make-a-change-2023",
+    "mozilla-fellowship-application-daniel",
   ]
 ---
 

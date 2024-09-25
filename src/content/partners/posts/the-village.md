@@ -12,12 +12,12 @@ draft: false
 sdgs: ["4", "10", "16", "17"]
 url: "https://thevillageearth.com/"
 status: ["Project Partners"]
-liaison: ["Brenda Keesal"]
+liaison: ["brenda-keesal"]
 projects:
   [
-    "AI & Us: In Person 2",
-    "AI & Us: A Human Conversation",
-    "AI & Us: In Person 1",
+    "ai-and-us-in-person-2",
+    "ai-and-us-a-human-conversation",
+    "ai-and-us-in-person-1",
   ]
 ---
 

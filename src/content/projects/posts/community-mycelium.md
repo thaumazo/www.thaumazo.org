@@ -13,7 +13,7 @@ sdgs: ["9", "17"]
 url: ""
 status: ["Internal", "In Progress"]
 partners: [""]
-liaison: ["Daniel Lindenberger"]
+liaison: ["daniel-lindenberger"]
 start_date: 2023-10-01T05:00:00Z
 end_date:
 location: "Langley, BC"

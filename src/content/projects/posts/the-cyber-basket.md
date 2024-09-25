@@ -12,8 +12,8 @@ draft: false
 sdgs: []
 url: ""
 status: ["Client", "Proposed"]
-partners: ["2 Rivers Remix"]
-liaison: ["Lee White", "Daniel Lindenberger"]
+partners: ["2-rivers-remix"]
+liaison: ["lee-white", "daniel-lindenberger"]
 start_date: 2022-04-04T05:00:00Z
 end_date: 2022-04-04T05:00:00Z
 location: "Lytton, BC"

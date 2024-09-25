@@ -12,9 +12,9 @@ draft: false
 sdgs: ["4", "9", "17"]
 url: "https://eml.ubc.ca/"
 status: ["Project Partners"]
-liaison: ["Saeed Dyanatkar"]
+liaison: ["saeed-dyanatkar"]
 projects:
-  ["Mozilla Fellowship Application", "CrisisForge", "Community Mycelium"]
+  ["mozilla-fellowship-application-daniel", "crisis-forge", "community-mycelium"]
 ---
 
 The Emerging Media Lab (EML) at UBC is a collaborative space that explores and develops innovative uses of media technology to enhance learning and research. The lab engages students, faculty, and industry partners in projects that push the boundaries of virtual and augmented reality, 3D modeling, and other media technologies. EML also offers workshops, lectures, and opportunities for hands-on experience with emerging media tools.

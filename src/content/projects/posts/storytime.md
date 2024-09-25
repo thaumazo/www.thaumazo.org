@@ -12,8 +12,8 @@ draft: false
 sdgs: ["3"]
 url: ""
 status: ["Internal", "In Progress"]
-partners: ["The Village"]
-liaison: ["Brenda Keesal", "Rachael Madore"]
+partners: ["the-village"]
+liaison: ["brenda-keesal", "rachael-madore"]
 start_date:
 end_date:
 location: "Montreal, QC"

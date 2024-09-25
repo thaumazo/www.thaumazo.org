@@ -12,8 +12,8 @@ draft: false
 sdgs: ["17"]
 url: ""
 status: ["Completed", "Client"]
-partners: ["Human Data Commons"]
-liaison: ["Daniel Lindenberger"]
+partners: ["human-data-commons"]
+liaison: ["daniel-lindenberger"]
 start_date:
 end_date:
 location: "Vancouver, BC"

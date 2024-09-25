@@ -12,8 +12,8 @@ draft: false
 sdgs: ["3", "10", "17"]
 url: ""
 status: ["Partner", "Completed"]
-partners: ["Welcome Collective"]
-liaison: ["Daniel Lindenberger"]
+partners: ["welcome-collective"]
+liaison: ["daniel-lindenberger"]
 start_date: 2022-04-04T05:00:00Z
 end_date: 2022-04-04T05:00:00Z
 location: "Vancouver, BC"

@@ -12,8 +12,8 @@ draft: false
 sdgs: ["3", "9", "17"]
 url: ""
 status: ["Partner", "Approved"]
-partners: ["Air Arena", "UBC Emerging Media Lab", "Conversa Corps"]
-liaison: ["Daniel Lindenberger"]
+partners: ["aid-arena", "ubc-emerging-media-lab", "conversa-corps"]
+liaison: ["daniel-lindenberger"]
 start_date: 2024-02-12T05:00:00Z
 end_date:
 location: "Denver, Colorado"

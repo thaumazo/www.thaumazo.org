@@ -14,26 +14,26 @@ url: ""
 status: ["Partner", "In Progress"]
 partners:
   [
-    "SIXR",
-    "Justice Institute of BC",
-    "Cortes Island Academy",
-    "CoronaWhy",
-    "FIPS Africa",
-    "Big Picture Learning",
-    "Thaumazo",
-    "UBC Emerging Media Lab",
-    "StoryBox",
-    "ParTecK",
-    "YxYY",
-    "UkraineNow",
-    "UBC Digital Exeperience Lab",
-    "Conversa Corps",
-    "Welcome Collective",
-    "Langley Fine Arts School",
-    "One Caring Human",
-    "Sanada",
+    "sixr",
+    "justice-institute-of-bc",
+    "cortes-island-academy",
+    "coronawhy",
+    "fips-africa",
+    "big-picture-learning",
+    "thaumazo",
+    "ubc-emerging-media-lab",
+    "storybox",
+    "parteck",
+    "yxyy",
+    "ukrainenow",
+    "ubc-digital-exeperience-lab",
+    "conversa-corps",
+    "welcome-collective",
+    "langley-fine-arts-school",
+    "one-caring-human",
+    "sanada",
   ]
-liaison: ["Daniel Lindenberger"]
+liaison: ["daniel-lindenberger"]
 start_date: 2024-04-19T05:00:00Z
 end_date: 2024-04-22T05:00:00Z
 location: "Langley, BC"

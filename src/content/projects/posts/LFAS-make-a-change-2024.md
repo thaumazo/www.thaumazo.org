@@ -12,8 +12,8 @@ draft: false
 sdgs: ["4", "17"]
 url: ""
 status: ["Partner", "Annual"]
-partners: ["Langley Fine Arts School"]
-liaison: ["Daniel Lindenberger", "Travis Vandenberg"]
+partners: ["langley-fine-arts-school"]
+liaison: ["daniel-lindenberger", "travis-vandenberg"]
 start_date: 2024-02-01T05:00:00Z
 end_date: 2024-06-30T05:00:00Z
 location: "Langley, BC, Canada"
