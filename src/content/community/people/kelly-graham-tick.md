@@ -3,7 +3,7 @@ title: "Kelly Graham Tick"
 meta_title: "kellygrahamtick"
 description: "this is meta description"
 date: 2024-09-24T05:00:00Z
-image: "/images/Kelly.jpg"
+image: "/images/community/Kelly.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []

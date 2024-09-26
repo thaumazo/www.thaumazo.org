@@ -3,7 +3,7 @@ title: "Reid Patterson"
 meta_title: "reidpatterson"
 description: "this is meta description"
 date: 2024-09-24T05:00:00Z
-image: "/images/Reid.jpg"
+image: "/images/community/Reid.png"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []

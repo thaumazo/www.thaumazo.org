@@ -3,7 +3,7 @@ title: "Nick Woolsey"
 meta_title: "nickwoolsey"
 description: "this is meta description"
 date: 2024-09-24T05:00:00Z
-image: "/images/Nick.jpg"
+image: "/images/community/Nick.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []

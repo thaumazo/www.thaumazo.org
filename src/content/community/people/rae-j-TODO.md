@@ -1,23 +1,23 @@
 ---
-title: "How to build an Application with modern Technology"
-meta_title: ""
+title: "Rae Jourard"
+meta_title: "raejourard"
 description: "this is meta description"
-date: 2022-04-04T05:00:00Z
-image: ""
-categories: ["community"]
-author: "rae-j"
-tags: ["nextjs", "tailwind"]
+date: 2024-09-24T05:00:00Z
+image: "/images/community/Rae.jpg"
+categories: ["Community"]
+author: "Daniel Lindenberger"
+tags: []
 draft: true
+
+contact: ["rae@thaumazo.org"]
+linkedin: "https://www.linkedin.com/in/rebecca-jourard-77b86b15a/"
+roles: ["Project Lead", "Project Member", "Volunteer", "Community Member"]
+communities: ["thaumazo", "atelier", "minimumviabledemos"]
+projects: ["crisisforge", "throughhumaneyes"]
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+// Creator // Thinker // Connector // Adventurer //
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+A University of British Columbia Cognitive Systems (Linguistics) alumnus from Toronto who wants to inspire the world through connection, creativity, and sparking change. 
 
-## Creative Design
-
-Nam ut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
-
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
+Passionate artist, photographer, videographer, writer, singer songwriter, music cognition enthusiast, and traveler who is always pursuing new skills, mediums, ideas, and opportunities. Connect with my work here: https://raenytuesday.com/

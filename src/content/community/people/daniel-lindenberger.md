@@ -3,7 +3,7 @@ title: "Daniel Lindenberger"
 meta_title: "daniellindenberger"
 description: "Visionary and board member of Thaumazo."
 date: 2024-09-24T05:00:00Z
-image: "/images/Daniel.jpg"
+image: "/images/community/Daniel.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: ["board member", "visionary"]

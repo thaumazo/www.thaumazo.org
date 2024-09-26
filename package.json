@@ -29,6 +29,7 @@
     "disqus-react": "^1.1.5",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "lodash-es": "^4.17.21",
     "marked": "^14.1.2",
     "next": "^14.2.13",
     "next-mdx-remote": "^5.0.0",

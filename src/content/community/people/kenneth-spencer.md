@@ -3,7 +3,7 @@ title: "Kenneth Spencer"
 meta_title: "kennethspencer"
 description: "this is meta description"
 date: 2024-09-24T05:00:00Z
-image: "/images/Kenneth.png"
+image: "/images/community/Kenneth.png"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: ["Director"]
