@@ -39,18 +39,16 @@ export default async function Page({ file, defaultImage = null }) {
               <Markdown className="main-text mb-4" content={data.content} />
               {data.url && (
                 <div className="mb-8 text-left">
-                  <h3 className="text-h6">Url</h3><a href={data.url}>{data.url}</a>
+                  <h3 className="text-h6">Url</h3>
+                  <a href={data.url}>{data.url}</a>
                 </div>
               )}
               <div className="mb-8">
-                <InfoTags 
-                  title="Roles"
-                  field={data.roles}
-                />
+                <InfoTags title="Roles" field={data.roles} />
               </div>
 
               <div className="mb-8">
-                <InfoTags 
+                <InfoTags
                   title="Liaisons"
                   path="/community"
                   references="community/people"
@@ -59,7 +57,7 @@ export default async function Page({ file, defaultImage = null }) {
               </div>
 
               <div className="mb-8">
-                <InfoTags 
+                <InfoTags
                   title="Partners"
                   path="/partners"
                   references="partners/posts"

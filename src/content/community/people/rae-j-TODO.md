@@ -18,6 +18,6 @@ projects: ["crisisforge", "throughhumaneyes"]
 
 // Creator // Thinker // Connector // Adventurer //
 
-A University of British Columbia Cognitive Systems (Linguistics) alumnus from Toronto who wants to inspire the world through connection, creativity, and sparking change. 
+A University of British Columbia Cognitive Systems (Linguistics) alumnus from Toronto who wants to inspire the world through connection, creativity, and sparking change.
 
 Passionate artist, photographer, videographer, writer, singer songwriter, music cognition enthusiast, and traveler who is always pursuing new skills, mediums, ideas, and opportunities. Connect with my work here: https://raenytuesday.com/
