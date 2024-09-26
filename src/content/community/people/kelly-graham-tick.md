@@ -11,7 +11,7 @@ draft: true
 
 contact: ["kellygraham@shaw.ca"]
 linkedin: "https://www.linkedin.com/in/kelly-graham-tick-8b54795a/"
-roles: ["Community Member", "Liaison"]
+roles: ["Project Lead", "Community Member", "Liaison"]
 communities: ["thaumazo", "one-caring-human"]
 projects: ["through-human-eyes-branding-support"]
 ---
