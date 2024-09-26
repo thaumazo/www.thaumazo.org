@@ -16,5 +16,5 @@ communities: ["thaumazo", "eml", "parteck"]
 projects: ["CrisisForge", "ai_and_us"]
 ---
 
-With background in systems design and digital media, I have been working in academe on using emerging technologies to enhance learning and knowledge translation. 
-While leading a creative team at UBC Studios, I have initiated the award-wining Emerging Media Lab at UBC as an innovation space for UBC community to explore and experiment with emerging technologies and immersive media. 
+With background in systems design and digital media, I have been working in academe on using emerging technologies to enhance learning and knowledge translation.
+While leading a creative team at UBC Studios, I have initiated the award-wining Emerging Media Lab at UBC as an innovation space for UBC community to explore and experiment with emerging technologies and immersive media.
