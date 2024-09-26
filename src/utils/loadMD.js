@@ -25,7 +25,7 @@ export default async function loadMD(localPath) {
   // Only show draft content on development
   if (
     matterResult.data.draft === true &&
-    process.env.NODE_ENV !== "development"
+    process.env.NODE_ENV === "production"
   ) {
     return false;
   }
