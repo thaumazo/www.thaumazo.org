@@ -21,7 +21,11 @@ export default async function loadMD(localPath) {
     const slug = path.basename(filePath).replace(/\.md$/, "");
 
     // Only show draft content on development
-    if (result.data.draft === true && process.env.NODE_ENV === "production") {
+    if (
+      result.data.draft === true &&
+      process.env.VERCEL_ENV !== "preview" &&
+      process.env.NODE_ENV === "production"
+    ) {
       continue;
     }
 

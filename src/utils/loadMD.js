@@ -25,6 +25,7 @@ export default async function loadMD(localPath) {
   // Only show draft content on development
   if (
     matterResult.data.draft === true &&
+    process.env.VERCEL_ENV !== "preview" &&
     process.env.NODE_ENV === "production"
   ) {
     return false;
