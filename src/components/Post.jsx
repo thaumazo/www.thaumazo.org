@@ -1,21 +1,13 @@
 import SeoMeta from "@/partials/SeoMeta";
 
-import loadMD from "@/utils/loadMD";
 import Markdown from "@kenstack/components/Markdown";
 
-import { notFound } from "next/navigation";
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 
 import Image from "next/image";
 import InfoTags from "./InfoTags";
 
-export default async function Page({ file, defaultImage = null }) {
-  const data = await loadMD(file);
-
-  if (data === false) {
-    notFound();
-  }
-
+export default function Page({ data, defaultImage = null }) {
   return (
     <>
       <SeoMeta {...data} />
