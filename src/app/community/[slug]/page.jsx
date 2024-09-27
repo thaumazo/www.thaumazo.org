@@ -4,9 +4,15 @@ import Post from "@/components/Post";
 import loadMD from "@/utils/loadMD";
 import { notFound } from "next/navigation";
 
+import listMD from "@/utils/listMD";
+export async function generateStaticParams() {
+  let list = await listMD("community/people");
+  return list.map((v) => ({ slug: v.slug }));
+}
+export const dynamicParams = false;
+
 export default async function Page({ params: { slug } }) {
   const data = await loadMD("community/people/" + slug);
-  console.log('page is loading', typeof(data), "community/people/" + slug);
   if (data === false) {
     notFound();
   }
