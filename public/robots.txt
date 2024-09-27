@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.thaumazo.org
-
-# Sitemaps
-#Sitemap: https://example.com/sitemap.xml
