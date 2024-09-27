@@ -11,6 +11,7 @@ export default async function loadMD(localPath) {
     localPath += ".md";
   }
   const fullPath = path.resolve("./src/content", localPath);
+  console.log('full path', fullPath);
 
   let fileContents;
   try {
