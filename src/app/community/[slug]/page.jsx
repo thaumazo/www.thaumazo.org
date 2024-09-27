@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 
 export default async function Page({ params: { slug } }) {
   const data = await loadMD("community/people/" + slug);
-  console.log('page is loading', typeof(data), "community/people/" + slug);
   if (data === false) {
     notFound();
   }
