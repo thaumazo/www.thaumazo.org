@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Thaumazo",
-    "base_url": "https://nextplate.netlify.app",
+    "base_url": "https://www.thaumazo.org",
     "base_path": "/",
     "trailing_slash": false,
     "logo": "/images/logo.svg",
@@ -27,8 +27,8 @@
 
   "navigation_button": {
     "enable": false,
-    "label": "Get Started",
-    "link": "https://github.com/zeon-studio/nextplate"
+    "label": "Contact",
+    "link": "/contact"
   },
 
   "disqus": {
