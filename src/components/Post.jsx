@@ -18,6 +18,9 @@ export default function Page({ data, defaultImage = null }) {
           <div className="row justify-center">
             <div className="lg:col-7 md:col-9 mb-8 text-center">
               <h1 className="mb-4 text-h3"> {data.title} </h1>
+              {data.location && (
+                <div className="-mt-4 mb-8">{data.location}</div>
+              )}
               {data.image ? (
                 <div className="flex justify-center mb-8">
                   <Image
@@ -30,7 +33,7 @@ export default function Page({ data, defaultImage = null }) {
                 defaultImage
               )}
 
-              <Markdown className="main-text mb-4" content={data.content} />
+              <Markdown className="main-text mb-4 text-justify" content={data.content} />
 
               {data.linkedin && (
                 <div className="flex justify-end mb-8">
