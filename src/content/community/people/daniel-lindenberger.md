@@ -12,16 +12,14 @@ draft: false
 contact: ["daniel@thaumazo.org"]
 linkedin: "https://www.linkedin.com/in/daniel-lindenberger-00824916/"
 roles:
-  [
-    "Director",
-    "Project Lead",
-    "Project Member",
-    "Team Lead",
-    "Team Member",
-    "Volunteer",
-    "Community Member",
-    "Liaison",
-  ]
+  - Director
+  - Project Lead
+  - Project Member
+  - Team Lead
+  - Team Member
+  - Volunteer
+  - Community Member
+  - Liaisonr
 communities: ["thaumazo", "practical-utopias"]
 projects:
   [

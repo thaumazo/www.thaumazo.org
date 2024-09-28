@@ -7,6 +7,8 @@ import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 import Image from "next/image";
 import InfoTags from "./InfoTags";
 
+import Social from "@/components/Social";
+
 export default function Page({ data, defaultImage = null }) {
   return (
     <>
@@ -29,6 +31,12 @@ export default function Page({ data, defaultImage = null }) {
               )}
 
               <Markdown className="main-text mb-4" content={data.content} />
+
+              {data.linkedin && (
+                <div className="flex justify-end mb-8">
+                  <Social linkedin={data.linkedin} />
+                </div>
+              )}
               {data.url && (
                 <div className="mb-8 text-left">
                   <h3 className="text-h6">Url</h3>
