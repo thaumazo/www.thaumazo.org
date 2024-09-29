@@ -17,7 +17,7 @@ export default function Page({ data, defaultImage = null }) {
         <Back />
       </div>
       <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto my-8">
-        <h1 className="text-h3 text-center"> {data.title} </h1>
+        <h1 className="text-center"> {data.title} </h1>
         {data.location && (
           <div className="-mt-4 text-center">{data.location}</div>
         )}
@@ -44,7 +44,7 @@ export default function Page({ data, defaultImage = null }) {
 
         {data.url && (
           <div className="text-left">
-            <h3 className="text-h6">Url</h3>
+            <h6>Url</h6>
             <a href={data.url}>{data.url}</a>
           </div>
         )}

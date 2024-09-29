@@ -35,7 +35,7 @@ export default async function InfoTags({
 
   return (
     <div className="text-left">
-      <h3 className="px-3 mb-1 text-h6">{title}</h3>
+      <h6 className="px-3 mb-1">{title}</h6>
       <div className="flex flex-wrap gap-2">{tags}</div>
     </div>
   );

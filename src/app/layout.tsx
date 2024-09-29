@@ -3,7 +3,7 @@ import "@kenstack/styles/forms.scss";
 import "@kenstack/styles/buttons.scss";
 
 import config from "@/config/config.json";
-import theme from "@/config/theme.json";
+import theme from "@/config/theme";
 // import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";

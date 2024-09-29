@@ -1,16 +1,21 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+// import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 // import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 // import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
-import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
+
+import loadMD from "@/utils/loadMD";
+import Markdown from "@kenstack/components/Markdown";
+import Link from "next/link";
 
 import Main from "@/components/Main";
 
-const Home = () => {
+export default async function Home() {
+  const { banner }  = await loadMD("homepage/_index");
+  /*
   const homepage = getListPage("homepage/_index.md");
   // const testimonial = getListPage("sections/testimonial.md");
   // const callToAction = getListPage("sections/call-to-action.md");
@@ -22,12 +27,27 @@ const Home = () => {
     banner: { title: string; image: string; content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
+  */
 
   return (
     <>
       <SeoMeta />
-      <Main {...banner} />
+      <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto mt-14">
+        <h1 className="text-center text-3xl md:text-5xl">{banner.title}</h1>
+        <Markdown className="markdown text-center" content={banner.content} />
 
+        <div className="text-center">
+          <Link
+            className="btn btn-primary"
+            href={banner.button!.link}
+            rel="noopener"
+          >
+            {banner.button!.label}
+          </Link>
+        </div>
+      </main>
+
+      {/*
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -81,7 +101,7 @@ const Home = () => {
           </div>
         </section>
       ))}
-
+      /*}
       {/*
       <Testimonials data={testimonial} />
     */}
@@ -92,4 +112,3 @@ const Home = () => {
   );
 };
 
-export default Home;

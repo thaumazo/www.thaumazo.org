@@ -34,6 +34,7 @@ export default async function formAction(state, formData) {
       html,
     });
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error("Error sending email", e);
     return {
       error:

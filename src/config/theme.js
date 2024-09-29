@@ -1,4 +1,4 @@
-{
+const theme = {
   "colors": {
     "default": {
       "theme_color": {
@@ -36,9 +36,13 @@
       "secondary": "Signika:wght@500;700",
       "secondary_type": "sans-serif"
     },
+    /*
     "font_size": {
       "base": "16",
       "scale": "1.2"
     }
+    */
   }
 }
+
+export default theme;
