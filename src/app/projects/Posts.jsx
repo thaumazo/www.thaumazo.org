@@ -6,21 +6,17 @@ export default async function Posts() {
   const posts = postData.sort((a, b) => a.title.localeCompare(b.title));
 
   return (
-    <div className="container">
-      <div className="row justify-center">
-        <div className="lg:col-7 md:col-9 flex row gap-4">
-          {posts.map(({ title, slug }) => {
-            const link = "/projects/" + slug;
-            return (
-              <div key={slug} className="flex justify-left row">
-                <Link className="flex justify-left" href={link}>
-                  {title}
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-3xl mx-auto my-8">
+      {posts.map(({ title, slug }) => {
+        const link = "/projects/" + slug;
+        return (
+          <div key={slug} className="flex justify-left row">
+            <Link className="flex justify-left" href={link}>
+              {title}
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }

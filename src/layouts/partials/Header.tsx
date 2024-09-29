@@ -41,7 +41,7 @@ const Header = () => {
     >
       <nav className="navbar container">
         {/* logo */}
-        <div className="order-0">
+        <div className="order-0 flex-shrink-0">
           <Logo />
         </div>
         {/* navbar toggler */}
@@ -118,7 +118,10 @@ const Header = () => {
                     href={menu.url}
                     className={
                       "nav-link block" +
-                      (pathname === menu.url ? " active" : "")
+                      (pathname === menu.url ||
+                      (pathname !== "/" && pathname.startsWith(menu.url))
+                        ? " active"
+                        : "")
                     }
                   >
                     {menu.name}
@@ -150,7 +153,8 @@ const Header = () => {
             </button>
           )}
           */}
-          <ThemeSwitcher className="mr-5" />
+          {/* KS: Matching size with the logo to ensure nav is centered */}
+          <ThemeSwitcher className="lg:ml-[90px] mr-5" />
           {navigation_button.enable && (
             <Link
               className="btn btn-outline-primary btn-sm hidden lg:inline-block"
