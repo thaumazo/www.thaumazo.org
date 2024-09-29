@@ -7,7 +7,7 @@ image: "/images/community/Kenneth.png"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: ["Director"]
-draft: true
+draft: false
 
 contact: ["kenneth@thaumazo.org"]
 linkedin:
@@ -16,4 +16,4 @@ communities: ["thaumazo"]
 projects: []
 ---
 
-Kenneth is an entrepreneur and web developer with 20 years experience architecting and developing several products including addiction cessation and Content Management Systems. He is passionate about using cutting edge technology to overcome practical challenges that benefit people and organizations.
+Kenneth is a retired entrepreneur and web developer with 20 years of industry experience, He has architected and developed various products, including addiction cessation and Content Management Systems. He remains passionate about cutting-edge technologies that address practical challenges to benefit people and organizations.

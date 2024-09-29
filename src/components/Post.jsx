@@ -34,7 +34,7 @@ export default function Page({ data, defaultImage = null }) {
         ) : (
           defaultImage
         )}
-        <Markdown className="main-text text-justify" content={data.content} />
+        <Markdown className="markdown text-justify" content={data.content} />
 
         {data.linkedin && (
           <div className="flex justify-end">

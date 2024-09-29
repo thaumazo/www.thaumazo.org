@@ -12,7 +12,9 @@
   @import "buttons";
   @import "search";
 }
-@import "custom";
+
+// Thaumazo styles
+@import "markdown";
 
 @layer utilities {
   @import "utilities";

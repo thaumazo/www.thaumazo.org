@@ -16,7 +16,7 @@ export default function Main({
   return (
     <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto mt-14">
       <h1 className="text-center text-h3 lg:text-h1">{title}</h1>
-      <Markdown className="main-text text-justify" content={content} />
+      <Markdown className="markdown text-justify" content={content} />
       {button!.enable && (
         <Link
           className="mx-4 btn btn-primary"
