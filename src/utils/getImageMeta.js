@@ -3,7 +3,6 @@ import sharp from "sharp";
 
 const cache = new Map();
 export default async function getImageSize(imagePath) {
-  const start = Date.now();
   if (!imagePath) {
     return null;
   }
@@ -18,7 +17,7 @@ export default async function getImageSize(imagePath) {
   try {
     const image = sharp(filePath);
     meta = await image.metadata();
-  } catch (e) {
+  } catch (e) { // eslint-disable-line @typescript-eslint/no-unused-vars
     // can't find the image.
     cache.set(imagePath, null);
     return null;

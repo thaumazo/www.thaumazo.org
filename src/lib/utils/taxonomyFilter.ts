@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/ban-ts-comment */
+
 import { slugify } from "@/lib/utils/textConverter";
 import { Post } from "@/types";
 

@@ -1,4 +1,3 @@
-import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 import Post from "@/components/Post";
 
 import loadMD from "@/utils/loadMD";

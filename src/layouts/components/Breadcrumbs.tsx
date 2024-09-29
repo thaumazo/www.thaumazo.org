@@ -18,12 +18,13 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
 
   paths.forEach((label: string, i: number) => {
     const href = `/${paths.slice(0, i + 1).join("/")}`;
-    label !== "page" &&
+    if (label !== "page") {
       parts.push({
         label: humanize(label.replace(/[-_]/g, " ")) || "",
         href,
         "aria-label": pathname === href ? "page" : undefined,
       });
+    }
   });
 
   return (

@@ -2,8 +2,6 @@ import SeoMeta from "@/partials/SeoMeta";
 
 import Markdown from "@kenstack/components/Markdown";
 
-import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
-
 import Image from "next/image";
 import InfoTags from "./InfoTags";
 import Back from "./Back";

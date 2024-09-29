@@ -1,33 +1,17 @@
-import ImageFallback from "@/helpers/ImageFallback";
+// import ImageFallback from "@/helpers/ImageFallback";
 // import { getListPage } from "@/lib/contentParser";
-import { markdownify } from "@/lib/utils/textConverter";
+// import { markdownify } from "@/lib/utils/textConverter";
 // import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 // import Testimonials from "@/partials/Testimonials";
-import { Button, Feature } from "@/types";
-import { FaCheck } from "react-icons/fa";
+// import { FaCheck } from "react-icons/fa";
 
 import loadMD from "@/utils/loadMD";
 import Markdown from "@kenstack/components/Markdown";
 import Link from "next/link";
 
-import Main from "@/components/Main";
-
 export default async function Home() {
   const { banner }  = await loadMD("homepage/_index");
-  /*
-  const homepage = getListPage("homepage/_index.md");
-  // const testimonial = getListPage("sections/testimonial.md");
-  // const callToAction = getListPage("sections/call-to-action.md");
-  const { frontmatter } = homepage;
-  const {
-    banner,
-    features,
-  }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
-    features: Feature[];
-  } = frontmatter;
-  */
 
   return (
     <>
@@ -39,10 +23,10 @@ export default async function Home() {
         <div className="text-center">
           <Link
             className="btn btn-primary"
-            href={banner.button!.link}
+            href={banner.button.link}
             rel="noopener"
           >
-            {banner.button!.label}
+            {banner.button.label}
           </Link>
         </div>
       </main>
