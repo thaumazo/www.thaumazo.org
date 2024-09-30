@@ -21,8 +21,8 @@ export default function Sdgs({ sdgs }) {
           >
             <img
               src={"/images/sdgs/" + sdg + ".svg"}
-              width="20"
-              height="20"
+              width="32"
+              height="32"
               alt={"SDG " + sdg}
             />
           </a>
