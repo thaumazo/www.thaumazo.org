@@ -4,11 +4,12 @@ import Markdown from "@kenstack/components/Markdown";
 
 import Image from "next/image";
 import InfoTags from "./InfoTags";
+import DateRange from "./DateRange";
 import Sdgs from "./Sdgs";
 import Back from "./Back";
 import Social from "@/components/Social";
 
-export default function Page({ data, defaultImage = null }) {
+export default function Page({ data, type = "", defaultImage = null }) {
   return (
     <>
       <SeoMeta {...data} />
@@ -16,13 +17,37 @@ export default function Page({ data, defaultImage = null }) {
         <Back />
       </div>
       <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto my-8">
-        <h1 className="text-center"> {data.title} </h1>
-        {data.location && (
-          <div className="-mt-4 text-center">{data.location}</div>
-        )}
+        <h1 className="text-left"> {data.title} </h1>
+        {(() => {
+          if (!data.location && !data.start_date) {
+            return null;
+          }
+
+          const classes =
+            "px-3 py-1 rounded-full border-2 border-gray-800 dark:border-gray-200";
+
+          return (
+            <div className="flex flex-flow gap-4">
+              {data.location && <div className={classes}>{data.location}</div>}
+              {data.start_date && (
+                <div className={classes}>
+                  <DateRange
+                    start_date={data.start_date}
+                    end_date={data.end_date}
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {data.image ? (
-          <div className="flex justify-center">
+          <div
+            className={
+              "flex justify-center bg-gray-100 dark:bg-gray-800" +
+              (type === "project" ? " -order-1" : "")
+            }
+          >
             <Image
               {...data.image}
               alt={data.image.alt || ""}

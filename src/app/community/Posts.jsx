@@ -19,7 +19,12 @@ export default async function Posts() {
               href={link}
             >
               {image ? (
-                <Image {...image} alt="" className="max-w-32 max-h-32" />
+                <Image
+                  {...image}
+                  alt=""
+                  className="max-w-32 max-h-32"
+                  priority
+                />
               ) : (
                 <UserIcon className="w-16 h-16" />
               )}
