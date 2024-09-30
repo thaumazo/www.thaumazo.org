@@ -4,6 +4,7 @@ import Markdown from "@kenstack/components/Markdown";
 
 import Image from "next/image";
 import InfoTags from "./InfoTags";
+import Sdgs from "./Sdgs";
 import Back from "./Back";
 import Social from "@/components/Social";
 
@@ -40,6 +41,7 @@ export default function Page({ data, defaultImage = null }) {
           </div>
         )}
 
+        <Sdgs sdgs={data.sdgs} />
         {data.url && (
           <div className="text-left">
             <h6>Url</h6>

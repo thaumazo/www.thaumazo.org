@@ -15,7 +15,8 @@ export default async function loadMD(localPath) {
   let fileContents;
   try {
     fileContents = await fs.readFile(fullPath, "utf8");
-  } catch (e) { // eslint-disable-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (e) {
     return false;
   }
 

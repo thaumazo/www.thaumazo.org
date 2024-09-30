@@ -17,7 +17,8 @@ export default async function getImageSize(imagePath) {
   try {
     const image = sharp(filePath);
     meta = await image.metadata();
-  } catch (e) { // eslint-disable-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (e) {
     // can't find the image.
     cache.set(imagePath, null);
     return null;

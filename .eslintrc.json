@@ -15,6 +15,7 @@
     "React": "readonly"
   },
   "rules": {
+    "@next/next/no-img-element": "off",
     "import/no-unresolved": "error",
     "no-duplicate-imports": "error",
     "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
