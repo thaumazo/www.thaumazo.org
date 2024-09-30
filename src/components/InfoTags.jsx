@@ -22,12 +22,16 @@ export default async function InfoTags({
     let tag = "";
     if (data) {
       tag = (
-        <Link href={path + "/" + name} className={classes}>
+        <Link key={name} href={path + "/" + name} className={classes}>
           {data.title}
         </Link>
       );
     } else {
-      tag = <div className={classes}>{startCase(name)}</div>;
+      tag = (
+        <div key={name} className={classes}>
+          {startCase(name)}
+        </div>
+      );
     }
 
     tags.push(tag);

@@ -1,5 +1,6 @@
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 import Post from "@/components/Post";
+import RelatedProjects from "@/components/projects/RelatedProjects";
 
 import loadMD from "@/utils/loadMD";
 import { notFound } from "next/navigation";
@@ -23,5 +24,9 @@ export default async function Page({ params: { slug } }) {
     </div>
   );
 
-  return <Post data={data} defaultImage={defaultImage} />;
+  return (
+    <Post data={data} defaultImage={defaultImage}>
+      <RelatedProjects field="liaison" slug={slug} />
+    </Post>
+  );
 }

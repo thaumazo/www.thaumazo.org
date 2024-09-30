@@ -9,7 +9,12 @@ import Sdgs from "./Sdgs";
 import Back from "./Back";
 import Social from "@/components/Social";
 
-export default function Page({ data, type = "", defaultImage = null }) {
+export default function Page({
+  data,
+  type = "",
+  defaultImage = null,
+  children,
+}) {
   return (
     <>
       <SeoMeta {...data} />
@@ -24,7 +29,7 @@ export default function Page({ data, type = "", defaultImage = null }) {
           }
 
           const classes =
-            "px-3 py-1 rounded-full border-2 border-gray-800 dark:border-gray-200";
+            "px-3 rounded-full border-2 border-gray-800 dark:border-gray-200";
 
           return (
             <div className="flex flex-flow gap-4">
@@ -89,6 +94,7 @@ export default function Page({ data, type = "", defaultImage = null }) {
           references="partners/posts"
           field={data.partners}
         />
+        {children}
       </main>
     </>
   );

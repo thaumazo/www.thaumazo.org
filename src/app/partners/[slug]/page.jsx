@@ -1,4 +1,5 @@
 import Post from "@/components/Post";
+import RelatedProjects from "@/components/projects/RelatedProjects";
 
 import loadMD from "@/utils/loadMD";
 import { notFound } from "next/navigation";
@@ -16,5 +17,9 @@ export default async function Page({ params: { slug } }) {
     notFound();
   }
 
-  return <Post data={data} />;
+  return (
+    <Post data={data}>
+      <RelatedProjects field="partners" slug={slug} />
+    </Post>
+  );
 }

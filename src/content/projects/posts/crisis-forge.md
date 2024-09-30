@@ -12,7 +12,7 @@ draft: false
 sdgs: ["3", "9", "17"]
 url: ""
 status: ["Partner", "Approved"]
-partners: ["aid-arena", "ubc-emerging-media-lab", "conversa-corps"]
+partners: ["aid-arena", "ubc-emerging-media-lab", "conversacorps"]
 liaison: ["daniel-lindenberger"]
 start_date: 2024-02-12T05:00:00Z
 end_date:
