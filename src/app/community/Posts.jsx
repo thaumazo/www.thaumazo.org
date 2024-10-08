@@ -23,6 +23,7 @@ export default async function Posts() {
                   {...image}
                   alt=""
                   className="max-w-32 max-h-32"
+                  sizes="128px"
                   priority
                 />
               ) : (
