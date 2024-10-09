@@ -9,12 +9,11 @@
 const fields = {
   first_name: {
     required: true,
-    // md: 6,
-    containerClass: "md:col-span-6",
+    span: "md:col-span-6",
   },
   last_name: {
     required: true,
-    containerClass: "md:col-span-6",
+    span: "md:col-span-6",
   },
   email: {
     required: true,
