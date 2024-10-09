@@ -12,7 +12,7 @@ const menu = {
     },
     {
       name: "Organizations",
-      url: "/partners",
+      url: "/organizations",
     },
     {
       name: "Projects",

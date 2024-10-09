@@ -6,13 +6,13 @@ import { notFound } from "next/navigation";
 
 import listMD from "@/utils/listMD";
 export async function generateStaticParams() {
-  let list = await listMD("partners/posts");
+  let list = await listMD("organizations/posts");
   return list.map((v) => ({ slug: v.slug }));
 }
 export const dynamicParams = false;
 
 export default async function Page({ params: { slug } }) {
-  const data = await loadMD("partners/posts/" + slug);
+  const data = await loadMD("organizations/posts/" + slug);
   if (data === false) {
     notFound();
   }

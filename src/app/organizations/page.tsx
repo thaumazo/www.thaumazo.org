@@ -7,7 +7,7 @@ import Posts from "./Posts";
 
 // for all regular pages
 export default async function CommunityPage() {
-  const data = await loadMD("partners/_index.md");
+  const data = await loadMD("organizations/_index.md");
 
   return (
     <>

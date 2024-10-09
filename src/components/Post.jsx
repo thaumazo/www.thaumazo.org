@@ -89,9 +89,9 @@ export default function Page({
         />
 
         <InfoTags
-          title="Partners"
-          path="/partners"
-          references="partners/posts"
+          title="Organizations"
+          path="/organizations"
+          references="organizations/posts"
           field={data.partners}
         />
         {children}

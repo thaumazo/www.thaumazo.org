@@ -1,5 +1,5 @@
 ---
-title: "Partners"
+title: "Organizations"
 meta_title: ""
 description: ""
 ---
