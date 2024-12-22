@@ -3,7 +3,7 @@ title: "Conversa Corps"
 meta_title: "conversacorps"
 description: "Conversa Corps"
 date: 2022-04-04T05:00:00Z
-image: ""
+image: "/images/organizations/ConversaCorps.jpg"
 categories: ["partner"]
 author: "daniel-lindenberger"
 tags: ["crisis response", "platform"]

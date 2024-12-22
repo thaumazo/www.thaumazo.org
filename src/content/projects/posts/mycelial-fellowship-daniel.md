@@ -3,7 +3,7 @@ title: "Mycelial Fellowship"
 meta_title: "mycelialfellowship"
 description: "Mycelial fellowship."
 date: 2024-09-17T05:00:00Z
-image: ""
+image: "/images/projects/mycelial-fellowship-daniel.png"
 categories: ["project"]
 author: "rae-j"
 tags: [""]
