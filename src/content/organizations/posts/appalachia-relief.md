@@ -1,19 +1,23 @@
 ---
-title: "2 Rivers Remix Society"
-meta_title: "2rivers"
-description: "Events organization to empower indigenous artists."
-date: 2022-04-04T05:00:00Z
-image: "/images/organizations/2RiversRemix.jpg"
+title: "Appalachia Relief"
+meta_title: "Appalachia Relief"
+description: "Open, crowdsourced, vetted info by people on the ground for people on the ground"
+date: 2024-11-24T05:00:00Z
+image: "/images/organizations/appalachia-relief.png"
 categories: ["partner"]
 author: "rae-j"
-tags: ["indigenous", "art"]
+tags: ["crisis"]
 draft: false
 
-sdgs: ["4", "5", "10", "11", "17"]
-url: "https://2riversremix.ca/"
+sdgs: ["1", "11", "13", "17"]
+url: "https://appalachiarelief.org/"
 status: ["Liaising"]
 liaison: ["lee-white"]
 projects: ["the-cyber-basket"]
 ---
 
-2 Rivers Remix Society is a British Columbia-based non-profit organization dedicated to empowering and inspiring Indigenous communities, particularly youth, women, and 2-Spirit individuals, through contemporary Indigenous music and cultural expressions. They organize events like the annual 2 Rivers Remix Feast and Movable Feasts, featuring live and streamed performances from Indigenous artists, workshops, and cultural activities aimed at promoting Indigenous stories and identities.
+Appalacia Relief is committed to supporting Southern Appalachia by providing real-time, reliable recovery information to those impacted by Hurricane Helene. Our mission is simple: empower residents with crowdsourced, vetted, secure resources they can trust to rebuild their lives. We focus on keeping information up-to-date and easily accessible, ensuring that everyone has what they need to recover and thrive.
+
+We believe in the strength of community and the power of collaboration. Our approach is flexible and volunteer-driven, allowing anyone to contribute based on their skills and resources. With a decentralized structure, every volunteer plays an essential role, fostering a shared sense of responsibility and respect. In the first six weeks, our efforts helped over 100,000 people access the critical resources they needed. This is proof of what can be achieved when we come together as a community.
+
+Our commitment to recovery is grounded in humility and empathy. As needs evolve, so will our efforts. We remain dedicated to ensuring that the region’s recovery is sustainable and that all individuals can reach self-sufficiency and long-term resilience.

@@ -3,7 +3,7 @@ title: "The Village"
 meta_title: "thevillage"
 description: "Storytelling facilitation."
 date: 2022-04-04T05:00:00Z
-image: ""
+image: "/images/organizations/storytime.webp"
 categories: ["partner"]
 author: "rae-j"
 tags: ["storytelling", "community"]

@@ -5,7 +5,7 @@ description: "Discussion group on AI."
 date: 2024-09-17T05:00:00Z
 image: ""
 categories: ["project"]
-author: "rae-j"
+author: "daniel-lindenberger"
 tags: ["community", "ai"]
 draft: false
 
@@ -19,4 +19,7 @@ end_date: 2023-08-31T05:00:00Z
 location: "Vancouver, BC"
 ---
 
-A discussion group on how we interact and interface with ai with a human-first approach.
+This 7 part online discussion series explored the impact of Large Language Models such as GPT on individuals and society. Designed by Brenda Keesal and Daniel Lindenberger and facilitated by Brenda, a diverse group was brought together one each call to explore a wide range of issues.
+
+https://www.youtube.com/watch?v=9v9_OocoNt8&list=PLcrBJc5xBtJZNubgwQzfWWzeUTX-l9iPk
+
