@@ -22,4 +22,3 @@ location: "Vancouver, BC"
 This 7 part online discussion series explored the impact of Large Language Models such as GPT on individuals and society. Designed by Brenda Keesal and Daniel Lindenberger and facilitated by Brenda, a diverse group was brought together one each call to explore a wide range of issues.
 
 https://www.youtube.com/watch?v=9v9_OocoNt8&list=PLcrBJc5xBtJZNubgwQzfWWzeUTX-l9iPk
-
