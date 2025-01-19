@@ -14,7 +14,7 @@ export default async function Posts() {
         return (
           <Link
             key={slug}
-            className="flex flex-col items-center justify-center gap-2 w-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-80 0hover:dark:bg-gray-700  transition"
+            className="flex flex-col items-center justify-center gap-2 w-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 hover:dark:bg-gray-700  transition"
             href={link}
           >
             <div className="flex h-32 items-center justify-center">
