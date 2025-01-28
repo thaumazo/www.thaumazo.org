@@ -1,21 +1,30 @@
+  @use "base" as *;
+  @use "components" as *;
+  @use "navigation" as *;
+  @use "buttons" as *;
+  @use "search" as *;
+  @use "markdown" as *;
+  @use "utilities" as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
-  @import "base";
+  @include base;
 }
 
 @layer components {
-  @import "components";
-  @import "navigation";
-  @import "buttons";
-  @import "search";
+  @include components;
+  @include navigation;
+  @include buttons;
+  @include search;
 }
 
 // Thaumazo styles
-@import "markdown";
+@include markdown;
 
 @layer utilities {
-  @import "utilities";
+  @include utilities;
 }

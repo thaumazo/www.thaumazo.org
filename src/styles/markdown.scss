@@ -1,17 +1,19 @@
-.markdown {
-  p + p {
-    @apply mt-6;
-  }
+@mixin markdown {
+  .markdown {
+    p + p {
+      @apply mt-6;
+    }
 
-  ul {
-    @apply list-disc pl-5;
-  }
+    ul {
+      @apply list-disc pl-5;
+    }
 
-  ol {
-    @apply list-decimal pl-5;
-  }
+    ol {
+      @apply list-decimal pl-5;
+    }
 
-  li {
-    @apply mb-2; /* Optional margin to space out list items */
+    li {
+      @apply mb-2; /* Optional margin to space out list items */
+    }
   }
 }
