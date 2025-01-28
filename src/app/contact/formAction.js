@@ -1,13 +1,14 @@
 "use server";
 
 import checkServerValidity from "@kenstack/forms/validity/checkServerValidity";
-import fields from "./fields";
+import form from "./fields";
 
 import Email from "@kenstack/forms/Email";
 import { render } from "@react-email/render";
 import mailer from "@kenstack/utils/mailer";
 
-export default async function formAction(state, formData) {
+export default async function formAction(formData) {
+  const fields = form.getFields();
   const fieldErrors = checkServerValidity(fields, formData);
   if (fieldErrors) {
     return {

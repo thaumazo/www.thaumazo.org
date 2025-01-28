@@ -1,12 +1,6 @@
-/*
-  listClass: "flex flex-col gap-2", // Class for the `ul` element
-  itemClass: "flex items-center space-x-2", // Class for each `li` element
-  containerclass
-  labelClass: "text-sm font-medium text-gray-700", // Class for the label
-  inputClass 
-*/
+import createForm from "@kenstack/forms/formSchema";
 
-const fields = {
+const fields = createForm({
   first_name: {
     required: true,
     span: "md:col-span-6",
@@ -65,6 +59,6 @@ const fields = {
       ["PersonalPathways", "Personal Pathways"],
     ],
   },
-};
+});
 
 export default fields;
