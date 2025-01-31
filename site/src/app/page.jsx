@@ -10,6 +10,7 @@ import loadMD from "@/utils/loadMD";
 import Markdown from "@kenstack/components/Markdown";
 import Link from "next/link";
 
+
 export default async function Home() {
   const { banner } = await loadMD("homepage/_index");
 

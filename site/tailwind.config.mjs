@@ -22,7 +22,7 @@ module.exports = {
     "./src/layouts/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/custom/**/*.{js,ts,jsx,tsx}",
-    "./kenstack/src/**/*.{js,ts,jsx,tsx}",
+    "../kenstack/src/**/*.{js,ts,jsx,tsx}",
     "./src/content/**/*.{md,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
