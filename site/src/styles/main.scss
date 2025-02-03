@@ -1,15 +1,14 @@
-  @use "base" as *;
-  @use "components" as *;
-  @use "navigation" as *;
-  @use "buttons" as *;
-  @use "search" as *;
-  @use "markdown" as *;
-  @use "utilities" as *;
+@use "base" as *;
+@use "components" as *;
+@use "navigation" as *;
+@use "buttons" as *;
+@use "search" as *;
+@use "markdown" as *;
+@use "utilities" as *;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   @include base;

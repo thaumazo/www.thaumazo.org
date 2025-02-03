@@ -10,7 +10,7 @@ const action = async (...args) => {
     store.getState().reset();
   }
   return data;
-}
+};
 
 export default function Form() {
   return (

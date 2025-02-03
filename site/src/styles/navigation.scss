@@ -1,5 +1,5 @@
 @mixin navigation {
-    // navbar toggler
+  // navbar toggler
   input#nav-toggle:checked + label #show-button {
     @apply hidden;
   }
