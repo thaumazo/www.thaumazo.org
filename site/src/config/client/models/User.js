@@ -3,6 +3,7 @@ import PasswordRequest from "@kenstack/modules/User/PasswordRequest";
 
 import Editor from "@kenstack/forms/ToastEditor";
 
+
 const fields = {
   modelName: "User",
   title: "Manage users",
@@ -36,6 +37,11 @@ const fields = {
           required: true,
           type: "email",
         },
+        location: {},
+        linkedin: {},
+        projects: {
+          field: "Multi-select",
+        }
       },
     },
     login: {
@@ -44,8 +50,23 @@ const fields = {
       span: "lg:col-span-6",
       fields: {
         roles: {
-          field: "checkboxList",
+          label: "Roles  (Access)",
+          field: "checkbox-list",
           options: [["ADMIN", "Administrator"]],
+        },
+        publicRoles: {
+          label: "Roles  (Public)",
+          field: "checkbox-list",
+          options: [
+            "Community Member",
+            "Director",
+            "Liaison",
+            "Project Lead",
+            "Project Member",
+            "Team Lead",
+            "Team Member",
+            "Volunteer",
+          ],
         },
         resetPassword: {
           field: PasswordRequest,
