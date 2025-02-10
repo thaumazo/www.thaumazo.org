@@ -8,7 +8,7 @@ userSchema.add({
   linkedin: String,
   publicRoles: [String],
   communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Communities' }],
-  projects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Projects' }],
+  // projects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Projects' }],
   content: String,
   
 });

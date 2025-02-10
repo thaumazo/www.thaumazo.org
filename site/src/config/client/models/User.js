@@ -39,9 +39,9 @@ const fields = {
         },
         location: {},
         linkedin: {},
-        projects: {
-          field: "Multi-select",
-        }
+        // projects: {
+        //   field: "multi-select",
+        // }
       },
     },
     login: {
@@ -56,7 +56,7 @@ const fields = {
         },
         publicRoles: {
           label: "Roles  (Public)",
-          field: "checkbox-list",
+          field: "multi-select",
           options: [
             "Community Member",
             "Director",
