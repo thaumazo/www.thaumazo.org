@@ -12,11 +12,12 @@ export default async function Posts() {
       {posts.map(({ title, slug, image }) => {
         const link = "/organizations/" + slug;
         return (
-          <div key={slug} className="flex justify-center">
-            <Link
-              className="flex flex-col items-center justify-center gap-2 w-full"
-              href={link}
-            >
+          <Link
+            key={slug}
+            className="flex flex-col items-center justify-center gap-2 w-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 hover:dark:bg-gray-700  transition"
+            href={link}
+          >
+            <div className="flex h-32 items-center justify-center">
               {image ? (
                 <Image
                   {...image}
@@ -26,9 +27,9 @@ export default async function Posts() {
                   priority
                 />
               ) : null}
-              <span>{title}</span>
-            </Link>
-          </div>
+            </div>
+            <div>{title}</div>
+          </Link>
         );
       })}
     </div>
