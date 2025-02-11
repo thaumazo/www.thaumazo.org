@@ -12,7 +12,7 @@ draft: true
 sdgs: ["9", "11", "13", "17"]
 url: "https://conversacorps.org"
 status: ["Project Partners"]
-liaison: ["christopher-jonesy-jones"]
+liaison: ["Chris Jones"]
 projects: ["crisis-forge"]
 ---
 

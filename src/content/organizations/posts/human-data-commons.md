@@ -12,7 +12,7 @@ draft: false
 sdgs: ["9", "17"]
 url: "https://humandatacommons.org/"
 status: ["Project Partners"]
-liaison: ["carissa-kazyss"]
+liaison: ["Carissa Kazyss"]
 projects: ["hdc-visioning-event"]
 ---
 
