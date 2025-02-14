@@ -2,16 +2,23 @@
 
 import Sidebar from "@/components/Sidebar";
 
-// import ChartBarIcon from "@heroicons/react/24/outline/ChartBarIcon";
-import UsersIcon from "@heroicons/react/24/outline/UsersIcon";
-import GlobeIcon from "@heroicons/react/24/outline/GlobeAmericasIcon";
+// import UsersIcon from "@heroicons/react/24/outline/UsersIcon";
+// import ProjectsIcon from "@/icons/Projects";
+// import GlobeIcon from "@heroicons/react/24/outline/GlobeAmericasIcon";
+
+import { adminConfig } from "@/config/client";
 
 const sidebarLinks = [
-  // ["/admin", "Dashboard", ChartBarIcon],
-  ["/admin", "Manage users", UsersIcon],
-  // ["/admin/sites", "Sites", GlobeIcon],
+  // ["/admin", "Manage users", UsersIcon],
+  // ["/admin/projects", "Projects", ProjectsIcon],
+  // ["/admin/organizations", "Organizations", GlobeIcon],
+  ...adminConfig.getLinks(),
 ];
 
+
+
+
+
 export default function AdminSidebar() {
-  return <Sidebar links={sidebarLinks} />;
+return <Sidebar links={sidebarLinks} />;
 }

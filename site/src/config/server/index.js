@@ -1,6 +1,10 @@
 import Session from "@kenstack/server/Session";
 import User from "./models/User";
 
-const session = new Session(User);
+export const session = new Session(User);
 
-export { session };
+
+export const models = new Map([
+  ['User', () => import('./models/User')], 
+  ['Project', () => import('./models/Project')], 
+]);

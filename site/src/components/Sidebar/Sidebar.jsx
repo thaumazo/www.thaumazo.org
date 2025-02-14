@@ -1,5 +1,7 @@
 "use client";
 
+import { Suspense } from "react";
+
 import "./sidebar.scss";
 
 import { usePathname } from "next/navigation";
