@@ -13,4 +13,3 @@ const SvgProjexts = (props) => (
   </svg>
 );
 export default SvgProjexts;
-

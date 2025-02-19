@@ -3,8 +3,7 @@ import User from "./models/User";
 
 export const session = new Session(User);
 
-
 export const models = new Map([
-  ['User', () => import('./models/User')], 
-  ['Project', () => import('./models/Project')], 
+  ["User", import("./models/User")],
+  ["Project", import("./models/Project")],
 ]);

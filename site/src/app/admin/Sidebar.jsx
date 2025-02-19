@@ -15,10 +15,6 @@ const sidebarLinks = [
   ...adminConfig.getLinks(),
 ];
 
-
-
-
-
 export default function AdminSidebar() {
-return <Sidebar links={sidebarLinks} />;
+  return <Sidebar links={sidebarLinks} />;
 }

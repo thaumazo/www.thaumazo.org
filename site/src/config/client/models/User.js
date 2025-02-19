@@ -3,7 +3,6 @@ import PasswordRequest from "@kenstack/modules/User/PasswordRequest";
 
 import Editor from "@kenstack/forms/ToastEditor";
 
-
 const fields = {
   modelName: "User",
   title: "Manage users",
