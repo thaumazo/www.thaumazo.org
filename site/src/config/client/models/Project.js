@@ -14,13 +14,19 @@ const fields = {
       title: "Personal information",
       span: "lg:col-span-6",
       fields: {
+        image: {
+          field: "image",
+          span: "col-span-2 row-span-2",
+        },
         title: {
           required: true,
+          span: "col-span-10",
         },
         slug: {
           field: "slug",
           subscribe: ["title"],
           required: true,
+          span: "col-span-10",
         },
         location: {},
         url: {

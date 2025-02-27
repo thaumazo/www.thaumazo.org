@@ -23,7 +23,7 @@ const fields = createForm({
   interest: {
     label: "I'm Interested In",
     required: true,
-    field: "checkboxlist",
+    field: "checkbox-list",
     // listClass: "grid grid-cols-1 xl:grid-cols-2 gap-4",
     options: [
       ["event", "Attending a Thaumazo Event"],
@@ -46,7 +46,7 @@ const fields = createForm({
   },
   project: {
     label: "I'd like to find out about / discuss",
-    field: "checkboxlist",
+    field: "checkbox-list",
     listClass: "grid grid-cols-1 lg:grid-cols-2 gap-4",
     options: [
       ["StoryTime", "StoryTime"],

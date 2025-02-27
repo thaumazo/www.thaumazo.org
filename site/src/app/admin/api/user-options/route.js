@@ -8,7 +8,6 @@ import User from "@/config/server/models/User";
 import apiAction from "@kenstack/server/apiAction";
 
 async function loadUserOptions({ keywords = "", idArray = [] }) {
-  console.log("foo bar", keywords, idArray);
   // if (!(await session.hasRole("ADMIN"))) {
   //   return redirect("/login");
   // }
