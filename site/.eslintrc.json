@@ -14,9 +14,22 @@
    "globals": {
     "React": "readonly"
   },
+   "settings": {
+      "import/resolver": {
+        "alias": {
+          "map": [
+            ["@/partials/*", "./src/layouts/partials"],
+            ["@/*", "./src"],
+            ["@kenstack", "../kenstack/src"]
+          ],
+          "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+        }
+      }
+    },    
+  
   "rules": {
     "@next/next/no-img-element": "off",
-    "import/no-unresolved": "off",
+    "import/no-unresolved": "error",
     "no-duplicate-imports": "error",
     "@typescript-eslint/no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
     "no-undef": "error",
