@@ -1,7 +1,3 @@
 {
-  "projects": {
-    "site": {
-      "rootDirectory": "site"
-    }
-  }
+  "rootDirectory": "site"  
 }
