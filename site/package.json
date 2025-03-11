@@ -9,7 +9,7 @@
     "dev": "next dev",
     "_build": "yarn generate-json && next build",
     "build": "next build",
-    "preview": "next start",
+    "start": "next start",
     "lint": "next lint",
     "format": "prettier -w ./src",
     "generate-json": "node scripts/jsonGenerator.js",
