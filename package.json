@@ -5,6 +5,7 @@
     "site"
   ],
   "scripts": {
+    "build": "cd site && npm run build",    
     "postinstall": "git submodule update --init --recursive"
   },
   "devDependencies": {

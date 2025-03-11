@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 }
 export const dynamicParams = false;
 
-export default async function Page({ params: { slug } }) {
+export default async function Page({ params }) {
+  const { slug } = await params;
   const data = await loadMD("organizations/posts/" + slug);
   if (data === false) {
     notFound();
