@@ -6,10 +6,10 @@ import PasswordIcon from "@kenstack/icons/Password";
 import AccountCircleIcon from "@kenstack/icons/AccountCircle";
 
 import { session } from "@/config/server";
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
 
 export default async function MenuContents() {
-  const user = await session.getAuthenticatedUser();
+  // const user = await session.getAuthenticatedUser();
   const isAdmin = await session.hasRole("ADMIN");
 
   return (

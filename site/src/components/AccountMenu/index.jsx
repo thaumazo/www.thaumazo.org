@@ -14,7 +14,7 @@ export default async function DropmenuServer() {
   return (
     <AccountMenu
       session={session}
-      className="btn btn-outline-primary btn-sm hidden lg:inline-block"
+      buttonClass="btn btn-outline-primary btn-sm hidden lg:inline-block"
     >
       <Contents />
     </AccountMenu>

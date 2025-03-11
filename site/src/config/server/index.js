@@ -6,4 +6,5 @@ export const session = new Session(User);
 export const models = new Map([
   ["User", import("./models/User")],
   ["Project", import("./models/Project")],
+  ["Organization", import("./models/Organization")],
 ]);

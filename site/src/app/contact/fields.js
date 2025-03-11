@@ -11,7 +11,7 @@ const fields = createForm({
   },
   email: {
     required: true,
-    type: "email",
+    field: "email",
     email: true,
   },
   message: {

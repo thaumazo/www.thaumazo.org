@@ -35,10 +35,11 @@ export default async function loadMD(localPath) {
     }
 
     retval.push({
-      ...result.content,
+      // ...result.content,
       ...result.data,
       image,
       slug,
+      content: result.content,
     });
   }
   return retval;

@@ -5,11 +5,11 @@ import Markdown from "@kenstack/components/Markdown";
 export default function Main({
   title = "",
   content = "",
-  button = {
-    enable: false,
-    link: "",
-    label: "",
-  },
+  // button = {
+  //   enable: false,
+  //   link: "",
+  //   label: "",
+  // },
   image = "",
 }) {
   return (

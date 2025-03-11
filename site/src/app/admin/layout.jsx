@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 export default function layout({ children }) {
   return (
     <div className="light">
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 mx-4">
         <div className="w-1/4 max-w-48">
           <Sidebar />
         </div>

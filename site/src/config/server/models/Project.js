@@ -2,13 +2,16 @@ import mongoose from "@kenstack/db";
 
 // import ProjectAdmin from "../../client/models/Project";
 import AdminSchema from "@kenstack/db/AdminSchema";
-import { ImageFieldOptions } from "@kenstack/forms/Image/db"
-import { TagFieldOptions } from "@kenstack/forms/Tags/db"
+import image from "@kenstack/forms/Image/schema";
+import tag from "@kenstack/forms/Tags/schema";
+
+// import Checkbox from "@kenstack/forms/Checkbox";
 
 const ProjectSchema = new AdminSchema({
   title: String,
   slug: String,
-  image: ImageFieldOptions,
+  description: String,
+  image,
   url: String,
   location: String,
   draft: {
@@ -17,10 +20,12 @@ const ProjectSchema = new AdminSchema({
   },
   start_date: Date,
   end_date: Date,
-  tags: TagFieldOptions,
-  liaisons: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  status: [String],
+  tags: tag,
+  liaison: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  partners: [{ type: mongoose.Schema.Types.ObjectId, ref: "Organization" }],
   sdgs: [String],
-  
+
   content: String,
 });
 

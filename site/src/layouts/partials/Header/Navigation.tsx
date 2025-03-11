@@ -24,7 +24,7 @@ export interface INavigationLink {
 export default function Navigation() {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
-  const { navigation_button, settings } = config;
+  const { navigation_button /*, settings*/ } = config;
   // get current path
   const pathname = usePathname();
 

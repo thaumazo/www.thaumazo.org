@@ -19,7 +19,7 @@ export const adminConfig = new AdminConfig([
   ],
   [
     "Organization",
-    import("./models/Project"),
+    import("./models/Organization"),
     {
       icon: import("@heroicons/react/24/outline/GlobeAmericasIcon"),
     },

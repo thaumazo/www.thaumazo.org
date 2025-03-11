@@ -1,5 +1,5 @@
 import Logo from "@/layouts/components/Logo";
-import Link from "next/link";
+// import Link from "next/link";
 
 import ThemeSwitcher from "@/layouts/components/ThemeSwitcher";
 import AccountMenu from "@/components/AccountMenu";

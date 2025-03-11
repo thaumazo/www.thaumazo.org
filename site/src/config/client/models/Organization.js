@@ -5,7 +5,7 @@ import Editor from "@kenstack/forms/ToastEditor";
 import apiAction from "@kenstack/client/apiAction";
 
 const fields = {
-  modelName: "Project",
+  modelName: "Organization",
   // title: "Projects",
   list: [["title"], ["draft", { width: "auto" }]],
   fields: {
@@ -28,9 +28,27 @@ const fields = {
           required: true,
           span: "col-span-10",
         },
-        location: {},
+        // location: {},
         url: {
           field: "url",
+        },
+      },
+    },
+    meta: {
+      card: true,
+      title: "Meta",
+      span: "lg:col-span-6",
+      fields: {
+        draft: {
+          field: "checkbox",
+          default: true,
+        },
+        tags: {
+          field: "tags",
+        },
+        liaisons: {
+          field: "multi-select",
+          loadOptions: (arg) => apiAction("/admin/api/user-options", arg),
         },
         sdgs: {
           field: "multi-select",
@@ -53,50 +71,6 @@ const fields = {
             ["16", "16: Peace, Justice and Strong Institutions"],
             ["17", "17: Partnerships for the Goals"],
           ],
-        },
-      },
-    },
-    meta: {
-      card: true,
-      title: "Meta",
-      span: "lg:col-span-6",
-      fields: {
-        draft: {
-          field: "checkbox",
-          default: true,
-        },
-        start_date: {
-          field: "date",
-          span: "col-span-6",
-        },
-        end_date: {
-          field: "date",
-          span: "col-span-6",
-        },
-        status: {
-          field: "multi-select",
-          options: [
-            "Annual",
-            "Approved",
-            "Client",
-            "Completed",
-            "Exploring",
-            "In Progress",
-            "Internal",
-            "Partner",
-            "Proposed",
-          ],
-        },
-        tags: {
-          field: "tags",
-        },
-        liaison: {
-          field: "multi-select",
-          loadOptions: (arg) => apiAction("/admin/api/user-options", arg),
-        },
-        partners: {
-          field: "multi-select",
-          loadOptions: (arg) => apiAction("/admin/api/partner-options", arg),
         },
       },
     },

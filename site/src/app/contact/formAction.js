@@ -3,7 +3,7 @@
 import checkServerValidity from "@kenstack/forms/validity/checkServerValidity";
 import form from "./fields";
 
-import Email from "@kenstack/forms/Email";
+import Email from "@kenstack/forms/AutoEmail";
 import { render } from "@react-email/render";
 import mailer from "@kenstack/utils/mailer";
 

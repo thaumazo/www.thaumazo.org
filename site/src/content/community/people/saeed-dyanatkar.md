@@ -9,7 +9,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: true
 
-contact: ["saeed.dyanatkar.ubc.ca"]
+contact: ["saeed.dyanatkar@ubc.ca"]
 linkedin: "https://www.linkedin.com/in/saeeddyanatkar/"
 roles: ["Project Lead", "Project Member", "Community Member", "Liaison"]
 communities: ["thaumazo", "eml", "parteck"]
