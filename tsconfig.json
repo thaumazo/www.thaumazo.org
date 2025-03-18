@@ -26,7 +26,7 @@
       "@/partials/*": ["./src/layouts/partials/*"],
       "@/helpers/*": ["./src/layouts/helpers/*"],
       "@/*": ["./src/*"],
-      "@kenstack/*": ["../kenstack/src/*"]
+      "@kenstack/*": ["./kenstack/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
