@@ -16,6 +16,8 @@ communities: ["thaumazo", "one-caring-human"]
 projects: ["through-human-eyes-branding-support"]
 ---
 
-Kelly is an RMT, an educator, facilitator, life coach, storyteller, writer, collaborator, lover of life, people, animals and the planet, hugger of trees, hand holder of the olders, resounder of respite, duchess of nurturing touch and compassionate presence, proud mama of amazing humans, plants, and fur babies.
+Kelly is an Registered Massage Therapist, an educator, facilitator, storyteller, writer, and collaborator, is a proponent of compassionate care in healthcare systems, and is the founder of One Caring Human Society.
+
+She creates intergenerational communities and programs to provide compassionate presence and touch to those who are often isolated.
 
 Kelly is passionate and dedicated to sharing love, increasing humanity and access to quality of care for elders, those at the end of life, and those who are isolated and vulnerable in our communities.
