@@ -7,7 +7,7 @@ image: "/images/community/Rae.jpg"
 categories: ["Community"]
 author: ["daniel-lindenberger", "rae-j"]
 tags: []
-draft: true
+draft: false
 
 contact: ["rae@thaumazo.org"]
 linkedin: ""

@@ -7,7 +7,7 @@ image: "/images/community/Brenda.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: ["Director"]
-draft: true
+draft: false
 
 contact: ["brenda@thaumazo.org"]
 linkedin: "https://www.linkedin.com/in/brenda-keesal-6069995/"

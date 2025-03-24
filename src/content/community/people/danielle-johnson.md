@@ -7,7 +7,7 @@ image: "/images/community/Danielle.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["drjohnson8808@gmail.com"]
 linkedin: "https://www.linkedin.com/in/danielle-johnson-221272131/"

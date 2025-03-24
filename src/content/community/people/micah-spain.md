@@ -7,7 +7,7 @@ image: "/images/community/Micah.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["micahs@appalachiarelief.org"]
 linkedin: "https://www.linkedin.com/in/micah-spain-1b4796252/"

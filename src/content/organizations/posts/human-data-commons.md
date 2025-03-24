@@ -16,4 +16,6 @@ liaison: ["Carissa Kazyss"]
 projects: ["hdc-visioning-event"]
 ---
 
-The Human Data Commons Foundation (HDC) is a non-profit organization based in Vancouver, Canada, committed to fostering a sustainable and equitable digital future. HDC integrates technology, ethics, and consciousness to ensure mindful development and use of tech. It supports these principles through events like the annual ParTecK, open-source tech advocacy, and by offering seed grants to promote innovative projects at the intersection of technology and ethical practices.
+The Human Data Commons Foundation (HDC) was a non-profit organization based in Vancouver, Canada, committed to fostering a sustainable and equitable digital future. HDC integrated technology, ethics, and consciousness to ensure mindful development and use of tech. It supported these principles through events like the annual ParTecK, open-source tech advocacy, and by offering seed grants to promote innovative projects at the intersection of technology and ethical practices.
+
+Thaumazo assisted HDC in a set of "Bardo Discussions" whose end result was the decision to wind down the organization, with Thaumazo continuing to provide organizational support to the ParTecK community moving forward.

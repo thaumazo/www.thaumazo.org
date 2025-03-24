@@ -7,7 +7,7 @@ image: "/images/community/Melanda.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: ["Director"]
-draft: true
+draft: false
 
 contact: ["melanda@thaumazo.org"]
 linkedin: "https://www.linkedin.com/in/melanda-schmid-ochieng/"

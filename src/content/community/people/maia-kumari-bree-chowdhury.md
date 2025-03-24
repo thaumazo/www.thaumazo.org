@@ -7,7 +7,7 @@ image: "/images/community/Maia.jpg"
 categories: ["community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 contact: ["maia@thaumazo.org"]
 linkedin: "https://www.linkedin.com/in/maiakumari/"
 roles: ["Director", "Community Member"]

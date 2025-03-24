@@ -3,7 +3,7 @@ title: "AI & Us Working Group"
 meta_title: "aiandusworkinggroup"
 description: "Group discussion on AI."
 date: 2024-09-17T05:00:00Z
-image: ""
+image: "/images/projects/ai_and_us_group.png"
 categories: ["project"]
 author: "rae-j"
 tags: ["community", "ai"]
@@ -19,4 +19,5 @@ end_date:
 location: "Vancouver, BC"
 ---
 
-A discussion group on how we interact and interface with ai with a human-first approach.
+Thaumazo hosts weekly Working Group sessions for a small AI community, alternating weekly between our main Working Group and our Education focused working group. Through these invitational sessions we are building genuine community among those working to set positive precedent in AI work. Sharing our aspirations, concerns, ideas and work, we support each other in moving the needle on wise AI for Good.
+

@@ -7,7 +7,7 @@ image: "/images/community/Nick.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["nick.woolsey@gmail.com"]
 linkedin: "https://www.linkedin.com/in/nickwoolsey/"

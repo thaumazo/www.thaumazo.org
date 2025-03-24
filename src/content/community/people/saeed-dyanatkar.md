@@ -7,7 +7,7 @@ image: "/images/community/Saeed.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["saeed.dyanatkar.ubc.ca"]
 linkedin: "https://www.linkedin.com/in/saeeddyanatkar/"

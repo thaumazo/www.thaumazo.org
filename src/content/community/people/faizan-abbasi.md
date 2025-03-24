@@ -7,7 +7,7 @@ image: "/images/community/Faizan.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["faizan.a.abbasi@gmail.com"]
 linkedin: "https://www.linkedin.com/in/faizan-abbasi-9a667449/"

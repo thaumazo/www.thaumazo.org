@@ -7,7 +7,7 @@ image: "/images/community/Kelly.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"
 tags: []
-draft: true
+draft: false
 
 contact: ["kellygraham@shaw.ca"]
 linkedin: "https://www.linkedin.com/in/kelly-graham-tick-8b54795a/"
