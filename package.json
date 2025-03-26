@@ -5,9 +5,12 @@
   "author": "zeon.studio",
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "kenstack"
+  ],
   "scripts": {
     "_dev": "yarn generate-json && next dev",
-    "postinstall": "git submodule update --init --recursive && cd kenstack && npm install",
+    "preinstall": "git submodule update --init --recursive",
     "dev": "next dev",
     "_build": "yarn generate-json && next build",
     "build": "next build",
