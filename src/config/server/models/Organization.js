@@ -6,7 +6,7 @@ import tag from "@kenstack/forms/Tags/schema";
 
 const OrganizationSchema = new AdminSchema({
   title: String,
-  slug: String,
+  slug: { type: String },
   description: String,
   image,
   url: String,
@@ -22,5 +22,11 @@ const OrganizationSchema = new AdminSchema({
 
   content: String,
 });
+
+OrganizationSchema.index(
+  { slug: 1 },
+  { unique: true, partialFilterExpression: { "meta.deleted": false } },
+);
+
 
 export default mongoose.addModel("Organization", OrganizationSchema);

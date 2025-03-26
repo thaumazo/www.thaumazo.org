@@ -9,7 +9,7 @@ import tag from "@kenstack/forms/Tags/schema";
 
 const ProjectSchema = new AdminSchema({
   title: String,
-  slug: String,
+  slug: { type: String},
   description: String,
   image,
   url: String,
@@ -28,5 +28,10 @@ const ProjectSchema = new AdminSchema({
 
   content: String,
 });
+
+ProjectSchema.index(
+  { slug: 1 },
+  { unique: true, partialFilterExpression: { "meta.deleted": false } },
+);
 
 export default mongoose.addModel("Project", ProjectSchema);

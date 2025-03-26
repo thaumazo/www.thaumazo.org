@@ -2,7 +2,6 @@
   "name": "thaumazo",
   "version": "1.0",
   "license": "MIT",
-  "packageManager": "yarn@1.22.19",
   "type": "module",
   "workspaces": [
     "kenstack"
@@ -26,6 +25,9 @@
     "@aws-sdk/client-ses": "^3.654.0",
     "@heroicons/react": "^2.1.5",
     "@react-email/render": "^1.0.4",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.0.14",
+    "@tailwindcss/typography": "^0.5.16",
     "date-fns": "^4.1.0",
     "eslint-import-resolver-typescript": "^4.1.1",
     "github-slugger": "^2.0.0",
@@ -52,7 +54,6 @@
     "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "@typescript-eslint/parser": "^8.23.0",
-    "autoprefixer": "^10.4.19",
     "eslint": "^9.22.0",
     "eslint-config-next": "^15.1.6",
     "eslint-config-prettier": "^10.0.1",
@@ -60,7 +61,7 @@
     "eslint-plugin-import": "^2.31.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.6.6",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "sass": "^1.79.2",
     "sharp": "^0.33.3",
     "typescript": "^5.7.3"

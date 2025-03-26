@@ -8,7 +8,7 @@ import theme from "@/config/theme";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
-import "@/styles/main.scss";
+import "@/styles/main.css";
 
 export default function RootLayout({
   children,

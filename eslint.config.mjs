@@ -34,6 +34,8 @@ const eslintConfig = [
       },
     },    
     rules: {
+      "prefer-const": "off",
+      "@typescript-eslint/no-explicit-any": "off",      
       "no-unreachable": "error",
       "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
       "no-unused-vars": "off",

@@ -5,7 +5,7 @@ import image from "@kenstack/forms/Image/schema";
 import tags from "@kenstack/forms/Tags/schema";
 
 userSchema.add({
-  slug: String,
+  slug: { type: String, unique: true},
   image,
   location: String,
   linkedin: String,
