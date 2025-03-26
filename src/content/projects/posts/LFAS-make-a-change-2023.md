@@ -36,5 +36,3 @@ We then provided the project Teachers a private Notion page to help facilitate e
 In one case a team had us use GPT to help generate an introductory letter and other materials to help them market their project.
 
 ——
-
-

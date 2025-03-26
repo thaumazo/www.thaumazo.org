@@ -13,12 +13,7 @@ sdgs: ["9", "16", "17"]
 url: "https://humandatacommons.org/parteck/"
 status: ["Project Partners"]
 liaison: ["carissa-kazyss"]
-projects:
-  [
-    "parteck-bardo",
-    "ai-and-us-in-person-2",
-    "ai-and-us-in-person-1",
-  ]
+projects: ["parteck-bardo", "ai-and-us-in-person-2", "ai-and-us-in-person-1"]
 ---
 
 Born from a simple desire to bridge the worlds of technology and consciousness, ParTecK has grown into an emergent, co-creative space where people from diverse backgrounds explore what’s possible, what’s next, and what matters. Whether it's discussing the impact of AI, experimenting with new governance models, or simply sharing stories around a campfire (virtual or real), ParTecK thrives on curiosity, play, and deep conversation.

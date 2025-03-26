@@ -19,12 +19,10 @@ end_date:
 location: "Langley, BC"
 ---
 
-The Community Mycelium is a combination of several elements designed to help small, emergent, and self-organizing organizations thrive: 
+The Community Mycelium is a combination of several elements designed to help small, emergent, and self-organizing organizations thrive:
 
 - A data structure (currently offered as a Notion Template) designed to It helps track people, communities, projects, events, tasks as well as a range of underlying elements such as AI prompts and Microcredentials.
 - An approach to meetings and facilitation designed to promote collective intelligence, decision making, and an agile approach to work.
 - Automations and AI processing to facilitate operations, administration, collective intelligence, synergy finding and cross-pollination between people and organizations.
 
 We are currently in the process of developing a fully open source implementation.
-
-

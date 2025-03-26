@@ -20,4 +20,3 @@ location: "Vancouver, BC"
 ---
 
 Thaumazo hosts weekly Working Group sessions for a small AI community, alternating weekly between our main Working Group and our Education focused working group. Through these invitational sessions we are building genuine community among those working to set positive precedent in AI work. Sharing our aspirations, concerns, ideas and work, we support each other in moving the needle on wise AI for Good.
-

@@ -26,8 +26,9 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### 1. **Nonlinear Crisis Timeline Interface with AI-Assisted Injects**
+
 - **Problem**: Traditional crisis management timelines are too linear and hard to modify dynamically.
-- **Solution**: A redesigned user interface for the PRACTICE system that supports *branching timelines* and AI-generated injects.
+- **Solution**: A redesigned user interface for the PRACTICE system that supports _branching timelines_ and AI-generated injects.
 - **Features**:
   - Drag-and-drop inject reordering.
   - AI-generated visuals for injects.
@@ -38,6 +39,7 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### 2. **AI-Supported Debriefing Tool for Decision Traceability**
+
 - **Problem**: Experts only see the final decision and rationale, missing insights from the full conversation.
 - **Solution**: Use of **LangChain** and **AI prompts** to analyze chat logs and generate:
   - All possible decisions discussed.
@@ -52,6 +54,7 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### 3. **Dynamic Crisis Simulation Engine with Recursive AI Prompts**
+
 - **Problem**: Need for responsive, iterative crisis simulations that evolve with participant input.
 - **Solution**: A modular system that separates simulation into:
   - Baseline prompt (overall situation).
@@ -66,6 +69,7 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### 4. **Real-Time Slide Deck with Live Data and GPT Integration**
+
 - **Problem**: Static slides lack adaptability in crisis simulations.
 - **Solution**: A prototype for slide decks that dynamically pull real-time data and GPT outputs per slide.
 - **Use Case**: Command centers or practice simulations with evolving real-world info (e.g., wildfire updates).
@@ -77,18 +81,20 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### 5. **After Action Report (AAR) Generator + Decision Dynamics Evaluator**
+
 - **Problem**: Generating quality AARs is time-consuming and subject to human oversight.
 - **Solution**:
   - Use GPT to generate AARs based on FEMA templates.
   - Evaluate team decision-making dynamics from transcripts.
 - **Experiments Included**:
-  - Testing with fictional input (e.g., *Star Trek*, *Council of Elrond*) to simulate decisions.
+  - Testing with fictional input (e.g., _Star Trek_, _Council of Elrond_) to simulate decisions.
   - Added a fictional disruptive participant to evaluate how the system handled poor input.
 - **Result**: Dynamic scoring, feedback, and insights into group performance and individual contributions.
 
 ---
 
 ### 6. **Sphere Handbook RAG (Retrieval-Augmented Generation) Assistant**
+
 - **Problem**: Humanitarian guidelines are complex and hard to access in real-time.
 - **Solution**: LangChain-based tool that uses a vector database of the **Sphere Handbook** (~450 pages).
 - **Features**:
@@ -99,6 +105,7 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### Additional Contributions and Observations:
+
 - **Early GPT-based scenario generation tool**: Prompt-based assistant trying to generate JSON scenarios (MVP level).
 - **A few teams collaborated closely** and learned tools like LangChain, vector stores, prompt engineering, and GPT-based API integration on the fly.
 - **Suggestions for future work**:
@@ -109,6 +116,7 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 ### General Themes:
+
 - Emphasis on **nonlinear thinking**, **human-centered interface design**, and **modular AI pipelines**.
 - Strong orientation toward **applicability in both simulations and real-world crisis scenarios**.
 - Tools developed were portable, flexible, and grounded in practical crisis management needs.
@@ -116,4 +124,3 @@ This project started as a Hackathon hosted by UBC's Emerging Media Lab with ment
 ---
 
 Presentations from the Hackathon may be seen here: https://www.youtube.com/watch?v=DTsG-YLgj1M
-
