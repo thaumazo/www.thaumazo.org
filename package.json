@@ -34,7 +34,7 @@
     "gray-matter": "^4.0.3",
     "lodash-es": "^4.17.21",
     "marked": "^14.1.2",
-    "next": "^14.2.13",
+    "next": "14.2",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
