@@ -3,7 +3,7 @@ title: "ParTecK"
 meta_title: "parteck"
 description: "Community events for knowledge and technology."
 date: 2022-04-04T05:00:00Z
-image: "/images/organizations/ParTeck.JPG"
+image: "/images/organizations/ParTeck.jpg"
 categories: ["partner"]
 author: "rae-j"
 tags: ["events", "community"]
