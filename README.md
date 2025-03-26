@@ -20,6 +20,46 @@
     <img src="https://img.shields.io/github/contributors/zeon-studio/nextplate" alt="contributors"></a>
 </p>
 
+## Installation
+
+To install this project on your local machine: 
+
+
+```
+// clone the repository
+ git clone https://github.com/thaumazo/www.thaumazo.org www.thaumazo.org
+
+//change into the site's folder
+
+cd www.thaumazo.org
+
+// install packages
+npm install
+
+// start the dev server 
+npm run dev
+
+// before committing changes  please lint and format
+npm run lint
+npm run format
+
+// ADVANCED. Some helpful commands if you need to work with submodules
+// install submodules
+git submodule update --init --recursive
+
+// you will need to update submodules when you pull or change branches
+// you can either do this as you pull: 
+git pull --recurse-submodules
+
+// or you can set this globally to have it automated. 
+git config --global submodule.recurse true
+
+
+
+
+```
+
+
 ## 📌 Key Features
 
 - 👥 Multi-Authors
