@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Thaumazo",
-    "base_url": "https://www.thaumazo.org",
+    "base_url": "https://thaumazo.org",
     "base_path": "/",
     "trailing_slash": false,
     "logo": "/images/logo.svg",
@@ -32,14 +32,14 @@
   },
 
   "disqus": {
-    "enable": true,
+    "enable": false,
     "shortname": "themefisher-template",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Next Boilerplate"
+    "meta_description": ""
   }
 }
