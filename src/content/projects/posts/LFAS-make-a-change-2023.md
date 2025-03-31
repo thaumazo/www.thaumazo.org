@@ -1,5 +1,5 @@
 ---
-title: "LFAS: Make a Change 2024"
+title: "LFAS: Make a Change 2023"
 meta_title: "lfasmakeachange"
 description: "Facilitating students at LFAS to address problems using the Sustainable Development Goals framework."
 date: 2024-09-17T05:00:00Z
@@ -36,5 +36,3 @@ We then provided the project Teachers a private Notion page to help facilitate e
 In one case a team had us use GPT to help generate an introductory letter and other materials to help them market their project.
 
 ——
-
-In 2024, we expanded our role in supporting ideation and implementation around projects, attracting attention to the project teams and projects devised, and fostering more relationships with partner organizations for the student teams.

@@ -3,7 +3,7 @@ title: "UBC Emerging Media Lab"
 meta_title: "eml"
 description: "Education lab focusing on emerging media at UBC."
 date: 2022-04-04T05:00:00Z
-image: ""
+image: "/images/organizations/EML.png"
 categories: ["partner"]
 author: "rae-j"
 tags: ["education", "technology"]

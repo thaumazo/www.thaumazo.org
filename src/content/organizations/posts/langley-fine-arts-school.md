@@ -15,9 +15,9 @@ status: ["Project Partners"]
 liaison: ["travis-vandenberg"]
 projects:
   [
+    "lfas-make-a-change-2025",
     "lfas-make-a-change-2024",
     "lfas-make-a-change-2023",
-    "mozilla-fellowship-application-daniel",
   ]
 ---
 

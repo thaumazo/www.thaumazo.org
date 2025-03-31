@@ -11,8 +11,8 @@ draft: false
 
 sdgs: ["1", "11", "13", "17"]
 url: "https://appalachiarelief.org/"
-status: ["Liaising"]
-liaison: ["lee-white"]
+status: ["Partner"]
+liaison: ["Zac Wine"]
 projects: ["the-cyber-basket"]
 ---
 
