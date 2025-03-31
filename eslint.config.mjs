@@ -46,7 +46,7 @@ const eslintConfig = [
     }
   },
   {
-    files: ["src/layouts/**/*", "src/tailwind-plugin/**/*", "src/lib/utils/taxonomyFilter.ts"],
+    files: ["src/layouts/**/*", "src/tailwind-plugin/**/*", "src/components/ui/**/*", src/lib/utils/taxonomyFilter.ts"],
     rules: {
       "@typescript-eslint/no-shadow": "off",
     },

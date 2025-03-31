@@ -5,8 +5,6 @@ import "@kenstack/styles/buttons.scss";
 // import config from "@/config/config.json";
 import theme from "@/config/theme";
 // import TwSizeIndicator from "@/helpers/TwSizeIndicator";
-import Footer from "@/partials/Footer";
-import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
 import "./globals.css";
@@ -21,7 +19,7 @@ export default function RootLayout({
   const sf = theme.fonts.font_family.secondary;
 
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning={true} lang="en" className="light">
       <head>
         {/* responsive meta */}
         <meta
@@ -91,14 +89,7 @@ export default function RootLayout({
 
       <body suppressHydrationWarning={true}>
         {/* <TwSizeIndicator /> */}
-        <Providers>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            {/* <SearchModal /> */}
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

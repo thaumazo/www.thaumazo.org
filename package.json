@@ -24,8 +24,11 @@
   "dependencies": {
     "@aws-sdk/client-ses": "^3.654.0",
     "@heroicons/react": "^2.1.5",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-tooltip": "^1.1.8",
     "@react-email/components": "^0.0.34",
     "@react-email/render": "^1.0.4",
     "@tailwindcss/forms": "^0.5.10",

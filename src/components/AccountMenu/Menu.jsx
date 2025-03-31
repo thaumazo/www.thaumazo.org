@@ -68,7 +68,13 @@ export default function AccountMenu() {
             >
               My Account
             </NavigationMenuTrigger>
-            <NavigationMenuContent side="left" className="min-w-32 px-4">
+            <NavigationMenuContent
+              side="left"
+              className="min-w-32 px-4"
+              onClick={() => {
+                setOpen("");
+              }}
+            >
               <AccountMenuItems />
               <LogoutButton />
             </NavigationMenuContent>
