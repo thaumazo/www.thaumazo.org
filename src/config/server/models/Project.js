@@ -2,16 +2,16 @@ import mongoose from "@kenstack/db";
 
 // import ProjectAdmin from "../../client/models/Project";
 import AdminSchema from "@kenstack/db/AdminSchema";
-import image from "@kenstack/forms/Image/schema";
+import { imagePlugin } from "@kenstack/forms/Image/schema";
 import tag from "@kenstack/forms/Tags/schema";
 
 // import Checkbox from "@kenstack/forms/Checkbox";
 
 const ProjectSchema = new AdminSchema({
   title: String,
-  slug: { type: String},
+  slug: { type: String },
   description: String,
-  image,
+  // image,
   url: String,
   location: String,
   draft: {
@@ -33,5 +33,9 @@ ProjectSchema.index(
   { slug: 1 },
   { unique: true, partialFilterExpression: { "meta.deleted": false } },
 );
+
+ProjectSchema.plugin(imagePlugin, {
+  transformations: [["thumbnail", "w_360,h_250,c_fill,g_auto,f_webp"]],
+});
 
 export default mongoose.addModel("Project", ProjectSchema);

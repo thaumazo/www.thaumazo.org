@@ -1,35 +1,31 @@
-"use server";
+import { apiPipeline, recaptcha, validate } from "@kenstack/api";
 
-import checkServerValidity from "@kenstack/forms/validity/checkServerValidity";
-import form from "./fields";
+import form from "../fields";
 
 import Email from "@kenstack/forms/AutoEmail";
 import { render } from "@react-email/render";
 import mailer from "@kenstack/utils/mailer";
 
-export default async function formAction(formData) {
-  const fields = form.getFields();
-  const fieldErrors = checkServerValidity(fields, formData);
-  if (fieldErrors) {
-    return {
-      error:
-        "We couldn't process your request. See the errors marked in red below.",
-      fieldErrors,
-    };
-  }
+export const POST = (...args) =>
+  apiPipeline(...args, [validate({ form }), recaptcha(), formAction]);
 
+async function formAction({ json: values }) {
+  const fields = form.getFields();
   const to = process.env.CONTACT_EMAIL;
   if (!to) {
-    return { error: "Setup error. CONTACT_EMAIL is not defined" };
+    return Response.json({
+      error: "Setup error. CONTACT_EMAIL is not defined",
+    });
   }
 
-  const html = await render(<Email fields={fields} formData={formData} />, {
+  const html = await render(<Email fields={fields} values={values} />, {
     pretty: true,
   });
 
   try {
     await mailer({
       to: [to],
+      // from: "do.not.reply@giveround.com",
       from: "do.not.reply@thaumazo.org",
       subject: "Contact form submission",
       html,
@@ -37,14 +33,14 @@ export default async function formAction(formData) {
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error("Error sending email", e);
-    return {
+    return Response.json({
       error:
         "There was an unexpected problem handling your request. Please try again later.",
-    };
+    });
   }
 
-  return {
+  return Response.json({
     success:
       "Thank you for reaching out. We look forward to reviewing your submission.",
-  };
+  });
 }

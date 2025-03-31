@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+.markdown {
+  @apply flex flex-col gap-4;
+
+  :is(p, h1, h2, h3, h4, h5, blockquote, ul, ol, pre)
+    + :is(h1, h2, h3, h4, h5) {
+    @apply mt-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  ht6 {
+    @apply text-left;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  p + p {
+    /* @apply mt-4; */
+  }
+
+  ul {
+    @apply list-disc pl-5;
+  }
+
+  ol {
+    @apply list-decimal pl-5;
+  }
+
+  li + li {
+    @apply mt-1;
+  }
+
+  a {
+    @apply text-blue-900 hover:text-blue-700 font-medium transition;
+  }
+
+  blockquote {
+    @apply mx-8;
+  }
+}

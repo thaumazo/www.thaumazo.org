@@ -9,6 +9,7 @@ import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -59,6 +60,7 @@ export default function RootLayout({
         />
 
         {/* theme meta */}
+        {/*}
         <meta name="theme-name" content="nextplate" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
@@ -71,6 +73,7 @@ export default function RootLayout({
           media="(prefers-color-scheme: dark)"
           content="#000"
         />
+        /*}
 
         {/* google font css */}
         <link

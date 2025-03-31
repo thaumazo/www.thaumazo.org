@@ -14,7 +14,7 @@ export default function Main({
 }) {
   return (
     <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto mt-14">
-      <h1 className="text-center">{title}</h1>
+      <h1 className="text-center text-4xl">{title}</h1>
       <Markdown className="markdown text-justify" content={content} />
 
       {image && (

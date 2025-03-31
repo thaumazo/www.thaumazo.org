@@ -14,13 +14,7 @@ export default async function CommunityPage() {
       <SeoMeta {...data} />
       <Main {...data} />
 
-      <section className="container my-4">
-        <div className="row justify-center">
-          <div className="lg:col-7 md:col-9">
-            <Form />
-          </div>
-        </div>
-      </section>
+      <Form />
     </>
   );
 }

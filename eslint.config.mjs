@@ -19,7 +19,6 @@ const eslintConfig = [
       "@next/next/no-html-link-for-pages": "off",
     },
   },
-  
   {
     files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     plugins: {
@@ -46,6 +45,20 @@ const eslintConfig = [
 
     }
   },
+  {
+    files: ["src/layouts/**/*", "src/tailwind-plugin/**/*", "src/lib/utils/taxonomyFilter.ts"],
+    rules: {
+      "@typescript-eslint/no-shadow": "off",
+    },
+  },  
+
+ {
+    languageOptions: {
+      globals: { React: "readonly" },
+    },
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    // other settings...
+  },  
 ];
 
 export default eslintConfig;

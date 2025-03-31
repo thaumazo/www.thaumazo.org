@@ -2,7 +2,7 @@
 title: "Micah Spain"
 meta_title: "micahspain"
 description: "this is meta description"
-date: 2024-12-233T05:00:00Z
+date: 2024-12-23T05:00:00Z
 image: "/images/community/Micah.jpg"
 categories: ["Community"]
 author: "Daniel Lindenberger"

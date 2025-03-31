@@ -1,14 +1,14 @@
 import mongoose from "@kenstack/db";
 
 import AdminSchema from "@kenstack/db/AdminSchema";
-import image from "@kenstack/forms/Image/schema";
+import { imagePlugin } from "@kenstack/forms/Image/schema";
 import tag from "@kenstack/forms/Tags/schema";
 
 const OrganizationSchema = new AdminSchema({
   title: String,
   slug: { type: String },
   description: String,
-  image,
+  //  image,
   url: String,
   // location: String,
   draft: {
@@ -28,5 +28,8 @@ OrganizationSchema.index(
   { unique: true, partialFilterExpression: { "meta.deleted": false } },
 );
 
+OrganizationSchema.plugin(imagePlugin, {
+  transformations: [["thumbnail", "w_360,h_250,c_fill,g_auto,f_webp"]],
+});
 
 export default mongoose.addModel("Organization", OrganizationSchema);

@@ -1,13 +1,13 @@
 import Logo from "@/layouts/components/Logo";
 // import Link from "next/link";
 
-import ThemeSwitcher from "@/layouts/components/ThemeSwitcher";
+// import ThemeSwitcher from "@/layouts/components/ThemeSwitcher";
 import AccountMenu from "@/components/AccountMenu";
 import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <header className={`header z-30 sticky top-0`}>
+    <header className={`header z-30 top-0`}>
       <nav className="navbar container">
         <div className="order-0 flex-shrink-0">
           <Logo />
@@ -54,8 +54,10 @@ const Header = () => {
           )}
           */}
           {/* KS: Matching size with the logo to ensure nav is centered */}
-          <ThemeSwitcher className="lg:ml-[90px] mr-5" />
-          <AccountMenu />
+          {/*<ThemeSwitcher className="lg:ml-[90px] mr-5" />*/}
+          <div className="w-[150px]">
+            <AccountMenu />
+          </div>
           {/*}
             <Link
               className="btn btn-outline-primary btn-sm hidden lg:inline-block"
