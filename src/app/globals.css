@@ -65,3 +65,8 @@
     @apply mx-8;
   }
 }
+
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
