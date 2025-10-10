@@ -7,7 +7,7 @@ import { render } from "@react-email/render";
 import mailer from "@kenstack/utils/mailer";
 
 export const POST = (...args) =>
-  apiPipeline(...args, [validate({ form }), recaptcha(), formAction]);
+  apiPipeline(...args, [validate(), recaptcha(), formAction], { form });
 
 async function formAction({ json: values }) {
   const fields = form.getFields();
