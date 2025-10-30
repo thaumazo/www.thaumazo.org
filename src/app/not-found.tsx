@@ -1,10 +1,14 @@
-import SeoMeta from "@/partials/SeoMeta";
 import Link from "next/link";
+
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Page Not Found",
+};
+
 
 const NotFound = async () => {
   return (
     <>
-      <SeoMeta title={"Page Not Found"} />
       <section className="section-sm text-center">
         <div className="container">
           <div className="row justify-center">

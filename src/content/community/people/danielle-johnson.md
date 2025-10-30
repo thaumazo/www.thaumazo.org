@@ -1,7 +1,5 @@
 ---
 title: "Danielle Johnson"
-meta_title: "daniellejohnson"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Danielle.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: false
 
-contact: ["drjohnson8808@gmail.com"]
+email: "drjohnson8808@gmail.com"
 linkedin: "https://www.linkedin.com/in/danielle-johnson-221272131/"
 roles: ["Liaison", "Community Member"]
 communities: ["thaumazo", "limicon", "parteck"]

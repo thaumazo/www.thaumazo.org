@@ -1,6 +1,5 @@
 ---
 title: "Crisis Forge"
-meta_title: "crisisforge"
 description: "Crisis training through technology."
 date: 2024-09-17T05:00:00Z
 image: "/images/projects/CrisisForge.webp"

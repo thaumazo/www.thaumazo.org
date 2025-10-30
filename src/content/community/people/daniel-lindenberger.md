@@ -10,7 +10,7 @@ tags: ["board member", "visionary"]
 draft: false
 
 location: Langley, BC, Canada
-contact: ["daniel@thaumazo.org"]
+email: "daniel@thaumazo.org"
 linkedin: "https://www.linkedin.com/in/daniel-lindenberger-00824916/"
 roles:
   - Director

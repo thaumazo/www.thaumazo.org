@@ -1,6 +1,5 @@
 ---
 title: "Storytime"
-meta_title: "storytime"
 description: "Storytelling group to facilitate human growth and connection across different experiences."
 date: 2024-09-17T05:00:00Z
 image: ""

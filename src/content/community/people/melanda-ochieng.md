@@ -1,7 +1,5 @@
 ---
 title: "Melanda Ochieng"
-meta_title: "melandaochieng"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Melanda.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: ["Director"]
 draft: false
 
-contact: ["melanda@thaumazo.org"]
+email: "melanda@thaumazo.org"
 linkedin: "https://www.linkedin.com/in/melanda-schmid-ochieng/"
 roles: ["Director", "Community Member"]
 communities: ["thaumazo"]

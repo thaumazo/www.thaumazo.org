@@ -1,94 +1,18 @@
-// import SearchModal from "@/layouts/components/SearchModal";
-import "@kenstack/styles/forms.scss";
-import "@kenstack/styles/buttons.scss";
-
-// import config from "@/config/config.json";
-import theme from "@/config/theme";
-// import TwSizeIndicator from "@/helpers/TwSizeIndicator";
-import Providers from "@/partials/Providers";
-import "@/styles/main.css";
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // import google font css
-  const pf = theme.fonts.font_family.primary;
-  const sf = theme.fonts.font_family.secondary;
+import Providers from "@/context/Providers";
 
+export const metadata = {
+  title: "Thaumazo",
+};
+
+export default async function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning={true} lang="en" className="light">
-      <head>
-        {/* responsive meta */}
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
-        />
-
-        {/* favicon */}
-        {/*
-        <link rel="icon" type="image/svg+xml" href="/images/thaumazo.svg" />
-        <link rel="icon" type="image/png" href="/images/thaumazo.png" />
-      */}
-        <link
-          rel="icon"
-          href="/favicons/16.png"
-          sizes="16x16"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/favicons/32.png"
-          sizes="32x32"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/favicons/48.png"
-          sizes="48x48"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/favicons/64.png"
-          sizes="64x64"
-          type="image/png"
-        />
-
-        {/* theme meta */}
-        {/*}
-        <meta name="theme-name" content="nextplate" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: light)"
-          content="#fff"
-        />
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="#000"
-        />
-        /*}
-
-        {/* google font css */}
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href={`https://fonts.googleapis.com/css2?family=${pf}${
-            sf ? "&family=" + sf : ""
-          }&display=swap`}
-          rel="stylesheet"
-        />
-      </head>
-
-      <body suppressHydrationWarning={true}>
-        {/* <TwSizeIndicator /> */}
+    <html lang="en">
+      <body
+        // className={`light ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`light antialiased`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

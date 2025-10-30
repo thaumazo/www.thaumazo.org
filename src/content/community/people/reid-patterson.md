@@ -1,7 +1,5 @@
 ---
 title: "Reid Patterson"
-meta_title: "reidpatterson"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Reid.png"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: true
 
-contact: ["reid@thaumazo.org"]
+email: "reid@thaumazo.org"
 linkedin: "https://www.linkedin.com/in/reidpat/"
 roles: ["Project Member", "Community Member"]
 communities: ["thaumazo"]

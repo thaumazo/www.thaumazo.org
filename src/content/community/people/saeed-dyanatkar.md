@@ -1,7 +1,5 @@
 ---
 title: "Saeed Dyanatkar"
-meta_title: "saeeddyanatkar"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Saeed.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: false
 
-contact: ["saeed.dyanatkar@ubc.ca"]
+email: "saeed.dyanatkar@ubc.ca"
 linkedin: "https://www.linkedin.com/in/saeeddyanatkar/"
 roles: ["Project Lead", "Project Member", "Community Member", "Liaison"]
 communities: ["thaumazo", "eml", "parteck"]

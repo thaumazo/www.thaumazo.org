@@ -1,7 +1,5 @@
 ---
 title: "Nick Woolsey"
-meta_title: "nickwoolsey"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Nick.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: false
 
-contact: ["nick.woolsey@gmail.com"]
+email: "nick.woolsey@gmail.com"
 linkedin: "https://www.linkedin.com/in/nickwoolsey/"
 roles: ["Project Lead", "Project Member", "Community Member"]
 communities: ["thaumazo"]

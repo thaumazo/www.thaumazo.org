@@ -1,7 +1,5 @@
 ---
 title: "Faizan Abbasi"
-meta_title: "faizanabbasi"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Faizan.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: false
 
-contact: ["faizan.a.abbasi@gmail.com"]
+email: "faizan.a.abbasi@gmail.com"
 linkedin: "https://www.linkedin.com/in/faizan-abbasi-9a667449/"
 roles:
   [

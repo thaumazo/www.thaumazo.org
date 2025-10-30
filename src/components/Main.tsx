@@ -1,16 +1,15 @@
-// import { markdownify } from "@/lib/utils/textConverter";
-import ImageFallback from "@/helpers/ImageFallback";
+import Image from "next/image";
 import Markdown from "@kenstack/components/Markdown";
+import { type ImageResult } from "@/utils/getImageMeta";
 
 export default function Main({
-  title = "",
-  content = "",
-  // button = {
-  //   enable: false,
-  //   link: "",
-  //   label: "",
-  // },
-  image = "",
+  title,
+  content,
+  image,
+}: {
+  title: string;
+  content: string;
+  image: null | ImageResult;
 }) {
   return (
     <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto mt-14">
@@ -19,7 +18,7 @@ export default function Main({
 
       {image && (
         <div className="col-12">
-          <ImageFallback
+          <Image
             src={image}
             className="mx-auto"
             width="800"

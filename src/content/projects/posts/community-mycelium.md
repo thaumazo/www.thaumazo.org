@@ -1,6 +1,5 @@
 ---
 title: "Community Mycelium"
-meta_title: "communitymycelium"
 description: "Software that connects distributed projects, people, and resources for social good."
 date: 2024-09-17T05:00:00Z
 image: "/images/projects/CommunityMycelium.png"

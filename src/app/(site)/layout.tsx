@@ -1,18 +1,23 @@
-import theme from "@/config/theme";
-import Footer from "@/partials/Footer";
-import Header from "@/partials/Header";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import RecaptchaProvider from "@kenstack/context/RecaptchaProvider";
+// import { GoogleAnalytics } from "@next/third-parties/google";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: {
+    default: "Thaumazo",
+    template: "%s — Thaumazo",
+  },
+};
+
+export default async function SiteLayout({ children }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <RecaptchaProvider>
       <Header />
-      {/* <SearchModal /> */}
-      <div className="flex-1">{children}</div>
+      {children}
       <Footer />
-    </div>
+      {/* <GoogleAnalytics gaId="G-WC8VW2K63D" /> */}
+    </RecaptchaProvider>
   );
 }

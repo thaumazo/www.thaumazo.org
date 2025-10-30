@@ -1,6 +1,7 @@
 import loadMD from "@/utils/loadMD";
 import startCase from "lodash-es/startCase";
 import Link from "next/link";
+import { postSchema } from "@/schemas/post";
 
 export default async function InfoTags({
   title,
@@ -16,7 +17,7 @@ export default async function InfoTags({
   for (let name of field) {
     let data;
     if (references) {
-      data = await loadMD(references + "/" + name);
+      data = await loadMD(references + "/" + name, postSchema);
     }
     const classes = "px-3 py-1 rounded-full text-white bg-gray-700";
     let tag = "";
@@ -39,7 +40,7 @@ export default async function InfoTags({
 
   return (
     <div className="text-left">
-      <h6 className="mb-1">{title}</h6>
+      <h6 className="mb-1 font-bold">{title}</h6>
       <div className="flex flex-wrap gap-2">{tags}</div>
     </div>
   );

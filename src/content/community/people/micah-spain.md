@@ -1,7 +1,5 @@
 ---
 title: "Micah Spain"
-meta_title: "micahspain"
-description: "this is meta description"
 date: 2024-12-23T05:00:00Z
 image: "/images/community/Micah.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: []
 draft: false
 
-contact: ["micahs@appalachiarelief.org"]
+email: "micahs@appalachiarelief.org"
 linkedin: "https://www.linkedin.com/in/micah-spain-1b4796252/"
 roles: ["Liaison", "Community Member"]
 communities: ["thaumazo", "appalachia-relief"]

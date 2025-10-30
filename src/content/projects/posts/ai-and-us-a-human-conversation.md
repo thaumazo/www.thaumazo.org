@@ -1,6 +1,5 @@
 ---
 title: "AI & Us: A Human Conversation (Online Pilot)"
-meta_title: "aiandushumanconversation"
 description: "Discussion group on AI."
 date: 2024-09-17T05:00:00Z
 image: "/images/projects/ai_and_us_conversation.png"

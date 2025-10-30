@@ -5,11 +5,11 @@ description: "Thaumazo contractor. Interdisiplinary connector and creator."
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Rae.jpg"
 categories: ["Community"]
-author: ["daniel-lindenberger", "rae-j"]
+author: daniel-lindenberger
 tags: []
 draft: false
 
-contact: ["rae@thaumazo.org"]
+email: "rae@thaumazo.org"
 linkedin: ""
 roles: ["Project Lead", "Project Member", "Volunteer", "Community Member"]
 communities: ["thaumazo", "atelier", "minimumviabledemos"]

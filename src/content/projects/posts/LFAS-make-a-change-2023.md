@@ -1,6 +1,5 @@
 ---
 title: "LFAS: Make a Change 2023"
-meta_title: "lfasmakeachange"
 description: "Facilitating students at LFAS to address problems using the Sustainable Development Goals framework."
 date: 2024-09-17T05:00:00Z
 image: "/images/organizations/LFAS.jpg"

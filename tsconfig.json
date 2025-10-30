@@ -13,7 +13,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "plugins": [
@@ -22,13 +22,16 @@
       }
     ],
     "paths": {
-      "@/shortcodes/*": ["./src/layouts/shortcodes/*"],
-      "@/partials/*": ["./src/layouts/partials/*"],
-      "@/helpers/*": ["./src/layouts/helpers/*"],
       "@/*": ["./src/*"],
       "@kenstack/*": ["./kenstack/src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "kenstack/src/TODO"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next"]
 }

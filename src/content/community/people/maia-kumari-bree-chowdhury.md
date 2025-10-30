@@ -1,14 +1,12 @@
 ---
 title: "Maia Kumari Bree Chowdhury"
-meta_title: "maiachowdhury"
-description: "this is meta description"
 date: 2022-04-04T05:00:00Z
 image: "/images/community/Maia.jpg"
 categories: ["community"]
 author: "Daniel Lindenberger"
 tags: []
 draft: false
-contact: ["maia@thaumazo.org"]
+email: "maia@thaumazo.org"
 linkedin: "https://www.linkedin.com/in/maiakumari/"
 roles: ["Director", "Community Member"]
 communities: ["thaumazo"]

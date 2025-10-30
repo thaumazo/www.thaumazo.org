@@ -1,6 +1,5 @@
 ---
 title: "Lucinda: Indigenous Art Fraud Prevention"
-meta_title: "lucinda"
 description: "Fraud prevention for Lucinda Turner, an indigenous artist in BC."
 date: 2024-09-17T05:00:00Z
 image: "/images/projects/Lucinda.png"

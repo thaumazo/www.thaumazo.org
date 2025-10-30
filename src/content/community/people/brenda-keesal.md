@@ -1,7 +1,5 @@
 ---
 title: "Brenda Keesal"
-meta_title: "brendakeesal"
-description: "this is meta description"
 date: 2024-09-24T05:00:00Z
 image: "/images/community/Brenda.jpg"
 categories: ["Community"]
@@ -9,7 +7,7 @@ author: "Daniel Lindenberger"
 tags: ["Director"]
 draft: false
 
-contact: ["brenda@thaumazo.org"]
+email: "brenda@thaumazo.org"
 linkedin: "https://www.linkedin.com/in/brenda-keesal-6069995/"
 roles:
   ["Director", "Project Lead", "Project Member", "Community Member", "Liaison"]

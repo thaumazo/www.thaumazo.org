@@ -1,17 +1,20 @@
-import SeoMeta from "@/partials/SeoMeta";
-
-import loadMD from "@/utils/loadMD";
+import { loadMD, loadMetadata } from "@/utils/loadMD";
+import { notFound } from "next/navigation";
 import Main from "@//components/Main";
 
 import Posts from "./Posts";
 
-// for all regular pages
+export const metadata = loadMetadata("community/_index.md");
+
 export default async function CommunityPage() {
   const data = await loadMD("community/_index.md");
+  if (data === false) {
+    notFound();
+  }
+
   return (
     <>
-      <SeoMeta {...data} />
-      <Main {...data} />
+      <Main title={data.title} content={data.content} image={data.image} />
       <Posts />
     </>
   );

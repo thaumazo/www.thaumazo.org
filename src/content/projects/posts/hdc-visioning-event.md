@@ -1,6 +1,5 @@
 ---
 title: "HDC Visioning Event"
-meta_title: "hdcvision"
 description: "Metavision event for the Human Data Commons."
 date: 2024-09-17T05:00:00Z
 image: "/images/projects/HDC_Vision.png"
