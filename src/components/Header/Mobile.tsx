@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 // import NextLink from "next/link";
-import Link from "@/components/Link";
+import Link from "next/link";
 
 import MenuIcon from "@kenstack/icons/Menu";
 import CloseIcon from "@kenstack/icons/Close";

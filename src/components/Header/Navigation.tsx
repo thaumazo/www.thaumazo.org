@@ -3,17 +3,19 @@
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
-import Link from "@/components/Link";
+import Link from "next/link";
 
-export default function Navigation({ links, className }) {
+export default function Navigation({ links, className = "" }) {
   const pathname = usePathname();
   return (
-    <nav className={twMerge("hidden md:flex mx-4 gap-4", className)}>
+    <nav className={twMerge("hidden md:flex mx-auto gap-4 text-md", className)}>
       {links.map(([title, href]) => (
         <Link
           key={title}
           href={href}
-          className={pathname.startsWith(href) && "underline"}
+          className={
+            "hover:underline" + (pathname.startsWith(href) ? " underline" : "")
+          }
         >
           {title}
         </Link>

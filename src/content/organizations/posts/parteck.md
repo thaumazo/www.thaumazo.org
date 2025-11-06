@@ -7,7 +7,7 @@ image: "/images/organizations/ParTeck.jpg"
 categories: ["partner"]
 author: "rae-j"
 tags: ["events", "community"]
-draft: false
+draft: true
 
 sdgs: ["9", "16", "17"]
 url: "https://humandatacommons.org/parteck/"
