@@ -20,7 +20,7 @@
   "dependencies": {
     "@aws-sdk/client-ses": "^3.654.0",
     "@heroicons/react": "^2.1.5",
-    "@next/third-parties": "16.0.0",
+    "@next/third-parties": "^16.1.6",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.5",
     "@radix-ui/react-popover": "^1.1.15",
