@@ -41,6 +41,7 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "lodash-es": "^4.17.21",
+    "lucide-react": "^0.575.0",
     "next": "^16",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.4.6",
@@ -58,8 +59,8 @@
     "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "@typescript-eslint/parser": "^8.23.0",
     "eslint": "^9.22.0",

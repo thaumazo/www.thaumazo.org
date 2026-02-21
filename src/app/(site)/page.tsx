@@ -18,7 +18,7 @@ export default async function Home() {
 
         <div className="text-center">
           <Button asChild variant="outline">
-            <Link className="btn btn-primary" href="/contac" rel="noopener">
+            <Link className="btn btn-primary" href="/contact" rel="noopener">
               Join the Movement to Transform Our World!{" "}
             </Link>
           </Button>
