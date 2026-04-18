@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@plugin "tailwindcss-animate";
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -157,12 +157,14 @@
   @apply mx-auto min-h-[50vh] max-w-6xl px-4 md:min-h-[60vh];
 }
 
-.markdown {
-  @apply flex flex-col gap-4;
+.markdown,
+.milkdown {
+  /* @apply flex flex-col gap-4; */
 
-  :is(p, h1, h2, h3, h4, h5, blockquote, ul, ol, pre)
-    + :is(h1, h2, h3, h4, h5) {
-    @apply mt-4;
+  :where(p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol, pre) {
+    & + & {
+      @apply mt-4;
+    }
   }
 
   h1,

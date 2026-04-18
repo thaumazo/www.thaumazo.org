@@ -1,0 +1,3 @@
+ALTER TABLE "blogs" ALTER COLUMN "seo_title" SET NOT NULL;--> statement-breakpoint
+ALTER TABLE "blogs" ALTER COLUMN "seo_description" SET NOT NULL;--> statement-breakpoint
+CREATE INDEX "blogs_search_idx" ON "blogs" USING gin (to_tsvector('english', coalesce("title", '') || ' ' || coalesce("description", '') || ' ' || coalesce("content", '') || ' ' || coalesce("seo_title", '') || ' ' || coalesce("seo_description", '')));

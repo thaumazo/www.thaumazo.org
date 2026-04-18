@@ -18,7 +18,7 @@ type ContactMailerProps = {
 
 const contactMailerPost =
   (props: ContactMailerProps) => (request: NextRequest) =>
-    pipeline(request, schema, [recaptcha(), contactMailerAction(props)]);
+    pipeline({ request, schema }, [recaptcha(), contactMailerAction(props)]);
 
 const contactMailerAction =
   (props): PipelineAction<typeof schema> =>
@@ -35,7 +35,7 @@ const contactMailerAction =
 const messageMailer = async (
   { Email, attachments, from }: ContactMailerProps,
   data: z.infer<typeof schema>,
-  geo: Geo
+  geo: Geo,
 ) => {
   const html = await render(
     <Email>
@@ -57,7 +57,7 @@ const messageMailer = async (
           </tr>
         ))}
       </table>
-    </Email>
+    </Email>,
   );
 
   await mailer({
