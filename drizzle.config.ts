@@ -9,12 +9,12 @@ if (!process.env.DATABASE_URL && !process.env.VERCEL) {
 
 if (!process.env.DATABASE_URL) {
   throw new Error(
-    "DATABASE_URL is not set. Set it in your environment (e.g., Vercel/CI) or in a local .env.local file."
+    "DATABASE_URL is not set. Set it in your environment (e.g., Vercel/CI) or in a local .env.local file.",
   );
 }
 
 export default {
-  schema: "./src/db/schema/index.ts",
+  schema: "./src/tables/index.ts",
   out: "./drizzle",
   dbCredentials: {
     url: process.env.DATABASE_URL ?? "",

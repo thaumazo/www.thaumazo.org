@@ -1,12 +1,12 @@
-'use client';
-import InputField from '@kenstack/forms/InputField';
-import SlugField from '@kenstack/forms/SlugField';
-import MarkdownField from '@kenstack/forms/MarkdownField';
-// import TagField from '@kenstack/forms/TagField';
-import CheckboxField from '@kenstack/forms/CheckboxField';
-import TextareaField from '@kenstack/forms/TextareaField';
-import ImageField from '@kenstack/forms/ImageField';
-import DateField from '@kenstack/forms/DateField';
+"use client";
+import InputField from "@kenstack/forms/InputField";
+import SlugField from "@kenstack/forms/SlugField";
+import MarkdownField from "@kenstack/forms/MarkdownField";
+import TagField from "@kenstack/forms/TagField";
+import CheckboxField from "@kenstack/forms/CheckboxField";
+import TextareaField from "@kenstack/forms/TextareaField";
+import ImageField from "@kenstack/forms/ImageField";
+import DateField from "@kenstack/forms/DateField";
 
 export default function BlogForm() {
   return (
@@ -25,8 +25,11 @@ export default function BlogForm() {
       <div className="space-y-4">
         <CheckboxField label="Draft" name="draft" />
         <DateField name="publishedAt" label="Publish On" />
-        {/* <TagField label="Tags" name="tags" /> */}
-        <InputField label="SEO Title (If different than Title)" name="seoTitle" />
+        <TagField label="Tags" name="tags" />
+        <InputField
+          label="SEO Title (If different than Title)"
+          name="seoTitle"
+        />
         <TextareaField
           label="SEO Description (if different than Description)"
           name="seoDescription"

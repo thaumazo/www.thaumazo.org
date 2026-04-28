@@ -1,4 +1,4 @@
-export * from "@kenstack/db/tables/users";
+export * from "@kenstack/modules/users/tables";
 export * from "@kenstack/db/tables";
 
 export * from "@/modules/blog/tables";

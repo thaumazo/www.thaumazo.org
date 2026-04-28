@@ -1,27 +1,31 @@
-import { defineFields } from '@kenstack/admin';
-import * as z from 'zod';
-import { /*tags, */ image } from '@kenstack/schemas/atoms';
+import { defineFields } from "@kenstack/admin";
+import * as z from "zod";
+import { /*tags, */ image } from "@kenstack/schemas/atoms";
+import { tags } from "@kenstack/schemas/atoms";
 
 export const fields = defineFields({
   publishedAt: {
-    kind: 'timestamp',
-    column: 'published_at',
-    zod: z.string().datetime({ precision: 3 }).or(z.literal('')),
+    default: "",
+    zod: z.string().datetime({ precision: 3 }).or(z.literal("")),
     serverZod: z
       .string()
-      .transform((val) => (val === '' ? new Date() : val))
+      .transform((val) => (val === "" ? new Date() : val))
       .pipe(z.coerce.date()),
   },
   title: {
-    zod: z.string().min(1, 'Please enter a title'),
-    nullable: false,
+    default: "",
+    zod: z.string().min(1, "Please enter a title"),
     searchable: true,
   },
-  slug: { zod: z.string().min(1, 'Slug is required'), nullable: false },
-  image: { kind: 'jsonb', zod: image() },
-  description: { searchable: true },
-  content: { searchable: true },
-  draft: { kind: 'boolean', default: false },
-  seoTitle: { column: 'seo_title', searchable: true },
-  seoDescription: { column: 'seo_description', searchable: true },
+  slug: {
+    default: "",
+    zod: z.string().min(1, "Slug is required"),
+  },
+  image: { default: null, zod: image() },
+  description: { default: "", zod: z.string(), searchable: true },
+  content: { default: "", zod: z.string(), searchable: true },
+  tags: { default: [], zod: tags() },
+  draft: { default: false, zod: z.boolean() },
+  seoTitle: { default: "", zod: z.string(), searchable: true },
+  seoDescription: { default: "", zod: z.string(), searchable: true },
 });
