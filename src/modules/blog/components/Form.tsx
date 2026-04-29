@@ -1,12 +1,15 @@
 "use client";
-import InputField from "@kenstack/forms/InputField";
-import SlugField from "@kenstack/forms/SlugField";
-import MarkdownField from "@kenstack/forms/MarkdownField";
-import TagField from "@kenstack/forms/TagField";
-import CheckboxField from "@kenstack/forms/CheckboxField";
-import TextareaField from "@kenstack/forms/TextareaField";
-import ImageField from "@kenstack/forms/ImageField";
-import DateField from "@kenstack/forms/DateField";
+
+import {
+  InputField,
+  ImageField,
+  SlugField,
+  MarkdownField,
+  TagField,
+  CheckboxField,
+  TextareaField,
+  DateField,
+} from "@kenstack/admin/forms";
 
 export default function BlogForm() {
   return (
