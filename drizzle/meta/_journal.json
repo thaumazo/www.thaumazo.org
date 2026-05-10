@@ -141,6 +141,48 @@
       "when": 1777304139354,
       "tag": "0019_graceful_post",
       "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1777589621765,
+      "tag": "0020_steady_fantastic_four",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1777592996657,
+      "tag": "0021_left_the_professor",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1777650428336,
+      "tag": "0022_sturdy_thunderbolt",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1777996255994,
+      "tag": "0023_old_quasimodo",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1778088081925,
+      "tag": "0024_crazy_carmella_unuscione",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1778180606236,
+      "tag": "0025_perpetual_carmella_unuscione",
+      "breakpoints": true
     }
   ]
 }

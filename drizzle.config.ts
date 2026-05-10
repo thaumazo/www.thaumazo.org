@@ -21,9 +21,9 @@ export default {
   },
   dialect: "postgresql",
   verbose: true,
-  strict: true,
+  strict: false,
   migrations: {
-    table: "__drizzle",
+    // table: "__drizzle",
     schema: "public",
   },
 } satisfies Config;

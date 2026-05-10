@@ -1,6 +1,5 @@
 import { defineFields } from "@kenstack/admin";
 import * as z from "zod";
-import { /*tags, */ image } from "@kenstack/schemas/atoms";
 import { tags } from "@kenstack/schemas/atoms";
 
 export const fields = defineFields({
@@ -21,7 +20,7 @@ export const fields = defineFields({
     default: "",
     zod: z.string().min(1, "Slug is required"),
   },
-  image: { default: null, zod: image() },
+  image: { kind: "image" },
   description: { default: "", zod: z.string(), searchable: true },
   content: { default: "", zod: z.string(), searchable: true },
   tags: { default: [], zod: tags() },

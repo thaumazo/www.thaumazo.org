@@ -3,15 +3,16 @@ import { sql } from "drizzle-orm";
 import {
   text,
   boolean,
-  jsonb,
+  // jsonb,
+  integer,
   timestamp,
   index,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 
-import * as z from "zod";
-import { image } from "@kenstack/schemas/atoms";
-type Image = z.infer<ReturnType<typeof image>>;
+// import * as z from "zod";
+// import { image } from "@kenstack/schemas/atoms";
+// type Image = z.infer<ReturnType<typeof image>>;
 
 import { defineTags } from "@kenstack/db/tables";
 
@@ -24,7 +25,9 @@ export const blogs = defineTable({
     title: text("title").notNull(),
     slug: text("slug").notNull(),
 
-    image: jsonb("image").$type<Image>(),
+    // image: jsonb("image").$type<Image>(),
+    image: integer("image"),
+
     description: text(),
     content: text(),
     draft: boolean().notNull(),
