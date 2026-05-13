@@ -1,20 +1,24 @@
-import { loadMD, loadMetadata } from "@/utils/loadMD";
-import Main from "@//components/Main";
+import { Main } from "@/components";
+import { loadMeta } from "@kenstack/pageEditor";
 
 import Form from "@/modules/contact/Form";
-import { notFound } from "next/navigation";
 
-export const metadata = loadMetadata("contact/_index.md");
+const slug = "contact";
+const defaultValues = {
+  title: "Contact",
+  content: "",
+};
+
+export const generateMetadata = () => loadMeta(slug, { defaultValues });
 
 export default async function CommunityPage() {
-  const data = await loadMD("contact/_index.md");
-  if (!data) {
-    notFound();
-  }
-
   return (
     <>
-      <Main title={data.title} content={data.content} image={data.image} />
+      <Main
+        slug={slug}
+        defaultValues={defaultValues}
+        className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
+      />
       <div className="flex max-w-3xl justify-center  mx-auto px-4 mt-4">
         <Form />
       </div>

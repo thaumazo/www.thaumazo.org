@@ -1,0 +1,1 @@
+ALTER TABLE "password_reset_requests" RENAME COLUMN "used_at" TO "invalidated_at";

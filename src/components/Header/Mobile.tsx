@@ -37,18 +37,24 @@ export default function MobileNavigation({ navigation }) {
         }}
       >
         <nav className="flex flex-col gap-2">
-          {navigation.map(([title, href], key) => (
-            <Link
-              className={
-                "w-full justify-start" +
-                (pathname.startsWith(href) ? " underline" : "")
-              }
-              href={href}
-              key={key}
-            >
-              {title}
-            </Link>
-          ))}
+          {navigation.map(([title, href], key) => {
+            const active = pathname === href || pathname.startsWith(href + "/");
+
+            return (
+              <Link
+                className={
+                  "w-full justify-start border-b transition " +
+                  (active
+                    ? "border-gray-900 dark:border-gray-100"
+                    : "border-transparent hover:border-gray-900 dark:hover:border-gray-100")
+                }
+                href={href}
+                key={key}
+              >
+                {title}
+              </Link>
+            );
+          })}
         </nav>
       </PopoverContent>
     </Popover>

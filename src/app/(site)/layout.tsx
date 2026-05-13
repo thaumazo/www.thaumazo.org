@@ -5,6 +5,7 @@ import RecaptchaProvider from "@kenstack/context/RecaptchaProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import type { Metadata } from "next";
+import { Suspense } from "react";
 export const metadata: Metadata = {
   title: {
     default: "Thaumazo",
@@ -17,7 +18,7 @@ export default async function SiteLayout({ children }) {
     <>
       <RecaptchaProvider>
         <Header />
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
         <Footer />
         {/* <GoogleAnalytics gaId="G-WC8VW2K63D" /> */}
       </RecaptchaProvider>

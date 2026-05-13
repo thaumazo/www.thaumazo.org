@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "es6",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,6 +22,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@app/deps": ["./src/deps/index.ts"],
+      "@app/deps/*": ["./src/deps/*"],
       "@kenstack/*": ["./kenstack/src/*"]
     }
   },

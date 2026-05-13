@@ -1,72 +1,112 @@
-import { loadMD, loadMetadata } from "@/utils/loadMD";
-import listMD from "@/utils/listMD";
+import type { Metadata } from "next";
+import { cacheLife, cacheTag } from "next/cache";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import Back from "@/components/Back";
-import Image from "next/image";
-import Markdown from "@kenstack/components/Markdown";
+import RelatedLinks from "@/components/RelatedLinks";
 import Sdgs from "@/components/Sdgs";
-import InfoTags from "@/components/InfoTags";
+import {
+  getOrganization,
+  listOrganizationUsers,
+} from "@/modules/organizations/queries";
+import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
+import { listProjects } from "@/modules/projects/queries";
+import Markdown from "@kenstack/components/Markdown";
 
-import RelatedProjects from "@/components/projects/RelatedProjects";
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-import { notFound } from "next/navigation";
-import { postSchema } from "@/schemas/post";
-
-export async function generateMetadata({ params }) {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  return await loadMetadata("organizations/posts/" + slug);
+  const organization = await getOrganization(slug);
+
+  if (!organization) {
+    return {};
+  }
+
+  return {
+    title: organization.seoTitle || organization.title,
+    description: organization.seoDescription || organization.description,
+  };
 }
 
-export async function generateStaticParams() {
-  const list = await listMD("organizations/posts");
-  return list.map((v) => ({ slug: v.slug }));
-}
-// export const dynamicParams = false;
-
-export default async function Page({ params }) {
-  const { slug } = await params;
-  const data = await loadMD<typeof postSchema>(
-    "organizations/posts/" + slug,
-    postSchema
+export default function Page({ params }: PageProps) {
+  return (
+    <Suspense fallback={null}>
+      {params.then(({ slug }) => (
+        <OrganizationPage slug={slug} />
+      ))}
+    </Suspense>
   );
-  if (data === false) {
+}
+
+async function OrganizationPage({ slug }: { slug: string }) {
+  "use cache";
+  cacheLife("hours");
+  cacheTag(`organizations:${slug}`);
+
+  const organization = await getOrganization(slug);
+
+  if (!organization) {
     notFound();
   }
 
+  const [members, liaisons, projects] = await Promise.all([
+    listOrganizationUsers(organization.id, "member"),
+    listOrganizationUsers(organization.id, "liaison"),
+    listProjects({ organizationId: organization.id, order: "recent" }),
+  ]);
+
   return (
     <>
-      <div className="max-w-3xl mx-auto">
+      <div className="mx-auto max-w-3xl">
         <Back />
       </div>
-      <main className="flex flex-col gap-4 max-w-3xl px-4 mx-auto my-8">
-        <div className="flex gap-4 items-center">
-          {data.image && (
+      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <div className="flex items-center gap-4">
+          {organization.image && (
             <Image
-              {...data.image}
-              alt={data.image.alt || ""}
-              className="max-w-24 max-h-auto"
+              {...organization.image}
+              alt={organization.image.alt}
+              className="h-auto max-h-24 max-w-24"
               priority
             />
           )}
 
-          <h1 className="text-left text-2xl">{data.title}</h1>
+          <h1 className="text-left text-2xl">{organization.title}</h1>
         </div>
-        <Markdown className="markdown text-justify" content={data.content} />
-        <Sdgs sdgs={data.sdgs} />
-        {data.url && (
-          <div className="text-left">
-            <h6 className="font-bold">Url</h6>
-            <a href={data.url}>{data.url}</a>
-          </div>
-        )}
-        <InfoTags
-          title="Liaisons"
-          path="/community"
-          references="community/people"
-          field={data.liaison}
+
+        <Markdown
+          className="markdown text-justify"
+          content={organization.content}
         />
 
-        <RelatedProjects field="partners" slug={slug} />
+        <Sdgs sdgs={organization.sdgs} />
+
+        {organization.url && (
+          <div className="text-left">
+            <h6 className="font-bold">Url</h6>
+            <a href={organization.url}>{organization.url}</a>
+          </div>
+        )}
+
+        <RelatedLinks
+          title="Liaisons"
+          links={liaisons}
+          hrefPrefix="/community"
+        />
+        <RelatedLinks title="Members" links={members} hrefPrefix="/community" />
+        {projects.length > 0 ? (
+          <div className="space-y-2 text-left">
+            <h6 className="font-bold">Projects</h6>
+            <ExpandableProjectCards projects={projects} />
+          </div>
+        ) : null}
       </main>
     </>
   );

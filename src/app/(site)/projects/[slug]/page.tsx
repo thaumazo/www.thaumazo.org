@@ -1,30 +1,148 @@
-import { loadMD, loadMetadata } from "@/utils/loadMD";
-import listMD from "@/utils/listMD";
-import { postSchema } from "@/schemas/post";
-
-import Post from "@/components/Post";
-
+import type { Metadata } from "next";
+import { cacheLife, cacheTag } from "next/cache";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  return await loadMetadata("projects/posts/" + slug);
+import Back from "@/components/Back";
+import DateRange from "@/components/DateRange";
+import RelatedLinks from "@/components/RelatedLinks";
+import Sdgs from "@/components/Sdgs";
+import {
+  getProject,
+  listProjectOrganizations,
+  listProjectUsers,
+} from "@/modules/projects/queries";
+import Markdown from "@kenstack/components/Markdown";
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+function dateValue(date: Date | null) {
+  return date ? date.toISOString() : null;
 }
 
-export async function generateStaticParams() {
-  const list = await listMD("projects/posts");
-  return list.map((v) => ({ slug: v.slug }));
+function ProjectImage({
+  image,
+  title,
+}: {
+  image: NonNullable<Awaited<ReturnType<typeof getProject>>>["image"];
+  title: string;
+}) {
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <div className="mb-4 flex w-full items-center justify-center overflow-hidden bg-gray-100 sm:float-right sm:mb-3 sm:ml-6 sm:w-72 lg:w-80 dark:bg-gray-800">
+      <Image
+        {...image}
+        alt={image.alt || title}
+        className="h-auto max-h-72 w-auto max-w-full sm:max-h-80"
+        priority
+        sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, calc(100vw - 32px)"
+      />
+    </div>
+  );
 }
-// export const dynamicParams = false;
 
-export default async function Page({ params }) {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const project = await getProject(slug);
 
-  const data = await loadMD("projects/posts/" + slug, postSchema);
+  if (!project) {
+    return {};
+  }
 
-  if (data === false) {
+  return {
+    title: project.seoTitle || project.title,
+    description: project.seoDescription || project.description,
+  };
+}
+
+export default function Page({ params }: PageProps) {
+  return (
+    <Suspense fallback={null}>
+      {params.then(({ slug }) => (
+        <ProjectPage slug={slug} />
+      ))}
+    </Suspense>
+  );
+}
+
+async function ProjectPage({ slug }: { slug: string }) {
+  "use cache";
+  cacheLife("hours");
+  cacheTag(`projects:${slug}`);
+
+  const project = await getProject(slug);
+
+  if (!project) {
     notFound();
   }
 
-  return <Post data={data} />;
+  const [liaisons, organizations] = await Promise.all([
+    listProjectUsers(project.id, "liaison"),
+    listProjectOrganizations(project.id),
+  ]);
+
+  return (
+    <>
+      <div className="mx-auto max-w-3xl">
+        <Back />
+      </div>
+      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <h1 className="text-left text-2xl">{project.title}</h1>
+
+        {(project.location || project.startDate) && (
+          <div className="flex flex-wrap gap-4">
+            {project.location && (
+              <div className="rounded-full border-2 border-gray-800 px-3">
+                {project.location}
+              </div>
+            )}
+            {project.startDate && (
+              <div className="rounded-full border-2 border-gray-800 px-3">
+                <DateRange
+                  start_date={dateValue(project.startDate)}
+                  end_date={dateValue(project.endDate)}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="flow-root">
+          <ProjectImage image={project.image} title={project.title} />
+          <Markdown
+            className="markdown text-justify"
+            content={project.content}
+          />
+        </div>
+
+        <Sdgs sdgs={project.sdgs} />
+
+        {project.url && (
+          <div className="text-left">
+            <h6>Url</h6>
+            <a href={project.url}>{project.url}</a>
+          </div>
+        )}
+
+        <RelatedLinks
+          title="Liaisons"
+          links={liaisons}
+          hrefPrefix="/community"
+        />
+        <RelatedLinks
+          title="Organizations"
+          links={organizations}
+          hrefPrefix="/organizations"
+        />
+      </main>
+    </>
+  );
 }

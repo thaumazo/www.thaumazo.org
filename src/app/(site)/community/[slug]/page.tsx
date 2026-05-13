@@ -1,43 +1,154 @@
-import { postSchema } from "@/schemas/post";
-import { loadMD, loadMetadata } from "@/utils/loadMD";
-import listMD from "@/utils/listMD";
-
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
-import Post from "@/components/Post";
-import RelatedProjects from "@/components/projects/RelatedProjects";
-
+import type { Metadata } from "next";
+import { cacheLife, cacheTag } from "next/cache";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  return await loadMetadata("community/people/" + slug);
-}
+import Back from "@/components/Back";
+import RelatedLinks from "@/components/RelatedLinks";
+import Social from "@/components/Social";
+import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
+import { listProjects } from "@/modules/projects/queries";
+import {
+  getCommunityUser,
+  listUserOrganizations,
+} from "@/modules/users/queries";
+import Markdown from "@kenstack/components/Markdown";
 
-export async function generateStaticParams() {
-  const list = await listMD("community/people");
-  return list.map((v) => ({ slug: v.slug }));
-}
-// export const dynamicParams = false;
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-export default async function Page({ params }) {
-  const { slug } = await params;
-  const data = await loadMD<typeof postSchema>(
-    "community/people/" + slug,
-    postSchema
+function Tags({ title, values }: { title: string; values: string[] }) {
+  const tags = values.filter(Boolean);
+
+  if (tags.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="text-left">
+      <h6 className="mb-1 font-bold">{title}</h6>
+      <div className="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <div
+            key={tag}
+            className="rounded-full bg-gray-700 px-3 py-1 text-white"
+          >
+            {tag}
+          </div>
+        ))}
+      </div>
+    </div>
   );
-  if (data === false) {
+}
+
+function ProfileImage({
+  image,
+  title,
+}: {
+  image: NonNullable<Awaited<ReturnType<typeof getCommunityUser>>>["image"];
+  title: string;
+}) {
+  const frameClass =
+    "mb-4 flex aspect-square w-44 items-center justify-center overflow-hidden bg-gray-100 sm:float-right sm:mb-3 sm:ml-6 sm:w-56 dark:bg-gray-800";
+
+  if (!image) {
+    return (
+      <div className={frameClass}>
+        <UserIcon className="h-24 w-24" />
+      </div>
+    );
+  }
+
+  return (
+    <div className={frameClass}>
+      <Image
+        {...image}
+        alt={image.alt || title}
+        className="h-full w-full object-cover"
+        priority
+        sizes="(min-width: 640px) 224px, 176px"
+      />
+    </div>
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const user = await getCommunityUser(slug);
+
+  if (!user) {
+    return {};
+  }
+
+  return {
+    title: user.seoTitle || user.title,
+    description: user.seoDescription || user.description,
+  };
+}
+
+export default function Page({ params }: PageProps) {
+  return (
+    <Suspense fallback={null}>
+      {params.then(({ slug }) => (
+        <CommunityUserPage slug={slug} />
+      ))}
+    </Suspense>
+  );
+}
+
+async function CommunityUserPage({ slug }: { slug: string }) {
+  "use cache";
+  cacheLife("hours");
+  cacheTag(`community:${slug}`);
+
+  const user = await getCommunityUser(slug);
+
+  if (!user) {
     notFound();
   }
 
-  const defaultImage = (
-    <div className="inline-flex items-center justify-center w-48 h-48 mb-4 bg-gray-200 dark:bg-gray-800">
-      <UserIcon className="w-24 h-24" />
-    </div>
-  );
+  const [projects, organizations] = await Promise.all([
+    listProjects({ userId: user.id, order: "recent" }),
+    listUserOrganizations(user.id),
+  ]);
 
   return (
-    <Post data={data} defaultImage={defaultImage}>
-      <RelatedProjects field="liaison" slug={slug} />
-    </Post>
+    <>
+      <div className="mx-auto max-w-3xl">
+        <Back />
+      </div>
+      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <h1 className="text-left text-2xl">{user.title}</h1>
+
+        <div className="flow-root">
+          <ProfileImage image={user.image} title={user.title} />
+          <Markdown className="markdown text-justify" content={user.content} />
+        </div>
+
+        {user.linkedin && (
+          <div className="flex justify-end">
+            <Social linkedin={user.linkedin} />
+          </div>
+        )}
+
+        <Tags title="Roles" values={user.roles} />
+        <RelatedLinks
+          title="Organizations"
+          links={organizations}
+          hrefPrefix="/organizations"
+        />
+        {projects.length > 0 ? (
+          <div className="space-y-2 text-left">
+            <h6 className="font-bold">Projects</h6>
+            <ExpandableProjectCards projects={projects} />
+          </div>
+        ) : null}
+      </main>
+    </>
   );
 }

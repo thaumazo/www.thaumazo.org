@@ -34,8 +34,7 @@
   /* --color-secondary: var(--secondary); */
   --color-secondary: var(--color-gray-300);
   --color-primary-foreground: var(--primary-foreground);
-  /* --color-primary: var(--primary); */
-  --color-primary: var(--color-blue-600);
+  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -80,7 +79,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.47 0.17 250);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -116,8 +115,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.68 0.14 245);
+  --primary-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -157,12 +156,14 @@
   @apply mx-auto min-h-[50vh] max-w-6xl px-4 md:min-h-[60vh];
 }
 
-.markdown {
-  @apply flex flex-col gap-4;
+.markdown,
+.milkdown {
+  /* @apply flex flex-col gap-4; */
 
-  :is(p, h1, h2, h3, h4, h5, blockquote, ul, ol, pre)
-    + :is(h1, h2, h3, h4, h5) {
-    @apply mt-4;
+  :where(p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol, pre) {
+    & + & {
+      @apply mt-4;
+    }
   }
 
   h1,

@@ -1,21 +1,28 @@
-import { loadMD, loadMetadata } from "@/utils/loadMD";
-import Main from "@/components/Main";
+import { Main } from "@/components";
+import { Suspense } from "react";
 
-import Posts from "./Posts";
-import { notFound } from "next/navigation";
+import Posts from "@/modules/organizations/components/Posts";
+import { loadMeta } from "@kenstack/pageEditor";
 
-export const metadata = loadMetadata("organizations/_index.md");
+const slug = "organizations";
+const defaultValues = {
+  title: "Organizations",
+  content: "",
+};
+
+export const generateMetadata = () => loadMeta(slug, { defaultValues });
 
 export default async function CommunityPage() {
-  const data = await loadMD("organizations/_index.md");
-  if (!data) {
-    notFound();
-  }
-
   return (
     <>
-      <Main title={data.title} content={data.content} image={data.image} />
-      <Posts />
+      <Main
+        slug={slug}
+        defaultValues={defaultValues}
+        className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
+      />
+      <Suspense fallback={null}>
+        <Posts />
+      </Suspense>
     </>
   );
 }
