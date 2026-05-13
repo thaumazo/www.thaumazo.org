@@ -8,8 +8,22 @@ const communityRoleValues = [
   "Liaison",
   "Project Lead",
   "Project Member",
+  "Team Lead",
+  "Team Member",
   "Volunteer",
 ] as const;
+
+const legacyCommunityRoleValues = ["Liaisonr"] as const;
+
+const communityRolesSchema = z
+  .array(z.enum([...communityRoleValues, ...legacyCommunityRoleValues]))
+  .transform((values) =>
+    Array.from(
+      new Set(
+        values.map((value) => (value === "Liaisonr" ? "Liaison" : value)),
+      ),
+    ),
+  );
 
 export const communityRoleOptions = communityRoleValues.map(
   (value): [string, string] => [value, value],
@@ -52,7 +66,7 @@ export const fields = defineFields({
   },
   communityRoles: {
     default: [],
-    zod: z.array(z.enum(communityRoleValues)),
+    zod: communityRolesSchema,
   },
   seoTitle: { default: "", zod: z.string(), searchable: true },
   seoDescription: { default: "", zod: z.string(), searchable: true },

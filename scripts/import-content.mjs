@@ -230,7 +230,7 @@ async function importUsers() {
         content: entry.content.trim(),
         draft: Boolean(entry.data.draft),
         linkedin: stringValue(entry.data.linkedin),
-        community_roles: stringArray(entry.data.roles),
+        community_roles: normalizeCommunityRoles(entry.data.roles),
         seo_title: stringValue(entry.data.meta_title),
         seo_description: stringValue(entry.data.description),
         roles: [],
@@ -953,6 +953,16 @@ function splitProjectStatus(value) {
     values.find((item) => trueProjectStatuses.has(item)) ?? "Proposed";
   const kind = values.filter((item) => item && item !== status);
   return { status, kind };
+}
+
+function normalizeCommunityRoles(value) {
+  return Array.from(
+    new Set(
+      stringArray(value).map((role) =>
+        role === "Liaisonr" ? "Liaison" : role,
+      ),
+    ),
+  );
 }
 
 function sanitizeValues(values) {
