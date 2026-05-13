@@ -1,5 +1,4 @@
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
-import { ArrowRight } from "lucide-react";
 import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,7 +36,7 @@ export default async function Posts() {
         return (
           <div key={slug} className="flex">
             <Link
-              className="group flex w-full flex-col overflow-hidden rounded border border-gray-200 bg-white transition hover:border-gray-300 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:border-gray-700 dark:hover:bg-gray-900"
+              className="group flex w-full flex-col overflow-hidden rounded border border-stone-200 bg-white transition hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-950 dark:hover:border-stone-700 dark:hover:bg-stone-900"
               href={link}
             >
               <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
@@ -56,13 +55,9 @@ export default async function Posts() {
                 )}
               </span>
 
-              <span className="flex flex-1 flex-col gap-2 p-3.5">
-                <span className="flex items-start gap-2 text-lg leading-tight text-gray-950 transition group-hover:text-gray-700 dark:text-gray-50 dark:group-hover:text-gray-200">
-                  <span>{title}</span>
-                  <ArrowRight
-                    className="mt-1 size-4 shrink-0 translate-x-0 opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
-                    aria-hidden="true"
-                  />
+              <span className="flex flex-1 flex-col gap-2 p-3.5 text-center">
+                <span className="text-lg leading-tight text-stone-950 transition group-hover:text-stone-700 dark:text-stone-50 dark:group-hover:text-stone-100">
+                  <span className="text-wrap">{title}</span>
                 </span>
 
                 {excerpt && (
@@ -72,7 +67,7 @@ export default async function Posts() {
                 )}
 
                 {visibleRoles.length > 0 && (
-                  <span className="mt-auto hidden flex-wrap gap-1 pt-1 sm:flex">
+                  <span className="mt-auto hidden flex-wrap justify-center gap-1 pt-1 sm:flex">
                     {visibleRoles.map((role) => (
                       <span
                         key={role}

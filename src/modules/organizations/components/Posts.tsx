@@ -54,7 +54,7 @@ export default async function Posts() {
         return (
           <Link
             key={slug}
-            className="group flex w-full flex-col overflow-hidden rounded border border-gray-200 bg-white transition hover:border-gray-300 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:border-gray-700 dark:hover:bg-gray-900"
+            className="group flex w-full flex-col overflow-hidden rounded border border-stone-200 bg-white transition hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-950 dark:hover:border-stone-700 dark:hover:bg-stone-900"
             href={link}
           >
             <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
@@ -69,9 +69,9 @@ export default async function Posts() {
               ) : null}
             </span>
 
-            <span className="flex flex-1 flex-col gap-2 p-3.5">
-              <span className="text-lg leading-tight text-gray-950 transition group-hover:text-gray-700 dark:text-gray-50 dark:group-hover:text-gray-200">
-                {title}
+            <span className="flex flex-1 flex-col gap-2 p-3.5 text-center">
+              <span className="text-lg leading-tight text-stone-950 transition group-hover:text-stone-700 dark:text-stone-50 dark:group-hover:text-stone-100">
+                <span className="text-wrap">{title}</span>
               </span>
 
               {description && (
@@ -80,7 +80,7 @@ export default async function Posts() {
                 </span>
               )}
 
-              <span className="mt-auto hidden flex-wrap items-center gap-x-4 gap-y-1 pt-1 sm:flex">
+              <span className="mt-auto hidden flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-1 sm:flex">
                 {organizationKinds.length > 0 && (
                   <span className="flex flex-wrap items-center gap-1">
                     {organizationKinds.map((value) => (

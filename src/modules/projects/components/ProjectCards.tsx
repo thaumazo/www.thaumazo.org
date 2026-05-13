@@ -59,7 +59,7 @@ export function ProjectCard({
 
   return (
     <Link
-      className="group grid gap-4 rounded border border-gray-200 bg-white p-3 transition hover:border-gray-300 hover:bg-gray-50 sm:grid-cols-[11rem_1fr] sm:p-4 dark:border-gray-800 dark:bg-gray-950 dark:hover:border-gray-700 dark:hover:bg-gray-900"
+      className="group grid gap-4 rounded border border-stone-200 bg-white p-3 text-center transition hover:border-stone-300 hover:bg-stone-50 sm:grid-cols-[11rem_1fr] sm:border-gray-200 sm:p-4 sm:text-left sm:hover:border-gray-300 sm:hover:bg-gray-50 dark:border-stone-800 dark:bg-gray-950 dark:hover:border-stone-700 dark:hover:bg-stone-900 sm:dark:border-gray-800 sm:dark:hover:border-gray-700 sm:dark:hover:bg-gray-900"
       href={link}
     >
       <span className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden bg-gray-100 sm:w-44 dark:bg-gray-800">
@@ -79,10 +79,10 @@ export function ProjectCard({
         </span>
       </span>
 
-      <span className="flex min-w-0 flex-col justify-center gap-2.5">
+      <span className="flex min-w-0 flex-col justify-center gap-2.5 text-center sm:text-left">
         <span className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <span className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-            <span className="text-lg leading-tight text-gray-950 transition group-hover:text-gray-700 dark:text-gray-50 dark:group-hover:text-gray-200">
+            <span className="text-lg leading-tight text-stone-950 transition group-hover:text-stone-700 sm:text-gray-950 sm:group-hover:text-gray-700 dark:text-stone-50 dark:group-hover:text-stone-100 sm:dark:text-gray-50 sm:dark:group-hover:text-gray-200">
               {title}
             </span>
             {location && (
