@@ -3,6 +3,7 @@
 import {
   InputField,
   ImageField,
+  GalleryField,
   SlugField,
   MarkdownField,
   TagField,
@@ -23,6 +24,7 @@ export default function BlogForm() {
           </div>
         </div>
         <TextareaField label="Description" name="description" />
+        <GalleryField label="Gallery" name="gallery" />
         <MarkdownField label="Content" name="content" />
       </div>
       <div className="space-y-4">

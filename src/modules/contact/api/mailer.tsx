@@ -1,5 +1,5 @@
 import { type Geo, geolocation } from "@vercel/functions";
-import { pipeline, pipelineAction, recaptcha } from "@kenstack/lib/api";
+import { pipeline, pipelineStage, recaptcha } from "@kenstack/lib/api";
 import schema from "../schema";
 import mailer, { type Attachment } from "@kenstack/lib/mailer";
 import { render } from "@react-email/render";
@@ -21,7 +21,7 @@ const contactMailerPost =
     pipeline({ request }, [recaptcha(), contactMailerAction(props)]);
 
 const contactMailerAction = (props) =>
-  pipelineAction({ schema }, async ({ data, request, response }) => {
+  pipelineStage({ schema }, async ({ data, request, response }) => {
     const geo = geolocation(request);
     waitUntil(messageMailer(props, data, geo));
 

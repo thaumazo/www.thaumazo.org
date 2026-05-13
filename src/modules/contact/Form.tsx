@@ -40,7 +40,7 @@ export default function ContactForm() {
       }}
     >
       <Notice />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
         <InputField name="first_name" label="First Name" />
         <InputField name="last_name" label="Last Name" />
       </div>

@@ -1,9 +1,10 @@
 import { desc } from "drizzle-orm";
 
-import { blogs, blogTags } from "./tables";
+import { blogImages, blogs, blogTags } from "./tables";
 import { NotebookPen } from "lucide-react";
 
 import { adminTable } from "@kenstack/admin";
+import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
 import { fields } from "./fields";
 
@@ -16,9 +17,24 @@ const config = adminTable({
   revalidate: ["blog", ({ slug }) => `blog-${slug}`],
   // fields: { image: { transformations: imageTransformations } },
   orderBy: [desc(blogs.publishedAt), desc(blogs.id)],
-  select: { title: blogs.title, publishedAt: blogs.publishedAt },
-  preview: "/learning-centre/${slug}",
+  select: {
+    title: blogs.title,
+    image: selectImageSubquery(blogs.image, "square"),
+    publishedAt: blogs.publishedAt,
+  },
+  // preview: "/learning-centre/${slug}",
   tags: { table: blogTags },
+  galleries: {
+    gallery: {
+      table: blogImages,
+      tableIdKey: "blogId",
+      tableId: blogImages.blogId,
+      imageIdKey: "imageId",
+      imageId: blogImages.imageId,
+      sortOrderKey: "sortOrder",
+      sortOrder: blogImages.sortOrder,
+    },
+  },
 });
 
 export default config;

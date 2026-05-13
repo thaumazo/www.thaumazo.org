@@ -21,6 +21,7 @@ export const fields = defineFields({
     zod: z.string().min(1, "Slug is required"),
   },
   image: { kind: "image" },
+  gallery: { kind: "gallery" },
   description: { default: "", zod: z.string(), searchable: true },
   content: { default: "", zod: z.string(), searchable: true },
   tags: { default: [], zod: tags() },

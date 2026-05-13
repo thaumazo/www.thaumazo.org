@@ -8,18 +8,25 @@ import Link from "next/link";
 export default function Navigation({ links, className = "" }) {
   const pathname = usePathname();
   return (
-    <nav className={twMerge("hidden md:flex mx-auto gap-4 text-md", className)}>
-      {links.map(([title, href]) => (
-        <Link
-          key={title}
-          href={href}
-          className={
-            "hover:underline" + (pathname.startsWith(href) ? " underline" : "")
-          }
-        >
-          {title}
-        </Link>
-      ))}
+    <nav className={twMerge("text-md mx-auto hidden gap-4 md:flex", className)}>
+      {links.map(([title, href]) => {
+        const active = pathname === href || pathname.startsWith(href + "/");
+
+        return (
+          <Link
+            key={title}
+            href={href}
+            className={
+              "border-b transition " +
+              (active
+                ? "border-gray-900 dark:border-gray-100"
+                : "border-transparent hover:border-gray-900 dark:hover:border-gray-100")
+            }
+          >
+            {title}
+          </Link>
+        );
+      })}
     </nav>
   );
 }

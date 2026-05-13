@@ -15,6 +15,7 @@ import {
 // type Image = z.infer<ReturnType<typeof image>>;
 
 import { defineTags } from "@kenstack/db/tables";
+import { images } from "@kenstack/db/tables";
 
 export const blogs = defineTable({
   name: "blogs",
@@ -22,17 +23,17 @@ export const blogs = defineTable({
     publishedAt: timestamp("published_at", { withTimezone: true })
       .defaultNow()
       .notNull(),
-    title: text("title").notNull(),
-    slug: text("slug").notNull(),
+    title: text("title").notNull().default(""),
+    slug: text("slug").notNull().default(""),
 
     // image: jsonb("image").$type<Image>(),
     image: integer("image"),
 
-    description: text(),
-    content: text(),
+    description: text().notNull().default(""),
+    content: text().notNull().default(""),
     draft: boolean().notNull(),
-    seoTitle: text("seo_title"),
-    seoDescription: text("seo_description"),
+    seoTitle: text("seo_title").notNull().default(""),
+    seoDescription: text("seo_description").notNull().default(""),
   },
   extraConfig: (t) => [
     index("blogs_published_at_idx")
@@ -46,3 +47,20 @@ export const blogs = defineTable({
 });
 
 export const blogTags = defineTags({ table: blogs, prefix: "blog" });
+
+export const blogImages = defineTable({
+  name: "blog_images",
+  columns: {
+    blogId: integer("blog_id")
+      .notNull()
+      .references(() => blogs.id, { onDelete: "cascade" }),
+    imageId: integer("image_id")
+      .notNull()
+      .references(() => images.id, { onDelete: "cascade" }),
+    sortOrder: integer("sort_order").notNull().default(0),
+  },
+  extraConfig: (t) => [
+    uniqueIndex("blog_images_blog_id_image_id_unique").on(t.blogId, t.imageId),
+    index("blog_images_blog_id_sort_order_idx").on(t.blogId, t.sortOrder),
+  ],
+});

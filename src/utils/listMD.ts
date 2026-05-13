@@ -9,6 +9,11 @@ type List = {
   slug?: string;
   image?: ImageResult;
   content?: string;
+  description?: string;
+  status?: string[];
+  sdgs?: string[];
+  location?: string;
+  roles?: string[];
 }[];
 
 export default async function listMD(localPath: string): Promise<List> {
@@ -46,6 +51,11 @@ export default async function listMD(localPath: string): Promise<List> {
       image,
       slug,
       content: result.content,
+      description: result.data.description,
+      status: result.data.status,
+      sdgs: result.data.sdgs,
+      location: result.data.location,
+      roles: result.data.roles,
     });
   }
   return retval;

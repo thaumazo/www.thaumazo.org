@@ -6,7 +6,7 @@ const SvgComponent = (props) => (
     id="Layer_1"
     x={0}
     y={0}
-    viewBox="0 0 854.34 531.34"
+    viewBox="23.25 31.25 807.75 468.75"
     {...props}
   >
     <style>{".st0{fill-rule:evenodd;clip-rule:evenodd}"}</style>

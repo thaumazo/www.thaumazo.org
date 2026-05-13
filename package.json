@@ -9,7 +9,9 @@
   "scripts": {
     "postinstall": "git submodule update --init --recursive",
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "next build --webpack",
+    "build:vercel": "npm run db:migrate && npm run build",
+    "db:migrate": "drizzle-kit migrate",
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier -w ./src"
@@ -19,6 +21,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.654.0",
+    "@base-ui/react": "^1.4.1",
     "@heroicons/react": "^2.1.5",
     "@next/third-parties": "^16.1.6",
     "@radix-ui/react-dialog": "^1.1.6",
@@ -44,6 +47,7 @@
     "lodash-es": "^4.17.21",
     "next": "^16.1.6",
     "next-themes": "^0.4.6",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-gtm-module": "^2.0.11",
