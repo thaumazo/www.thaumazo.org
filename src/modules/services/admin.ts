@@ -1,4 +1,3 @@
-import { desc } from "drizzle-orm";
 import { HandHeart } from "lucide-react";
 
 import { adminTable } from "@kenstack/admin";
@@ -15,7 +14,27 @@ const config = adminTable({
   title: "Services",
   icon: HandHeart,
   table: services,
-  orderBy: [desc(services.publishedAt), desc(services.id)],
+  sort: {
+    newest: {
+      fields: [services.publishedAt, services.createdAt],
+      defaultDirection: "desc",
+    },
+    title: {
+      fields: [services.title],
+    },
+  },
+  filters: {
+    publishedAt: {
+      field: services.publishedAt,
+      kind: "date-range",
+      label: "Published",
+    },
+    draft: {
+      field: services.draft,
+      kind: "boolean",
+      label: "Hidden",
+    },
+  },
   select: {
     title: services.title,
     image: selectImageSubquery(services.image, "square"),

@@ -1,10 +1,9 @@
-import { desc } from "drizzle-orm";
 import { Building2 } from "lucide-react";
 
 import { adminTable } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
-import { fields } from "./fields";
+import { fields, organizationKindOptions, sdgNameOptions } from "./fields";
 import { relationships } from "./relationships";
 import { organizations, organizationTags } from "./tables";
 
@@ -15,7 +14,38 @@ const config = adminTable({
   title: "Organizations",
   icon: Building2,
   table: organizations,
-  orderBy: [desc(organizations.publishedAt), desc(organizations.id)],
+  sort: {
+    newest: {
+      fields: [organizations.publishedAt, organizations.createdAt],
+      defaultDirection: "desc",
+    },
+    title: {
+      fields: [organizations.title],
+    },
+  },
+  filters: {
+    publishedAt: {
+      field: organizations.publishedAt,
+      kind: "date-range",
+      label: "Published",
+    },
+    draft: {
+      field: organizations.draft,
+      kind: "boolean",
+      label: "Hidden",
+    },
+    kind: {
+      field: organizations.kind,
+      kind: "includes",
+      options: organizationKindOptions,
+    },
+    sdgs: {
+      field: organizations.sdgs,
+      kind: "includes",
+      label: "SDGs",
+      options: sdgNameOptions,
+    },
+  },
   select: {
     title: organizations.title,
     image: selectImageSubquery(organizations.image, "square"),

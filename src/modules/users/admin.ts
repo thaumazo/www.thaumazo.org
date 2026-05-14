@@ -1,10 +1,10 @@
 import { adminTable } from "@kenstack/admin";
 import { userAdminTableOptions } from "@kenstack/modules/users/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
-import { asc } from "drizzle-orm";
+import roles from "@app/deps/roles";
 
 import { client } from "./client";
-import { fields } from "./fields";
+import { communityRoleOptions, fields } from "./fields";
 import { relationships } from "./relationships";
 import { users } from "./tables";
 
@@ -16,7 +16,49 @@ const config = adminTable({
   table: users,
   preview: "/community/${slug}",
   revalidate: ["community", ({ slug }) => `community:${slug}`],
-  orderBy: [asc(users.draft), asc(users.familyName), asc(users.givenName)],
+  sort: {
+    name: {
+      fields: [users.draft, users.familyName, users.givenName],
+      defaultDirection: "asc",
+    },
+  },
+  filters: {
+    publishedAt: {
+      field: users.publishedAt,
+      kind: "date-range",
+      label: "Published",
+    },
+    draft: {
+      field: users.draft,
+      kind: "boolean",
+      label: "Hidden",
+    },
+    givenName: {
+      field: users.givenName,
+      kind: "text",
+      label: "Given Name",
+    },
+    familyName: {
+      field: users.familyName,
+      kind: "text",
+      label: "Family Name",
+    },
+    email: {
+      field: users.email,
+      kind: "text",
+    },
+    roles: {
+      field: users.roles,
+      kind: "includes",
+      label: "Access Roles",
+      options: roles,
+    },
+    communityRoles: {
+      field: users.communityRoles,
+      kind: "includes",
+      options: communityRoleOptions,
+    },
+  },
 
   select: {
     givenName: users.givenName,

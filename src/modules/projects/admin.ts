@@ -1,10 +1,14 @@
-import { desc } from "drizzle-orm";
 import { FolderKanban } from "lucide-react";
 
 import { adminTable } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
-import { fields } from "./fields";
+import {
+  fields,
+  projectKindOptions,
+  projectStatusOptions,
+  sdgNameOptions,
+} from "./fields";
 import { relationships } from "./relationships";
 import { projects, projectTags } from "./tables";
 
@@ -16,7 +20,56 @@ const config = adminTable({
   icon: FolderKanban,
   table: projects,
   revalidate: ["projects", ({ slug }) => `projects:${slug}`],
-  orderBy: [desc(projects.publishedAt), desc(projects.id)],
+  sort: {
+    newest: {
+      fields: [projects.publishedAt, projects.createdAt],
+      defaultDirection: "desc",
+    },
+    title: {
+      fields: [projects.title],
+    },
+    status: {
+      fields: [projects.status, projects.title],
+    },
+  },
+  filters: {
+    publishedAt: {
+      field: projects.publishedAt,
+      kind: "date-range",
+      label: "Published",
+    },
+    startDate: {
+      field: projects.startDate,
+      kind: "date-range",
+      label: "Starts",
+    },
+    endDate: {
+      field: projects.endDate,
+      kind: "date-range",
+      label: "Ends",
+    },
+    draft: {
+      field: projects.draft,
+      kind: "boolean",
+      label: "Hidden",
+    },
+    status: {
+      field: projects.status,
+      kind: "enum",
+      options: projectStatusOptions,
+    },
+    kind: {
+      field: projects.kind,
+      kind: "includes",
+      options: projectKindOptions,
+    },
+    sdgs: {
+      field: projects.sdgs,
+      kind: "includes",
+      label: "SDGs",
+      options: sdgNameOptions,
+    },
+  },
   select: {
     title: projects.title,
     image: selectImageSubquery(projects.image, "square"),

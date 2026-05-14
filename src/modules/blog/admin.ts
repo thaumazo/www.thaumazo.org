@@ -1,5 +1,3 @@
-import { desc } from "drizzle-orm";
-
 import { blogImages, blogs, blogTags } from "./tables";
 import { NotebookPen } from "lucide-react";
 
@@ -16,7 +14,27 @@ const config = adminTable({
   table: blogs,
   revalidate: ["blog", ({ slug }) => `blog-${slug}`],
   // fields: { image: { transformations: imageTransformations } },
-  orderBy: [desc(blogs.publishedAt), desc(blogs.id)],
+  sort: {
+    newest: {
+      fields: [blogs.publishedAt, blogs.createdAt],
+      defaultDirection: "desc",
+    },
+    title: {
+      fields: [blogs.title],
+    },
+  },
+  filters: {
+    publishedAt: {
+      field: blogs.publishedAt,
+      kind: "date-range",
+      label: "Published",
+    },
+    draft: {
+      field: blogs.draft,
+      kind: "boolean",
+      label: "Hidden",
+    },
+  },
   select: {
     title: blogs.title,
     image: selectImageSubquery(blogs.image, "square"),
