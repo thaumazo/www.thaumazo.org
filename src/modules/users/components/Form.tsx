@@ -7,7 +7,6 @@ import {
   ImageField,
   InputField,
   MarkdownField,
-  RelationshipField,
   SlugField,
   TextareaField,
 } from "@kenstack/admin/forms";
@@ -70,18 +69,6 @@ export default function UserForm() {
           name="communityRoles"
           label="Roles"
           options={communityRoleOptions}
-        />
-        <RelationshipField
-          name="organizations"
-          label="Organizations"
-          relationship="organizations"
-          placeholder="Search organizations..."
-        />
-        <RelationshipField
-          name="projects"
-          label="Projects"
-          relationship="projects"
-          placeholder="Search projects..."
         />
         <SwitchUser />
         <ResetPassword />

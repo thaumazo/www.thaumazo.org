@@ -6,14 +6,10 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import Back from "@/components/Back";
-import RelatedLinks from "@/components/RelatedLinks";
 import Social from "@/components/Social";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
-import {
-  getCommunityUser,
-  listUserOrganizations,
-} from "@/modules/users/queries";
+import { getCommunityUser } from "@/modules/users/queries";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
@@ -112,10 +108,7 @@ async function CommunityUserPage({ slug }: { slug: string }) {
     notFound();
   }
 
-  const [projects, organizations] = await Promise.all([
-    listProjects({ userId: user.id, order: "recent" }),
-    listUserOrganizations(user.id),
-  ]);
+  const projects = await listProjects({ userId: user.id, order: "recent" });
 
   return (
     <>
@@ -137,11 +130,6 @@ async function CommunityUserPage({ slug }: { slug: string }) {
         )}
 
         <Tags title="Roles" values={user.roles} />
-        <RelatedLinks
-          title="Organizations"
-          links={organizations}
-          hrefPrefix="/organizations"
-        />
         {projects.length > 0 ? (
           <div className="space-y-2 text-left">
             <h6 className="font-bold">Projects</h6>

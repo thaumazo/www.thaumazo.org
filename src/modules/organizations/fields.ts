@@ -51,7 +51,7 @@ export const fields = defineFields({
   sdgs: { default: [], zod: z.array(z.enum(sdgValues)) },
   seoTitle: { default: "", zod: z.string(), searchable: true },
   seoDescription: { default: "", zod: z.string(), searchable: true },
-  members: { kind: "relationship" },
+  // members: { kind: "relationship" },
   liaisons: { kind: "relationship" },
-  projects: { kind: "relationship" },
+  // projects: { kind: "relationship" },
 });

@@ -70,6 +70,4 @@ export const fields = defineFields({
   },
   seoTitle: { default: "", zod: z.string(), searchable: true },
   seoDescription: { default: "", zod: z.string(), searchable: true },
-  organizations: { kind: "relationship" },
-  projects: { kind: "relationship" },
 });

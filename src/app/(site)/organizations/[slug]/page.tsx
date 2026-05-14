@@ -56,8 +56,7 @@ async function OrganizationPage({ slug }: { slug: string }) {
     notFound();
   }
 
-  const [members, liaisons, projects] = await Promise.all([
-    listOrganizationUsers(organization.id, "member"),
+  const [liaisons, projects] = await Promise.all([
     listOrganizationUsers(organization.id, "liaison"),
     listProjects({ organizationId: organization.id, order: "recent" }),
   ]);
@@ -100,7 +99,6 @@ async function OrganizationPage({ slug }: { slug: string }) {
           links={liaisons}
           hrefPrefix="/community"
         />
-        <RelatedLinks title="Members" links={members} hrefPrefix="/community" />
         {projects.length > 0 ? (
           <div className="space-y-2 text-left">
             <h6 className="font-bold">Projects</h6>

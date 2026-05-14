@@ -44,24 +44,24 @@ export default function OrganizationForm() {
         />
         <SdgComboboxField name="sdgs" label="SDGs" options={sdgNameOptions} />
         <TagField label="Tags" name="tags" />
-        <RelationshipField
+        {/* <RelationshipField
           name="members"
           label="Members"
           relationship="members"
           placeholder="Search users..."
-        />
+        /> */}
         <RelationshipField
           name="liaisons"
           label="Liaisons"
           relationship="liaisons"
           placeholder="Search users..."
         />
-        <RelationshipField
+        {/* <RelationshipField
           name="projects"
           label="Projects"
           relationship="projects"
           placeholder="Search projects..."
-        />
+        /> */}
 
         <InputField
           label="SEO Title (If different than Title)"

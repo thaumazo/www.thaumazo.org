@@ -3,10 +3,6 @@ import { and, asc, eq, isNull, lte, sql } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
 import { deps } from "@app/deps";
-import {
-  organizations,
-  userOrganizations,
-} from "@/modules/organizations/tables";
 import { projects, userProjects } from "@/modules/projects/tables";
 import { toSiteImage, uniqueRelatedLinks } from "@/modules/siteContent";
 import { users } from "@/modules/users/tables";
@@ -35,13 +31,6 @@ function pageUsersWhere() {
 
 function relatedProjectsWhere() {
   return and(isNull(projects.deletedAt), lte(projects.publishedAt, sql`now()`));
-}
-
-function relatedOrganizationsWhere() {
-  return and(
-    isNull(organizations.deletedAt),
-    lte(organizations.publishedAt, sql`now()`),
-  );
 }
 
 export async function listCommunityUsers() {
@@ -120,37 +109,6 @@ export async function listUserProjects(userId: number) {
     .innerJoin(projects, eq(userProjects.projectId, projects.id))
     .where(and(eq(userProjects.userId, userId), relatedProjectsWhere()))
     .orderBy(asc(projects.title));
-
-  return uniqueRelatedLinks(rows);
-}
-
-export async function listUserOrganizationLabels(userId: number) {
-  const rows = await deps.db
-    .select({
-      title: userOrganizations.relationship,
-    })
-    .from(userOrganizations)
-    .where(eq(userOrganizations.userId, userId));
-
-  return rows.map((row) => row.title);
-}
-
-export async function listUserOrganizations(userId: number) {
-  const rows = await deps.db
-    .select({
-      slug: organizations.slug,
-      title: organizations.title,
-      draft: organizations.draft,
-    })
-    .from(userOrganizations)
-    .innerJoin(
-      organizations,
-      eq(userOrganizations.organizationId, organizations.id),
-    )
-    .where(
-      and(eq(userOrganizations.userId, userId), relatedOrganizationsWhere()),
-    )
-    .orderBy(asc(organizations.title));
 
   return uniqueRelatedLinks(rows);
 }

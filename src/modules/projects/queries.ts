@@ -76,6 +76,20 @@ const projectListSelect = {
   sdgs: projects.sdgs,
 };
 
+function uniqueProjectRows<TProject extends { id: number }>(rows: TProject[]) {
+  return Array.from(
+    rows
+      .reduce((unique, row) => {
+        if (!unique.has(row.id)) {
+          unique.set(row.id, row);
+        }
+
+        return unique;
+      }, new Map<number, TProject>())
+      .values(),
+  );
+}
+
 export async function listProjects({
   organizationId,
   userId,
@@ -95,10 +109,16 @@ export async function listProjects({
       .select(projectListSelect)
       .from(userProjects)
       .innerJoin(projects, eq(userProjects.projectId, projects.id))
-      .where(and(eq(userProjects.userId, userId), listedProjectsWhere()))
+      .where(
+        and(
+          eq(userProjects.userId, userId),
+          eq(userProjects.relationship, "liaison"),
+          listedProjectsWhere(),
+        ),
+      )
       .orderBy(...orderBy);
 
-    return rows.map((row) => ({
+    return uniqueProjectRows(rows).map((row) => ({
       ...row,
       image: toSiteImage(row.image),
     }));
@@ -112,12 +132,13 @@ export async function listProjects({
       .where(
         and(
           eq(projectOrganizations.organizationId, organizationId),
+          eq(projectOrganizations.relationship, "organization"),
           listedProjectsWhere(),
         ),
       )
       .orderBy(...orderBy);
 
-    return rows.map((row) => ({
+    return uniqueProjectRows(rows).map((row) => ({
       ...row,
       image: toSiteImage(row.image),
     }));
@@ -229,7 +250,13 @@ export async function listRelatedProjectsForUser(userId: number) {
     })
     .from(userProjects)
     .innerJoin(projects, eq(userProjects.projectId, projects.id))
-    .where(and(eq(userProjects.userId, userId), relatedProjectsWhere()))
+    .where(
+      and(
+        eq(userProjects.userId, userId),
+        eq(userProjects.relationship, "liaison"),
+        relatedProjectsWhere(),
+      ),
+    )
     .orderBy(asc(projects.title));
 
   return uniqueRelatedLinks(rows);
@@ -249,6 +276,7 @@ export async function listRelatedProjectsForOrganization(
     .where(
       and(
         eq(projectOrganizations.organizationId, organizationId),
+        eq(projectOrganizations.relationship, "organization"),
         relatedProjectsWhere(),
       ),
     )
