@@ -15,10 +15,6 @@ const config = adminTable({
   revalidate: ["blog", ({ slug }) => `blog-${slug}`],
   // fields: { image: { transformations: imageTransformations } },
   sort: {
-    newest: {
-      fields: [blogs.publishedAt, blogs.createdAt],
-      defaultDirection: "desc",
-    },
     title: {
       fields: [blogs.title],
     },

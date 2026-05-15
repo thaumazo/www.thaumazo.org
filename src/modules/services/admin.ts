@@ -15,10 +15,6 @@ const config = adminTable({
   icon: HandHeart,
   table: services,
   sort: {
-    newest: {
-      fields: [services.publishedAt, services.createdAt],
-      defaultDirection: "desc",
-    },
     title: {
       fields: [services.title],
     },

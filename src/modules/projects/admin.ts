@@ -21,10 +21,6 @@ const config = adminTable({
   table: projects,
   revalidate: ["projects", ({ slug }) => `projects:${slug}`],
   sort: {
-    newest: {
-      fields: [projects.publishedAt, projects.createdAt],
-      defaultDirection: "desc",
-    },
     title: {
       fields: [projects.title],
     },

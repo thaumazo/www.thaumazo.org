@@ -15,10 +15,6 @@ const config = adminTable({
   icon: Building2,
   table: organizations,
   sort: {
-    newest: {
-      fields: [organizations.publishedAt, organizations.createdAt],
-      defaultDirection: "desc",
-    },
     title: {
       fields: [organizations.title],
     },
