@@ -59,3 +59,4 @@ Before finishing a code change, run the narrowest relevant checks:
 - Do not add dependencies without asking.
 - Do not reformat unrelated files.
 - Do not modify components/ui as can be overwritten by shadcn.
+- Avoid making custom components if shadcn has one that will do the job.
