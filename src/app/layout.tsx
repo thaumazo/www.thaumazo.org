@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "@/context/Providers";
 
 export const metadata = {
+  generator: "Kenstack",
   title: "Thaumazo",
 };
 
