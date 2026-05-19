@@ -1,18 +1,17 @@
 "use client";
 
 import {
-  InputField,
   ImageField,
-  GalleryField,
-  SlugField,
+  InputField,
   MarkdownField,
+  RelationshipField,
+  SlugField,
   TagField,
-  CheckboxField,
   TextareaField,
-  DateField,
 } from "@kenstack/admin/forms";
+import MetaFields from "@kenstack/admin/components/MetaFields";
 
-export default function BlogForm() {
+export default function ServiceForm() {
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
       <div className="space-y-4 lg:col-span-2">
@@ -24,20 +23,17 @@ export default function BlogForm() {
           </div>
         </div>
         <TextareaField label="Description" name="description" />
-        <GalleryField label="Gallery" name="gallery" />
         <MarkdownField label="Content" name="content" />
       </div>
+
       <div className="space-y-4">
-        <CheckboxField label="Draft" name="draft" />
-        <DateField name="publishedAt" label="Publish On" />
+        <MetaFields />
         <TagField label="Tags" name="tags" />
-        <InputField
-          label="SEO Title (If different than Title)"
-          name="seoTitle"
-        />
-        <TextareaField
-          label="SEO Description (if different than Description)"
-          name="seoDescription"
+        <RelationshipField
+          name="liaisons"
+          label="Liaisons"
+          relationship="liaisons"
+          placeholder="Search users..."
         />
       </div>
     </div>

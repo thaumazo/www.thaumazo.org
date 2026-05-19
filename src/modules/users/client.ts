@@ -2,7 +2,7 @@
 
 import { adminClient } from "@kenstack/admin";
 import { userClientOptions } from "@kenstack/modules/users/client";
-import EditForm from "./components/Form";
+import EditForm from "./components/EditForm";
 import ListItem from "./components/ListItem";
 import { fields } from "./fields";
 

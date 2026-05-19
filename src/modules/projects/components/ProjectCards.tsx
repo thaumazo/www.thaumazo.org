@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import type { SiteImage } from "@/modules/siteContent";
+import type { SelectedImage } from "@kenstack/db/tables";
 
 export type ProjectCardData = {
   title: string;
   slug: string;
-  image: SiteImage | null;
+  image: SelectedImage | null;
   description: string;
   location: string;
   sdgs: string[];
@@ -66,7 +66,9 @@ export function ProjectCard({
         <span className="flex h-full w-full items-center justify-center p-3">
           {image ? (
             <Image
-              {...image}
+              src={image.url}
+              width={image.width ?? 800}
+              height={image.height ?? 800}
               alt=""
               className="h-auto max-h-full w-auto max-w-full transition duration-300 group-hover:scale-[1.03]"
               sizes="(min-width: 640px) 160px, calc(100vw - 56px)"

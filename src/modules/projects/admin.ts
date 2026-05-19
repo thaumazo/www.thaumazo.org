@@ -1,6 +1,6 @@
 import { FolderKanban } from "lucide-react";
 
-import { adminTable } from "@kenstack/admin";
+import { adminConfig } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
 import {
@@ -12,7 +12,7 @@ import {
 import { relationships } from "./relationships";
 import { projects, projectTags } from "./tables";
 
-const config = adminTable({
+const config = adminConfig({
   client,
   fields,
   relationships,
@@ -43,11 +43,6 @@ const config = adminTable({
       field: projects.endDate,
       kind: "date-range",
       label: "Ends",
-    },
-    draft: {
-      field: projects.draft,
-      kind: "boolean",
-      label: "Hidden",
     },
     status: {
       field: projects.status,

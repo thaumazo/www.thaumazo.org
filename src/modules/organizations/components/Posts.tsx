@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cacheLife, cacheTag } from "next/cache";
 import React from "react";
 
 import { listOrganizations } from "@/modules/organizations/queries";
@@ -37,10 +36,6 @@ function OrgMeta({
 }
 
 export default async function Posts() {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("organizations");
-
   const posts = await listOrganizations();
 
   return (
@@ -60,7 +55,7 @@ export default async function Posts() {
             <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
               {image ? (
                 <Image
-                  src={image.src}
+                  src={image.url}
                   alt=""
                   fill
                   className="object-contain p-4 transition duration-300 group-hover:scale-[1.03]"

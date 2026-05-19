@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -13,10 +12,13 @@ import {
   listProjectOrganizations,
   listProjectUsers,
 } from "@/modules/projects/queries";
+import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
+import { buildMetadata } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<SiteSearchParams>;
 };
 
 function dateValue(date: Date | null) {
@@ -37,7 +39,9 @@ function ProjectImage({
   return (
     <div className="mb-4 flex w-full items-center justify-center overflow-hidden bg-gray-100 sm:float-right sm:mb-3 sm:ml-6 sm:w-72 lg:w-80 dark:bg-gray-800">
       <Image
-        {...image}
+        src={image.url}
+        width={image.width ?? 800}
+        height={image.height ?? 800}
         alt={image.alt || title}
         className="h-auto max-h-72 w-auto max-w-full sm:max-h-80"
         priority
@@ -49,44 +53,40 @@ function ProjectImage({
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const project = await getProject(slug);
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const project = await getProject(slug, { preview: isPreviewRequest(query) });
 
-  if (!project) {
-    return {};
-  }
-
-  return {
-    title: project.seoTitle || project.title,
-    description: project.seoDescription || project.description,
-  };
+  return buildMetadata(project);
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+
   return (
     <Suspense fallback={null}>
-      {params.then(({ slug }) => (
-        <ProjectPage slug={slug} />
-      ))}
+      <ProjectPage slug={slug} preview={isPreviewRequest(query)} />
     </Suspense>
   );
 }
 
-async function ProjectPage({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("hours");
-  cacheTag(`projects:${slug}`);
-
-  const project = await getProject(slug);
+async function ProjectPage({
+  slug,
+  preview = false,
+}: {
+  slug: string;
+  preview?: boolean;
+}) {
+  const project = await getProject(slug, { preview });
 
   if (!project) {
     notFound();
   }
 
   const [liaisons, organizations] = await Promise.all([
-    listProjectUsers(project.id, "liaison"),
-    listProjectOrganizations(project.id),
+    listProjectUsers(project.id, "liaison", { preview }),
+    listProjectOrganizations(project.id, { preview }),
   ]);
 
   return (

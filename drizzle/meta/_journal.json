@@ -211,6 +211,20 @@
       "when": 1778600451378,
       "tag": "0029_silly_luminals",
       "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1779040345527,
+      "tag": "0030_lovely_gorilla_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1779056255832,
+      "tag": "0031_skinny_whiplash",
+      "breakpoints": true
     }
   ]
 }

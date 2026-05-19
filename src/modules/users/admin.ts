@@ -1,5 +1,5 @@
-import { adminTable } from "@kenstack/admin";
-import { userAdminTableOptions } from "@kenstack/modules/users/admin";
+import { adminConfig } from "@kenstack/admin";
+import { userAdminConfigOptions } from "@kenstack/modules/users/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import roles from "@app/deps/roles";
 
@@ -8,8 +8,8 @@ import { communityRoleOptions, fields } from "./fields";
 import { relationships } from "./relationships";
 import { users } from "./tables";
 
-const config = adminTable({
-  ...userAdminTableOptions,
+const config = adminConfig({
+  ...userAdminConfigOptions,
   client,
   fields,
   relationships,
@@ -18,7 +18,7 @@ const config = adminTable({
   revalidate: ["community", ({ slug }) => `community:${slug}`],
   sort: {
     name: {
-      fields: [users.draft, users.familyName, users.givenName],
+      fields: [users.visibility, users.familyName, users.givenName],
       defaultDirection: "asc",
     },
   },
@@ -27,11 +27,6 @@ const config = adminTable({
       field: users.publishedAt,
       kind: "date-range",
       label: "Published",
-    },
-    draft: {
-      field: users.draft,
-      kind: "boolean",
-      label: "Hidden",
     },
     givenName: {
       field: users.givenName,

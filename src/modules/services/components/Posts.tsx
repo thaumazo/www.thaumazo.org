@@ -1,14 +1,9 @@
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
 import { listServices } from "@/modules/services/queries";
 
 export default async function Posts() {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("services");
-
   const posts = await listServices();
 
   return (
@@ -27,7 +22,7 @@ export default async function Posts() {
               >
                 {image ? (
                   <Image
-                    src={image.src}
+                    src={image.url}
                     alt=""
                     fill
                     className="object-cover"

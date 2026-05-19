@@ -1,5 +1,5 @@
 import { userFieldOptions } from "@kenstack/modules/users/fields";
-import { defineFields } from "@kenstack/admin";
+import { defineFields, metaFieldOptions } from "@kenstack/admin";
 import * as z from "zod";
 
 const communityRoleValues = [
@@ -41,14 +41,7 @@ export const fields = defineFields({
     zod: z.string(),
     searchable: true,
   },
-  publishedAt: {
-    default: "",
-    zod: z.string().datetime({ precision: 3 }).or(z.literal("")),
-    serverZod: z.preprocess(
-      (val) => (val === "" ? null : val),
-      z.coerce.date().nullable(),
-    ),
-  },
+  ...metaFieldOptions,
   description: {
     default: "",
     zod: z.string(),
@@ -59,7 +52,6 @@ export const fields = defineFields({
     zod: z.string(),
     searchable: true,
   },
-  draft: { default: true, zod: z.boolean() },
   linkedin: {
     default: "",
     zod: z.url().or(z.literal("")),
@@ -68,6 +60,4 @@ export const fields = defineFields({
     default: [],
     zod: communityRolesSchema,
   },
-  seoTitle: { default: "", zod: z.string(), searchable: true },
-  seoDescription: { default: "", zod: z.string(), searchable: true },
 });

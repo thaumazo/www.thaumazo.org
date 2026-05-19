@@ -3,15 +3,11 @@ import Footer from "@/components/Footer";
 import RecaptchaProvider from "@kenstack/context/RecaptchaProvider";
 // import { GoogleAnalytics } from "@next/third-parties/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { loadSiteSettingsMetadata } from "@kenstack/modules/siteSettings/queries";
 
-import type { Metadata } from "next";
 import { Suspense } from "react";
-export const metadata: Metadata = {
-  title: {
-    default: "Thaumazo",
-    template: "%s — Thaumazo",
-  },
-};
+
+export const generateMetadata = loadSiteSettingsMetadata;
 
 export default async function SiteLayout({ children }) {
   return (

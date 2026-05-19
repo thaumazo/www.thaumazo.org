@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import MetaDates from "@kenstack/admin/MetaDates";
+import MetaDates from "@kenstack/admin/components/MetaDates";
 import { type ListItemComponent } from "@kenstack/admin/client";
 import { type SelectedImage } from "@kenstack/db/tables";
 

@@ -1,13 +1,13 @@
 import { Building2 } from "lucide-react";
 
-import { adminTable } from "@kenstack/admin";
+import { adminConfig } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
 import { fields, organizationKindOptions, sdgNameOptions } from "./fields";
 import { relationships } from "./relationships";
 import { organizations, organizationTags } from "./tables";
 
-const config = adminTable({
+const config = adminConfig({
   client,
   fields,
   relationships,
@@ -24,11 +24,6 @@ const config = adminTable({
       field: organizations.publishedAt,
       kind: "date-range",
       label: "Published",
-    },
-    draft: {
-      field: organizations.draft,
-      kind: "boolean",
-      label: "Hidden",
     },
     kind: {
       field: organizations.kind,

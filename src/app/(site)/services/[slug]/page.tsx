@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -7,10 +6,13 @@ import { Suspense } from "react";
 import Back from "@/components/Back";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getService, listServiceUsers } from "@/modules/services/queries";
+import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
+import { buildMetadata } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<SiteSearchParams>;
 };
 
 function ServiceImage({
@@ -27,7 +29,9 @@ function ServiceImage({
   return (
     <div className="mb-4 flex w-full items-center justify-center overflow-hidden bg-gray-100 sm:float-right sm:mb-3 sm:ml-6 sm:w-56 dark:bg-gray-800">
       <Image
-        {...image}
+        src={image.url}
+        width={image.width ?? 800}
+        height={image.height ?? 800}
         alt={image.alt || title}
         className="h-auto max-h-56 w-auto max-w-full"
         priority
@@ -40,42 +44,38 @@ function ServiceImage({
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const service = await getService(slug);
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const service = await getService(slug, { preview: isPreviewRequest(query) });
 
-  if (!service) {
-    return {};
-  }
-
-  return {
-    title: service.seoTitle || service.title,
-    description: service.seoDescription || service.description,
-  };
+  return buildMetadata(service);
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+
   return (
     <Suspense fallback={null}>
-      {params.then(({ slug }) => (
-        <ServicePage slug={slug} />
-      ))}
+      <ServicePage slug={slug} preview={isPreviewRequest(query)} />
     </Suspense>
   );
 }
 
-async function ServicePage({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("hours");
-  cacheTag(`services:${slug}`);
-
-  const service = await getService(slug);
+async function ServicePage({
+  slug,
+  preview = false,
+}: {
+  slug: string;
+  preview?: boolean;
+}) {
+  const service = await getService(slug, { preview });
 
   if (!service) {
     notFound();
   }
 
-  const liaisons = await listServiceUsers(service.id, "liaison");
+  const liaisons = await listServiceUsers(service.id, "liaison", { preview });
 
   return (
     <>

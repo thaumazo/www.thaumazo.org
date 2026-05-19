@@ -1,6 +1,5 @@
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 import type { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -10,10 +9,13 @@ import Social from "@/components/Social";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
 import { getCommunityUser } from "@/modules/users/queries";
+import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
+import { buildMetadata } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<SiteSearchParams>;
 };
 
 function Tags({ title, values }: { title: string; values: string[] }) {
@@ -61,7 +63,9 @@ function ProfileImage({
   return (
     <div className={frameClass}>
       <Image
-        {...image}
+        src={image.url}
+        width={image.width ?? 800}
+        height={image.height ?? 800}
         alt={image.alt || title}
         className="h-full w-full object-cover"
         priority
@@ -73,42 +77,44 @@ function ProfileImage({
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const user = await getCommunityUser(slug);
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const user = await getCommunityUser(slug, {
+    preview: isPreviewRequest(query),
+  });
 
-  if (!user) {
-    return {};
-  }
-
-  return {
-    title: user.seoTitle || user.title,
-    description: user.seoDescription || user.description,
-  };
+  return buildMetadata(user);
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+
   return (
     <Suspense fallback={null}>
-      {params.then(({ slug }) => (
-        <CommunityUserPage slug={slug} />
-      ))}
+      <CommunityUserPage slug={slug} preview={isPreviewRequest(query)} />
     </Suspense>
   );
 }
 
-async function CommunityUserPage({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("hours");
-  cacheTag(`community:${slug}`);
-
-  const user = await getCommunityUser(slug);
+async function CommunityUserPage({
+  slug,
+  preview = false,
+}: {
+  slug: string;
+  preview?: boolean;
+}) {
+  const user = await getCommunityUser(slug, { preview });
 
   if (!user) {
     notFound();
   }
 
-  const projects = await listProjects({ userId: user.id, order: "recent" });
+  const projects = await listProjects({
+    userId: user.id,
+    order: "recent",
+    preview,
+  });
 
   return (
     <>

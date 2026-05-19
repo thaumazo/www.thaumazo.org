@@ -17,7 +17,9 @@ function CompactProjectCard({ project }: { project: ProjectCardData }) {
         <span className="flex h-full w-full items-center justify-center p-2.5">
           {project.image ? (
             <Image
-              {...project.image}
+              src={project.image.url}
+              width={project.image.width ?? 800}
+              height={project.image.height ?? 800}
               alt=""
               className="h-auto max-h-full w-auto max-w-full transition duration-300 group-hover:scale-[1.03]"
               sizes="(min-width: 768px) 180px, (min-width: 640px) 50vw, 88px"

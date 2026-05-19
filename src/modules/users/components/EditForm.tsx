@@ -1,15 +1,14 @@
 "use client";
 
 import {
-  CheckboxField,
   CheckboxList,
-  DateField,
   ImageField,
   InputField,
   MarkdownField,
   SlugField,
   TextareaField,
 } from "@kenstack/admin/forms";
+import MetaFields from "@kenstack/admin/components/MetaFields";
 import ResetPassword from "@kenstack/modules/users/components/ResetPassword";
 import SwitchUser from "@kenstack/modules/users/components/SwitchUser";
 
@@ -50,19 +49,10 @@ export default function UserForm() {
         />
         <TextareaField label="Description" name="description" />
         <MarkdownField label="Profile Content" name="content" />
-        <InputField
-          label="SEO Title (If different than Title)"
-          name="seoTitle"
-        />
-        <TextareaField
-          label="SEO Description (if different than Description)"
-          name="seoDescription"
-        />
       </div>
 
       <div className="space-y-4">
-        <CheckboxField label="Hidden" name="draft" />
-        <DateField name="publishedAt" label="Publish On" />
+        <MetaFields />
         <InputField label="LinkedIn" name="linkedin" type="url" />
         <CheckboxList name="roles" label="Access Roles" options={roles} />
         <CheckboxList

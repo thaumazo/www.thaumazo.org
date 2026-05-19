@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -13,52 +12,53 @@ import {
 } from "@/modules/organizations/queries";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
+import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
+import { buildMetadata } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<SiteSearchParams>;
 };
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const organization = await getOrganization(slug);
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const organization = await getOrganization(slug, {
+    preview: isPreviewRequest(query),
+  });
 
-  if (!organization) {
-    return {};
-  }
-
-  return {
-    title: organization.seoTitle || organization.title,
-    description: organization.seoDescription || organization.description,
-  };
+  return buildMetadata(organization);
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
+
   return (
     <Suspense fallback={null}>
-      {params.then(({ slug }) => (
-        <OrganizationPage slug={slug} />
-      ))}
+      <OrganizationPage slug={slug} preview={isPreviewRequest(query)} />
     </Suspense>
   );
 }
 
-async function OrganizationPage({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("hours");
-  cacheTag(`organizations:${slug}`);
-
-  const organization = await getOrganization(slug);
+async function OrganizationPage({
+  slug,
+  preview = false,
+}: {
+  slug: string;
+  preview?: boolean;
+}) {
+  const organization = await getOrganization(slug, { preview });
 
   if (!organization) {
     notFound();
   }
 
   const [liaisons, projects] = await Promise.all([
-    listOrganizationUsers(organization.id, "liaison"),
-    listProjects({ organizationId: organization.id, order: "recent" }),
+    listOrganizationUsers(organization.id, "liaison", { preview }),
+    listProjects({ organizationId: organization.id, order: "recent", preview }),
   ]);
 
   return (
@@ -70,8 +70,10 @@ async function OrganizationPage({ slug }: { slug: string }) {
         <div className="flex items-center gap-4">
           {organization.image && (
             <Image
-              {...organization.image}
-              alt={organization.image.alt}
+              src={organization.image.url}
+              width={organization.image.width ?? 800}
+              height={organization.image.height ?? 800}
+              alt={organization.image.alt ?? organization.title}
               className="h-auto max-h-24 max-w-24"
               priority
             />

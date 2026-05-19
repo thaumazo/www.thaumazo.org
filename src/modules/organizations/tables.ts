@@ -1,26 +1,22 @@
-import { defineRelationship, defineTable } from "@kenstack/admin/table";
+import {
+  defineRelationship,
+  defineTable,
+  metaColumns,
+} from "@kenstack/admin/table";
 import { defineTags } from "@kenstack/db/tables";
 import { users } from "@/modules/users/tables";
 import { sql } from "drizzle-orm";
-import {
-  boolean,
-  index,
-  integer,
-  text,
-  timestamp,
-  uniqueIndex,
-} from "drizzle-orm/pg-core";
+import { index, integer, text, uniqueIndex } from "drizzle-orm/pg-core";
 
 export const organizations = defineTable({
   name: "organizations",
   columns: {
-    publishedAt: timestamp("published_at", { withTimezone: true }),
+    ...metaColumns,
     title: text("title").notNull().default(""),
     slug: text("slug").notNull().default(""),
     image: integer("image"),
     description: text("description").notNull().default(""),
     content: text("content").notNull().default(""),
-    draft: boolean("draft").notNull().default(true),
     url: text("url").notNull().default(""),
     kind: text("kind")
       .array()
@@ -30,8 +26,6 @@ export const organizations = defineTable({
       .array()
       .notNull()
       .default(sql`'{}'`),
-    seoTitle: text("seo_title").notNull().default(""),
-    seoDescription: text("seo_description").notNull().default(""),
   },
   extraConfig: (t) => [
     index("organizations_published_at_idx")

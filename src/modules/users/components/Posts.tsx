@@ -1,5 +1,4 @@
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,10 +19,6 @@ function getExcerpt(content: string | undefined) {
 }
 
 export default async function Posts() {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("community");
-
   const posts = await listCommunityUsers();
 
   return (
@@ -42,7 +37,7 @@ export default async function Posts() {
               <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
                 {image ? (
                   <Image
-                    src={image.src}
+                    src={image.url}
                     alt=""
                     fill
                     className="object-contain p-3 transition duration-300 group-hover:scale-[1.03]"

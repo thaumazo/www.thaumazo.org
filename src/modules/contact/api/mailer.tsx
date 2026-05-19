@@ -1,5 +1,5 @@
 import { type Geo, geolocation } from "@vercel/functions";
-import { pipeline, pipelineStage, recaptcha } from "@kenstack/lib/api";
+import { pipeline, pipelineStage, recaptcha } from "@kenstack/api";
 import schema from "../schema";
 import mailer, { type Attachment } from "@kenstack/lib/mailer";
 import { render } from "@react-email/render";

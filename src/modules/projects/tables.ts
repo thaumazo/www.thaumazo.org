@@ -1,10 +1,13 @@
-import { defineRelationship, defineTable } from "@kenstack/admin/table";
+import {
+  defineRelationship,
+  defineTable,
+  metaColumns,
+} from "@kenstack/admin/table";
 import { defineTags } from "@kenstack/db/tables";
 import { organizations } from "@/modules/organizations/tables";
 import { users } from "@/modules/users/tables";
 import { sql } from "drizzle-orm";
 import {
-  boolean,
   index,
   integer,
   text,
@@ -15,13 +18,12 @@ import {
 export const projects = defineTable({
   name: "projects",
   columns: {
-    publishedAt: timestamp("published_at", { withTimezone: true }),
+    ...metaColumns,
     title: text("title").notNull().default(""),
     slug: text("slug").notNull().default(""),
     image: integer("image"),
     description: text("description").notNull().default(""),
     content: text("content").notNull().default(""),
-    draft: boolean("draft").notNull().default(true),
     url: text("url").notNull().default(""),
     location: text("location").notNull().default(""),
     startDate: timestamp("start_date", { withTimezone: true }),
@@ -35,8 +37,6 @@ export const projects = defineTable({
       .array()
       .notNull()
       .default(sql`'{}'`),
-    seoTitle: text("seo_title").notNull().default(""),
-    seoDescription: text("seo_description").notNull().default(""),
   },
   extraConfig: (t) => [
     index("projects_published_at_idx")

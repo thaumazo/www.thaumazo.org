@@ -1,13 +1,13 @@
 import { HandHeart } from "lucide-react";
 
-import { adminTable } from "@kenstack/admin";
+import { adminConfig } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
 import client from "./client";
 import { fields } from "./fields";
 import { relationships } from "./relationships";
 import { services, serviceTags } from "./tables";
 
-const config = adminTable({
+const config = adminConfig({
   client,
   fields,
   relationships,
@@ -24,11 +24,6 @@ const config = adminTable({
       field: services.publishedAt,
       kind: "date-range",
       label: "Published",
-    },
-    draft: {
-      field: services.draft,
-      kind: "boolean",
-      label: "Hidden",
     },
   },
   select: {

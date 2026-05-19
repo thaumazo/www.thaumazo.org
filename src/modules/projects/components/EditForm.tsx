@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  CheckboxField,
   CheckboxList,
   DateField,
   ImageField,
@@ -12,13 +11,16 @@ import {
   TagField,
   TextareaField,
 } from "@kenstack/admin/forms";
+import MetaFields from "@kenstack/admin/components/MetaFields";
 import SdgComboboxField from "@/components/forms/SdgComboboxField";
 import {
-  organizationKindOptions,
+  projectKindOptions,
+  projectStatusOptions,
   sdgNameOptions,
-} from "@/modules/organizations/fields";
+} from "../fields";
+import StatusField from "./StatusField";
 
-export default function OrganizationForm() {
+export default function ProjectForm() {
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
       <div className="space-y-4 lg:col-span-2">
@@ -35,41 +37,29 @@ export default function OrganizationForm() {
       </div>
 
       <div className="space-y-4">
-        <CheckboxField label="Hidden" name="draft" />
-        <DateField name="publishedAt" label="Publish On" />
-        <CheckboxList
-          name="kind"
-          label="Kind"
-          options={organizationKindOptions}
+        <MetaFields />
+        <DateField name="startDate" label="Start Date" />
+        <DateField name="endDate" label="End Date" />
+        <InputField label="Location" name="location" />
+        <StatusField
+          name="status"
+          label="Status"
+          options={projectStatusOptions}
         />
+        <CheckboxList name="kind" label="Kind" options={projectKindOptions} />
         <SdgComboboxField name="sdgs" label="SDGs" options={sdgNameOptions} />
         <TagField label="Tags" name="tags" />
-        {/* <RelationshipField
-          name="members"
-          label="Members"
-          relationship="members"
-          placeholder="Search users..."
-        /> */}
         <RelationshipField
           name="liaisons"
           label="Liaisons"
           relationship="liaisons"
           placeholder="Search users..."
         />
-        {/* <RelationshipField
-          name="projects"
-          label="Projects"
-          relationship="projects"
-          placeholder="Search projects..."
-        /> */}
-
-        <InputField
-          label="SEO Title (If different than Title)"
-          name="seoTitle"
-        />
-        <TextareaField
-          label="SEO Description (if different than Description)"
-          name="seoDescription"
+        <RelationshipField
+          name="organizations"
+          label="Organizations"
+          relationship="organizations"
+          placeholder="Search organizations..."
         />
       </div>
     </div>
