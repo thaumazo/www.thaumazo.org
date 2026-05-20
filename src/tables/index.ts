@@ -10,6 +10,6 @@ import { createContent } from "@kenstack/db/tables/content";
 const content = createContent();
 export { content };
 
-export const blogs = blogTables.posts;
+export const blog = blogTables.posts;
 export const blog_tags = blogTables.tags;
 export const blog_images = blogTables.images;

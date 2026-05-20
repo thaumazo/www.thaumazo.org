@@ -239,6 +239,13 @@
       "when": 1779212803697,
       "tag": "0033_bizarre_lethal_legion",
       "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1779239849824,
+      "tag": "0034_silly_mauler",
+      "breakpoints": true
     }
   ]
 }
