@@ -225,6 +225,20 @@
       "when": 1779056255832,
       "tag": "0031_skinny_whiplash",
       "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1779207687841,
+      "tag": "0032_brown_gabe_jones",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1779212803697,
+      "tag": "0033_bizarre_lethal_legion",
+      "breakpoints": true
     }
   ]
 }
