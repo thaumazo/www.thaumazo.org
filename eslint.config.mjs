@@ -1,29 +1,6 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import kenstackConfig from "./kenstack/eslint.config.mjs";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-  {
-    rules: {
-      "@next/next/no-img-element": "off",
-      "@next/next/no-html-link-for-pages": "off",
-
-      "no-console": "error",
-    },
-  },
-]);
-
-export default eslintConfig;
+export default kenstackConfig;
 
 // import js from "@eslint/js";
 // import * as tseslint from "typescript-eslint";

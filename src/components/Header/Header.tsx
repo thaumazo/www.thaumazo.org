@@ -3,9 +3,8 @@ import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import AccountMenu from "@kenstack/components/AccountMenu";
 
-// import AccountMenu from "../AccountMenu";
+import SiteAccountMenu from "@/components/AccountMenu";
 import Navigation from "./Navigation";
 import MobileNavigation from "./Mobile";
 
@@ -49,7 +48,7 @@ export default function Header() {
             <Navigation links={navigation} className="md:mx-0" />
           </Suspense>
           <Suspense fallback={null}>
-            <AccountMenu
+            <SiteAccountMenu
               fallback={
                 <Button
                   asChild
