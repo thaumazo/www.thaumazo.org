@@ -1,13 +1,14 @@
 import { Suspense } from "react";
 
-import { Main } from "@/components";
+import { Main } from "@/components/Main";
 import { blog } from "@/modules/blog";
-import BlogPosts from "@kenstack/modules/blog/components/Posts";
-import { loadMeta } from "@kenstack/pageEditor";
+import { Posts as BlogPosts } from "@/modules/blog/components/Posts";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 
 const defaultValues = {
   title: "Blog",
-  content: "",
+  content:
+    "Read updates, notes, and articles from the site. Use Kenstack to publish posts with tags, images, metadata, and editor-managed content.",
 };
 
 export const generateMetadata = () => loadMeta(blog.name, { defaultValues });
@@ -15,7 +16,7 @@ export const generateMetadata = () => loadMeta(blog.name, { defaultValues });
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<Record<string, unknown>>;
+  searchParams: Promise<unknown>;
 }) {
   return (
     <>
@@ -24,11 +25,11 @@ export default async function Page({
         defaultValues={defaultValues}
         className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
       />
-      <main className="mx-auto mb-16 max-w-6xl px-4">
+      <section className="mx-auto mt-8 mb-16 max-w-6xl px-4">
         <Suspense fallback={null}>
-          <BlogPosts module={blog} searchParams={searchParams} />
+          <BlogPosts searchParams={searchParams} />
         </Suspense>
-      </main>
+      </section>
     </>
   );
 }

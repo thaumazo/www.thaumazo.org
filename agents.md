@@ -8,3 +8,4 @@ This site uses Kenstack from `kenstack/`. Before making code changes, read and f
 - Keep reusable CMS/admin behavior in `kenstack/`.
 - Do not modify `.env*` files.
 - Keep patches narrow and avoid unrelated refactors.
+- During site review, check that `src/app/sitemap.ts` and `src/app/robots.ts` still match the current public page structure and indexing rules.

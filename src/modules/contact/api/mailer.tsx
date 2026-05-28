@@ -1,29 +1,49 @@
 import { type Geo, geolocation } from "@vercel/functions";
 import { pipeline, pipelineStage, recaptcha } from "@kenstack/api";
-import schema from "../schema";
+import { deps } from "@app/deps";
+import { schema } from "../schema";
 import mailer, { type Attachment } from "@kenstack/lib/mailer";
+import { loadContactSettings } from "./queries";
 import { render } from "@react-email/render";
 import startCase from "lodash-es/startCase";
 
-import { waitUntil } from "@vercel/functions";
 import * as z from "zod";
 
 import type { NextRequest } from "next/server";
 
 type ContactMailerProps = {
-  Email: React.FC<{ preview?: boolean; children: React.ReactNode }>; //<ForgottenPasswordEmailProps>;
-  attachments: Attachment[];
-  from: string;
+  Email?: React.FC<{ preview?: boolean; children: React.ReactNode }>;
+  attachments?: Attachment[];
+  from?: typeof deps.email.from;
 };
 
-const contactMailerPost =
-  (props: ContactMailerProps) => (request: NextRequest) =>
+export const contactMailerPost =
+  (props: ContactMailerProps = {}) =>
+  (request: NextRequest) =>
     pipeline({ request }, [recaptcha(), contactMailerAction(props)]);
 
-const contactMailerAction = (props) =>
+const contactMailerAction = (props: ContactMailerProps) =>
   pipelineStage({ schema }, async ({ data, request, response }) => {
+    const from = props.from ?? deps.email.from;
+
+    if (!from) {
+      return response.error(
+        "Email sender is not configured. Set deps.email.from, or FROM_ADDRESS.",
+      );
+    }
+
+    const settings = await loadContactSettings();
     const geo = geolocation(request);
-    waitUntil(messageMailer(props, data, geo));
+    await messageMailer(
+      {
+        ...props,
+        from,
+        subject: settings.subject,
+        to: settings.to,
+      },
+      data,
+      geo,
+    );
 
     return response.success({
       message:
@@ -32,7 +52,17 @@ const contactMailerAction = (props) =>
   });
 
 const messageMailer = async (
-  { Email, attachments, from }: ContactMailerProps,
+  {
+    Email = deps.email.EmailCont,
+    attachments = deps.email.attachments,
+    from,
+    subject,
+    to,
+  }: Omit<ContactMailerProps, "from"> & {
+    from: NonNullable<ContactMailerProps["from"]>;
+    subject: string;
+    to: string;
+  },
   data: z.infer<typeof schema>,
   geo: Geo,
 ) => {
@@ -59,12 +89,15 @@ const messageMailer = async (
     </Email>,
   );
 
-  await mailer({
-    to: process.env.CONTACT_EMAIL,
+  const result = await mailer({
+    to,
     from,
-    subject: "Contact form submission",
+    subject,
     html,
     attachments,
   });
+
+  if (!result) {
+    throw new Error("Contact form email could not be sent.");
+  }
 };
-export default contactMailerPost;

@@ -6,7 +6,7 @@ import LoginForm from "@kenstack/auth/components/Login";
 // import Link from "next/link";
 // import { cacheLife, cacheTag } from "next/cache";
 
-import { loadMeta } from "@kenstack/pageEditor";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 const slug = "login";
 const defaultValues = {
   title: "Login",

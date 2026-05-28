@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -12,44 +11,34 @@ import {
 } from "@/modules/organizations/queries";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
-import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
-import { buildMetadata } from "@kenstack/admin";
+import { createMetadataLoader, isPreview } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<SiteSearchParams>;
+  searchParams: Promise<unknown>;
 };
 
-export async function generateMetadata({
-  params,
-  searchParams,
-}: PageProps): Promise<Metadata> {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
-  const organization = await getOrganization(slug, {
-    preview: isPreviewRequest(query),
-  });
-
-  return buildMetadata(organization);
-}
+export const generateMetadata = createMetadataLoader(getOrganization);
 
 export default async function Page({ params, searchParams }: PageProps) {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <OrganizationPage slug={slug} preview={isPreviewRequest(query)} />
+      <OrganizationPage slug={slug} searchParams={searchParams} />
     </Suspense>
   );
 }
 
 async function OrganizationPage({
   slug,
-  preview = false,
+  searchParams,
 }: {
   slug: string;
-  preview?: boolean;
+  searchParams: PageProps["searchParams"];
 }) {
+  const preview = await isPreview(searchParams);
   const organization = await getOrganization(slug, { preview });
 
   if (!organization) {

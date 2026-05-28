@@ -40,7 +40,7 @@ import {
   type DefaultValues,
   TextEdit,
   MarkdownEdit,
-} from '@kenstack/pageEditor';
+} from '@kenstack/admin/pageEditor';
 
 type MainProps = {
   slug: string;

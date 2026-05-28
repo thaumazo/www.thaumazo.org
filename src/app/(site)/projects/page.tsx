@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { Main } from "@/components";
 import Posts from "@/modules/projects/components/Posts";
-import { loadMeta } from "@kenstack/pageEditor";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 
 const slug = "projects";
 const defaultValues = {

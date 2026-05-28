@@ -14,7 +14,7 @@ if (!process.env.DATABASE_URL) {
 }
 
 export default {
-  schema: "./src/tables/index.ts",
+  schema: "./src/tables.ts",
   out: "./drizzle",
   dbCredentials: {
     url: process.env.DATABASE_URL ?? "",

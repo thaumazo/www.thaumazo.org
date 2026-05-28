@@ -1,7 +1,4 @@
-import AdminServer from '@kenstack/admin/Server';
+import { createAdminPage } from "@kenstack/admin/Server";
+import admin from "@/modules/admin";
 
-import admin from '@/modules/admin';
-
-export default function Admin(context) {
-  return <AdminServer context={context} admin={admin} />;
-}
+export default createAdminPage({ adminConfig: admin });

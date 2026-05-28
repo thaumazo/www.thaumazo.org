@@ -2,7 +2,7 @@
 
 import * as z from "zod";
 import Form from "@kenstack/forms/Form";
-import schema from "./schema";
+import { schema } from "../schema";
 import Notice from "@kenstack/forms/Notice";
 
 import InputField from "@kenstack/forms/InputField";
@@ -14,24 +14,26 @@ import RecaptchaTerms from "@kenstack/components/RecaptchaTerms";
 
 type Schema = z.infer<typeof schema>;
 const defaultValues = {
-  first_name: "",
-  last_name: "",
+  givenName: "",
+  familyName: "",
   email: "",
   organization: "",
   message: "",
 } satisfies Schema;
 
-export default function ContactForm() {
+export function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   return (
     <Form
       className="max-w-lg space-y-4"
-      apiPath="/contact/api"
+      apiPath="/api/contact"
       schema={schema}
       defaultValues={defaultValues}
       onSubmit={async ({ data, mutation, form }) => {
-        const recaptchaToken = await executeRecaptcha("login");
+        const recaptchaToken = executeRecaptcha
+          ? await executeRecaptcha("contact")
+          : null;
         return mutation.mutateAsync({ ...data, recaptchaToken }).then((res) => {
           if (res.status === "success") {
             form.reset();
@@ -41,8 +43,8 @@ export default function ContactForm() {
     >
       <Notice />
       <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
-        <InputField name="first_name" label="First Name" />
-        <InputField name="last_name" label="Last Name" />
+        <InputField name="givenName" label="Given Name" />
+        <InputField name="familyName" label="Family Name" />
       </div>
       <InputField name="email" label="Email" type="email" />
       <InputField name="organization" label="Organization" />

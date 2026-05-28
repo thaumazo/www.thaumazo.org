@@ -3,17 +3,17 @@ import projects from "./projects/admin";
 import organizations from "./organizations/admin";
 import services from "./services/admin";
 import { blog } from "./blog";
+import { contact } from "./contact";
 
-import { defineAdmin } from "@kenstack/admin";
+import type { DefinedAdmin } from "@kenstack/admin";
 
-export const admin = defineAdmin({
-  modules: {
-    users,
-    blog: blog.admin,
-    projects,
-    organizations,
-    services,
-  },
-});
+export const admin = {
+  users,
+  blog,
+  projects,
+  organizations,
+  services,
+  contact,
+} satisfies DefinedAdmin;
 
 export default admin;

@@ -1,12 +1,10 @@
 import * as z from "zod";
-import { email } from "@kenstack/schemas/atoms";
+import { email } from "@kenstack/zod/email";
 
-const schema = z.object({
-  first_name: z.string().min(1, "First Name is required"),
-  last_name: z.string().min(1, "Last Name is required"),
-  email: email(),
+export const schema = z.object({
+  givenName: z.string().min(1, "Given Name is required"),
+  familyName: z.string().min(1, "Family Name is required"),
+  email,
   organization: z.string(),
   message: z.string().min(1, "Please fill out this field"),
 });
-
-export default schema;

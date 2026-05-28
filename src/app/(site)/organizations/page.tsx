@@ -2,7 +2,7 @@ import { Main } from "@/components";
 import { Suspense } from "react";
 
 import Posts from "@/modules/organizations/components/Posts";
-import { loadMeta } from "@kenstack/pageEditor";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 
 const slug = "organizations";
 const defaultValues = {

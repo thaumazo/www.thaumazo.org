@@ -1,39 +1,50 @@
 import { HandHeart } from "lucide-react";
 
-import { adminConfig } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin";
 import { selectImageSubquery } from "@kenstack/db/tables";
+import {
+  relationshipField,
+  serverFields,
+  tagField,
+} from "@kenstack/fields/server";
 import client from "./client";
 import { fields } from "./fields";
 import { relationships } from "./relationships";
 import { services, serviceTags } from "./tables";
 
-const config = adminConfig({
+const config = defineModule({
+  name: "services",
   client,
-  fields,
-  relationships,
   title: "Services",
   icon: HandHeart,
-  table: services,
-  sort: {
-    title: {
-      fields: [services.title],
+  admin: {
+    table: services,
+    fields: serverFields(fields, {
+      tags: tagField({ table: serviceTags }),
+      liaisons: relationshipField(relationships.liaisons),
+    }),
+    revalidate: ["services", ({ slug }) => `services:${slug}`],
+    list: {
+      sort: {
+        title: {
+          fields: ["title"],
+        },
+      },
+      filters: {
+        publishedAt: {
+          field: "publishedAt",
+          kind: "date-range",
+          label: "Published",
+        },
+      },
+      select: {
+        title: services.title,
+        image: selectImageSubquery(services.image, "square"),
+        publishedAt: services.publishedAt,
+      },
     },
+    preview: "/services/${slug}",
   },
-  filters: {
-    publishedAt: {
-      field: services.publishedAt,
-      kind: "date-range",
-      label: "Published",
-    },
-  },
-  select: {
-    title: services.title,
-    image: selectImageSubquery(services.image, "square"),
-    publishedAt: services.publishedAt,
-  },
-  preview: "/services/${slug}",
-  revalidate: ["services", ({ slug }) => `services:${slug}`],
-  tags: { table: serviceTags },
 });
 
 export default config;

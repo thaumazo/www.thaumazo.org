@@ -3,12 +3,6 @@ export type RelatedLink = {
   title: string;
 };
 
-export type SiteSearchParams = Record<string, string | string[] | undefined>;
-
-export function isPreviewRequest(searchParams: SiteSearchParams) {
-  return searchParams.preview !== undefined;
-}
-
 export function uniqueRelatedLinks(rows: RelatedLink[]) {
   const bySlug = new Map<string, RelatedLink>();
 

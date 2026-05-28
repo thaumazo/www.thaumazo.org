@@ -1,7 +1,7 @@
 import { Main, Container } from "@/components";
 import Form from "@kenstack/auth/components/ResetPassword";
 
-import { loadMeta } from "@kenstack/pageEditor";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 const slug = "reset-password";
 const defaultValues = {
   title: "Reset Your Password",

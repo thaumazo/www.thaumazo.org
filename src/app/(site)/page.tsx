@@ -6,7 +6,7 @@ import {
   PageEditor,
   PageEditorSettings,
   TextEdit,
-} from "@kenstack/pageEditor";
+} from "@kenstack/admin/pageEditor";
 
 const slug = "homepage";
 const defaultValues = {

@@ -1,4 +1,4 @@
-import { defineRelationships } from "@kenstack/admin";
+import { defineRelationships } from "@kenstack/fields";
 import { sql } from "drizzle-orm";
 import { users } from "@/modules/users/tables";
 import {

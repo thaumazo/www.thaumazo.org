@@ -217,6 +217,7 @@
 
   a {
     @apply font-medium text-blue-900 transition hover:text-blue-700;
+    overflow-wrap: anywhere;
   }
 
   blockquote {

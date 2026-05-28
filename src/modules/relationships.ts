@@ -1,7 +1,7 @@
 import {
   relationshipName,
   type RelationshipTable,
-} from "@kenstack/admin/relationships";
+} from "@kenstack/fields/relationships";
 import type { AnyPgTable } from "drizzle-orm/pg-core";
 
 type WithRelationshipName<

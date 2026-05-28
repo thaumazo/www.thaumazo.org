@@ -1,7 +1,10 @@
-import { Main } from "@/components";
-import { loadMeta } from "@kenstack/pageEditor";
+import { Main } from "@/components/Main";
+import { contact } from "@/modules/contact";
+import { client as contactClient } from "@/modules/contact/client";
+import { loadMeta } from "@kenstack/admin/pageEditor";
+import ModuleSettingsControl from "@kenstack/admin/moduleSettings/Control";
 
-import Form from "@/modules/contact/Form";
+import { ContactForm } from "@/modules/contact/components/Form";
 
 const slug = "contact";
 const defaultValues = {
@@ -11,7 +14,7 @@ const defaultValues = {
 
 export const generateMetadata = () => loadMeta(slug, { defaultValues });
 
-export default async function CommunityPage() {
+export default async function ContactPage() {
   return (
     <>
       <Main
@@ -19,8 +22,14 @@ export default async function CommunityPage() {
         defaultValues={defaultValues}
         className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
       />
-      <div className="flex max-w-3xl justify-center  mx-auto px-4 mt-4">
-        <Form />
+      <div className="mx-auto mt-4 flex max-w-3xl justify-center px-4">
+        <ModuleSettingsControl
+          name={contact.name}
+          title="Contact Form Settings"
+          client={contactClient.settings}
+        >
+          <ContactForm />
+        </ModuleSettingsControl>
       </div>
     </>
   );

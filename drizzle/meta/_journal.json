@@ -246,6 +246,27 @@
       "when": 1779239849824,
       "tag": "0034_silly_mauler",
       "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1780001096597,
+      "tag": "0035_kenstack_content_contact_settings",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1780009286677,
+      "tag": "0036_rename_images_to_media",
+      "breakpoints": true
+    },
+    {
+      "idx": 37,
+      "version": "7",
+      "when": 1780010283529,
+      "tag": "0037_add_media_file_kind",
+      "breakpoints": true
     }
   ]
 }

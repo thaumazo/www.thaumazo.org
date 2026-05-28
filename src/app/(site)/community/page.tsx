@@ -1,5 +1,5 @@
 import { Main } from "@/components";
-import { loadMeta } from "@kenstack/pageEditor";
+import { loadMeta } from "@kenstack/admin/pageEditor";
 import { Suspense } from "react";
 
 import Posts from "@/modules/users/components/Posts";

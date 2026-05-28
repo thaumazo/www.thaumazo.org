@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -6,13 +5,12 @@ import { Suspense } from "react";
 import Back from "@/components/Back";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getService, listServiceUsers } from "@/modules/services/queries";
-import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
-import { buildMetadata } from "@kenstack/admin";
+import { createMetadataLoader, isPreview } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<SiteSearchParams>;
+  searchParams: Promise<unknown>;
 };
 
 function ServiceImage({
@@ -42,33 +40,26 @@ function ServiceImage({
   );
 }
 
-export async function generateMetadata({
-  params,
-  searchParams,
-}: PageProps): Promise<Metadata> {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
-  const service = await getService(slug, { preview: isPreviewRequest(query) });
-
-  return buildMetadata(service);
-}
+export const generateMetadata = createMetadataLoader(getService);
 
 export default async function Page({ params, searchParams }: PageProps) {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <ServicePage slug={slug} preview={isPreviewRequest(query)} />
+      <ServicePage slug={slug} searchParams={searchParams} />
     </Suspense>
   );
 }
 
 async function ServicePage({
   slug,
-  preview = false,
+  searchParams,
 }: {
   slug: string;
-  preview?: boolean;
+  searchParams: PageProps["searchParams"];
 }) {
+  const preview = await isPreview(searchParams);
   const service = await getService(slug, { preview });
 
   if (!service) {

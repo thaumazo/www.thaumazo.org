@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -12,13 +11,12 @@ import {
   listProjectOrganizations,
   listProjectUsers,
 } from "@/modules/projects/queries";
-import { isPreviewRequest, type SiteSearchParams } from "@/modules/siteContent";
-import { buildMetadata } from "@kenstack/admin";
+import { createMetadataLoader, isPreview } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<SiteSearchParams>;
+  searchParams: Promise<unknown>;
 };
 
 function dateValue(date: Date | null) {
@@ -51,33 +49,26 @@ function ProjectImage({
   );
 }
 
-export async function generateMetadata({
-  params,
-  searchParams,
-}: PageProps): Promise<Metadata> {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
-  const project = await getProject(slug, { preview: isPreviewRequest(query) });
-
-  return buildMetadata(project);
-}
+export const generateMetadata = createMetadataLoader(getProject);
 
 export default async function Page({ params, searchParams }: PageProps) {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
+  const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <ProjectPage slug={slug} preview={isPreviewRequest(query)} />
+      <ProjectPage slug={slug} searchParams={searchParams} />
     </Suspense>
   );
 }
 
 async function ProjectPage({
   slug,
-  preview = false,
+  searchParams,
 }: {
   slug: string;
-  preview?: boolean;
+  searchParams: PageProps["searchParams"];
 }) {
+  const preview = await isPreview(searchParams);
   const project = await getProject(slug, { preview });
 
   if (!project) {

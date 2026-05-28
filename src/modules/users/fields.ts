@@ -1,5 +1,15 @@
-import { userFieldOptions } from "@kenstack/modules/users/fields";
-import { defineFields, metaFieldOptions } from "@kenstack/admin";
+import roles from "@app/deps/roles";
+import { metaFieldOptions } from "@kenstack/admin";
+import { defineFields } from "@kenstack/fields";
+import {
+  checkboxListField,
+  emailField,
+  imageField,
+  markdownField,
+  slugField,
+  textField,
+  textareaField,
+} from "@kenstack/fields/client";
 import * as z from "zod";
 
 const communityRoleValues = [
@@ -30,34 +40,43 @@ export const communityRoleOptions = communityRoleValues.map(
 );
 
 export const fields = defineFields({
-  ...userFieldOptions,
-  title: {
-    default: "",
-    zod: z.string(),
+  givenName: textField({
+    zod: z.string().min(1, "Given name is required"),
     searchable: true,
-  },
-  slug: {
-    default: "",
-    zod: z.string(),
+    list: true,
+    filter: true,
+  }),
+  familyName: textField({
+    zod: z.string().min(1, "Family name is required"),
     searchable: true,
-  },
+    list: true,
+    filter: true,
+  }),
+  email: emailField({
+    searchable: true,
+    list: true,
+    filter: true,
+  }),
+  avatar: imageField({ list: "square" }),
+  roles: checkboxListField({ options: roles }),
+  title: textField({
+    searchable: true,
+  }),
+  slug: slugField({
+    searchable: true,
+  }),
   ...metaFieldOptions,
-  description: {
-    default: "",
-    zod: z.string(),
+  description: textareaField({
     searchable: true,
-  },
-  content: {
-    default: "",
-    zod: z.string(),
+  }),
+  content: markdownField({
     searchable: true,
-  },
-  linkedin: {
-    default: "",
+  }),
+  linkedin: textField({
     zod: z.url().or(z.literal("")),
-  },
-  communityRoles: {
-    default: [],
+  }),
+  communityRoles: checkboxListField({
+    options: communityRoleOptions,
     zod: communityRolesSchema,
-  },
+  }),
 });

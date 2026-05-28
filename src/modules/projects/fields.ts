@@ -1,4 +1,16 @@
-import { defineFields, metaFieldOptions } from "@kenstack/admin";
+import { metaFieldOptions } from "@kenstack/admin";
+import { defineFields } from "@kenstack/fields";
+import {
+  checkboxListField,
+  dateTimeField,
+  imageField,
+  markdownField,
+  relationshipField,
+  slugField,
+  tagField,
+  textField,
+  textareaField,
+} from "@kenstack/fields/client";
 import * as z from "zod";
 
 export const sdgValues = [
@@ -73,34 +85,26 @@ export const projectKindOptions = projectKindValues.map(
 
 export const fields = defineFields({
   ...metaFieldOptions,
-  title: {
-    default: "",
+  title: textField({
+    list: true,
     zod: z.string().min(1, "Please enter a title"),
     searchable: true,
-  },
-  slug: {
-    default: "",
-    zod: z.string().min(1, "Slug is required"),
-  },
-  image: { kind: "image" },
-  description: { default: "", zod: z.string(), searchable: true },
-  content: { default: "", zod: z.string(), searchable: true },
-  tags: { kind: "tags" },
-  url: { default: "", zod: z.url().or(z.literal("")) },
-  location: { default: "", zod: z.string(), searchable: true },
-  startDate: {
-    default: "",
-    zod: z.string().datetime({ precision: 3 }).or(z.literal("")),
-    serverZod: metaFieldOptions.publishedAt.serverZod,
-  },
-  endDate: {
-    default: "",
-    zod: z.string().datetime({ precision: 3 }).or(z.literal("")),
-    serverZod: metaFieldOptions.publishedAt.serverZod,
-  },
-  status: { default: "Proposed", zod: z.enum(projectStatusValues) },
-  kind: { default: [], zod: z.array(z.enum(projectKindValues)) },
-  sdgs: { default: [], zod: z.array(z.enum(sdgValues)) },
-  liaisons: { kind: "relationship" },
-  organizations: { kind: "relationship" },
+  }),
+  slug: slugField(),
+  image: imageField({ list: "square" }),
+  description: textareaField({ searchable: true }),
+  content: markdownField({ searchable: true }),
+  tags: tagField(),
+  url: textField({ zod: z.url().or(z.literal("")) }),
+  location: textField({ searchable: true }),
+  startDate: dateTimeField({ filter: true }),
+  endDate: dateTimeField({ filter: true }),
+  status: textField({
+    default: "Proposed",
+    zod: z.enum(projectStatusValues),
+  }),
+  kind: checkboxListField({ options: projectKindOptions }),
+  sdgs: checkboxListField({ options: sdgNameOptions }),
+  liaisons: relationshipField(),
+  organizations: relationshipField(),
 });
