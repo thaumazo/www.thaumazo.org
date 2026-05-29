@@ -9,9 +9,9 @@ import { organizations } from "../tables";
 
 export function getOrganization(
   slug: string,
-  options: { preview?: boolean } = {},
+  options: { draft?: boolean } = {},
 ) {
-  return options.preview
+  return options.draft
     ? loadOrganization(slug, options)
     : loadCachedOrganization(slug);
 }
@@ -26,7 +26,7 @@ async function loadCachedOrganization(slug: string) {
 
 async function loadOrganization(
   slug: string,
-  options: { preview?: boolean } = {},
+  options: { draft?: boolean } = {},
 ) {
   const visibility = await pageWhere(organizations, options);
   const [organization] = await deps.db

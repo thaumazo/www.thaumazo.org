@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -11,12 +12,11 @@ import {
   listProjectOrganizations,
   listProjectUsers,
 } from "@/modules/projects/queries";
-import { createMetadataLoader, isPreview } from "@kenstack/admin";
+import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<unknown>;
 };
 
 function dateValue(date: Date | null) {
@@ -51,33 +51,27 @@ function ProjectImage({
 
 export const generateMetadata = createMetadataLoader(getProject);
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <ProjectPage slug={slug} searchParams={searchParams} />
+      <ProjectPage slug={slug} />
     </Suspense>
   );
 }
 
-async function ProjectPage({
-  slug,
-  searchParams,
-}: {
-  slug: string;
-  searchParams: PageProps["searchParams"];
-}) {
-  const preview = await isPreview(searchParams);
-  const project = await getProject(slug, { preview });
+async function ProjectPage({ slug }: { slug: string }) {
+  const draft = (await draftMode()).isEnabled;
+  const project = await getProject(slug, { draft });
 
   if (!project) {
     notFound();
   }
 
   const [liaisons, organizations] = await Promise.all([
-    listProjectUsers(project.id, "liaison", { preview }),
-    listProjectOrganizations(project.id, { preview }),
+    listProjectUsers(project.id, "liaison", { draft }),
+    listProjectOrganizations(project.id, { draft }),
   ]);
 
   return (

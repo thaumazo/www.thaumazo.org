@@ -12,7 +12,7 @@ import { users } from "@/modules/users/tables";
 import { projectOrganizations, projects, userProjects } from "../tables";
 
 type RelatedQueryOptions = {
-  preview?: boolean;
+  draft?: boolean;
 };
 
 const userLabel = {
@@ -39,8 +39,8 @@ export function listProjectUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadProjectUsers(projectId, relationship, options)
     : loadCachedProjectUsers(projectId, relationship);
 }
@@ -61,10 +61,10 @@ async function loadProjectUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(users, options)
-    : listWhere(users);
+    : await listWhere(users);
   const rows = await deps.db
     .select(userLabel)
     .from(userProjects)
@@ -88,8 +88,8 @@ export function listProjectOrganizations(
   projectId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadProjectOrganizations(projectId, options)
     : loadCachedProjectOrganizations(projectId);
 }
@@ -106,10 +106,10 @@ async function loadProjectOrganizations(
   projectId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(organizations, options)
-    : listWhere(organizations);
+    : await listWhere(organizations);
   const rows = await deps.db
     .select({
       slug: organizations.slug,
@@ -136,8 +136,8 @@ export function listRelatedProjectsForUser(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadRelatedProjectsForUser(userId, options)
     : loadCachedRelatedProjectsForUser(userId);
 }
@@ -154,10 +154,10 @@ async function loadRelatedProjectsForUser(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(projects, options)
-    : listWhere(projects);
+    : await listWhere(projects);
   const rows = await deps.db
     .select({
       slug: projects.slug,
@@ -181,8 +181,8 @@ export function listRelatedProjectsForOrganization(
   organizationId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadRelatedProjectsForOrganization(organizationId, options)
     : loadCachedRelatedProjectsForOrganization(organizationId);
 }
@@ -199,10 +199,10 @@ async function loadRelatedProjectsForOrganization(
   organizationId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(projects, options)
-    : listWhere(projects);
+    : await listWhere(projects);
   const rows = await deps.db
     .select({
       slug: projects.slug,
@@ -226,8 +226,8 @@ export function listProjectOrganizationsForUser(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadProjectOrganizationsForUser(userId, options)
     : loadCachedProjectOrganizationsForUser(userId);
 }
@@ -244,10 +244,10 @@ async function loadProjectOrganizationsForUser(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(organizations, options)
-    : listWhere(organizations);
+    : await listWhere(organizations);
   const rows = await deps.db
     .select({
       slug: organizations.slug,

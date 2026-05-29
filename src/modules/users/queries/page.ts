@@ -19,9 +19,9 @@ function userTitle(user: {
 
 export function getCommunityUser(
   slug: string,
-  options: { preview?: boolean } = {},
+  options: { draft?: boolean } = {},
 ) {
-  return options.preview
+  return options.draft
     ? loadCommunityUser(slug, options)
     : loadCachedCommunityUser(slug);
 }
@@ -36,7 +36,7 @@ async function loadCachedCommunityUser(slug: string) {
 
 async function loadCommunityUser(
   slug: string,
-  options: { preview?: boolean } = {},
+  options: { draft?: boolean } = {},
 ) {
   const visibility = await pageWhere(users, options);
   const [row] = await deps.db

@@ -1,4 +1,4 @@
-import { createMetadataLoader } from "@kenstack/admin";
+import { createMetadataLoader } from "@kenstack/admin/queries";
 import { loadBlogPage } from "./page";
 
 export { loadBlogList } from "./list";

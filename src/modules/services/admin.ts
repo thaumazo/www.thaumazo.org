@@ -43,7 +43,6 @@ const config = defineModule({
         publishedAt: services.publishedAt,
       },
     },
-    preview: "/services/${slug}",
   },
 });
 

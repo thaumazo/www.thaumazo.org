@@ -7,7 +7,7 @@ import { users } from "@/modules/users/tables";
 import { userServices } from "../tables";
 
 type RelatedQueryOptions = {
-  preview?: boolean;
+  draft?: boolean;
 };
 
 const userLabel = {
@@ -34,8 +34,8 @@ export function listServiceUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadServiceUsers(serviceId, relationship, options)
     : loadCachedServiceUsers(serviceId, relationship);
 }
@@ -56,10 +56,10 @@ async function loadServiceUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(users, options)
-    : listWhere(users);
+    : await listWhere(users);
   const rows = await deps.db
     .select(userLabel)
     .from(userServices)

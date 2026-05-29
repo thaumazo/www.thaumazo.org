@@ -8,7 +8,7 @@ import { projectOrganizations, projects, userProjects } from "../tables";
 
 type ListProjectsOptions = {
   organizationId?: number;
-  preview?: boolean;
+  draft?: boolean;
   userId?: number;
   order?: "title" | "recent";
 };
@@ -40,8 +40,8 @@ function uniqueProjectRows<TProject extends { id: number }>(rows: TProject[]) {
 }
 
 export function listProjects(options: ListProjectsOptions = {}) {
-  const { preview = false, ...cacheOptions } = options;
-  return preview ? loadProjects(options) : loadCachedProjects(cacheOptions);
+  const { draft = false, ...cacheOptions } = options;
+  return draft ? loadProjects(options) : loadCachedProjects(cacheOptions);
 }
 
 async function loadCachedProjects(options: ListProjectsOptions) {
@@ -59,12 +59,12 @@ async function loadCachedProjects(options: ListProjectsOptions) {
 async function loadProjects({
   organizationId,
   userId,
-  preview = false,
+  draft = false,
   order = "title",
 }: ListProjectsOptions = {}) {
-  const visibility = preview
-    ? await pageWhere(projects, { preview })
-    : listWhere(projects);
+  const visibility = draft
+    ? await pageWhere(projects, { draft })
+    : await listWhere(projects);
   const orderBy =
     order === "recent"
       ? [desc(projects.publishedAt), desc(projects.id)]

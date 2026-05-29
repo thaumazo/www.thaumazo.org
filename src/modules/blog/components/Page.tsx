@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
 import { Suspense } from "react";
 import { ArrowLeft } from "lucide-react";
 
-import { getSearchParam, isPreview } from "@kenstack/admin";
 import Markdown from "@kenstack/components/Markdown";
+import { getSearchParam } from "@kenstack/admin/lib/searchParams";
+import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { blog } from "@/modules/blog";
 import { loadBlogPage } from "@/modules/blog/queries";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<unknown>;
+  searchParams?: unknown | Promise<unknown>;
 };
 
 export function BlogPostPage(props: BlogPostPageProps) {
@@ -23,22 +25,21 @@ export function BlogPostPage(props: BlogPostPageProps) {
 }
 
 async function BlogPostLoader({ params, searchParams }: BlogPostPageProps) {
-  const { slug } = await params;
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
 
-  return <BlogPost slug={slug} searchParams={searchParams} />;
+  return <BlogPost slug={slug} tag={getSearchParam(query, "tag")} />;
 }
 
 async function BlogPost({
   slug,
-  searchParams,
+  tag,
 }: {
   slug: string;
-  searchParams: BlogPostPageProps["searchParams"];
+  tag?: string;
 }) {
-  const query = await searchParams;
-  const tag = getSearchParam(query, "tag");
+  const draft = (await draftMode()).isEnabled;
   const post = await loadBlogPage(slug, {
-    preview: await isPreview(query),
+    draft,
   });
 
   if (!post) {
@@ -46,7 +47,12 @@ async function BlogPost({
   }
 
   return (
-    <main className="mx-auto my-8 flex max-w-5xl flex-col gap-8 px-4">
+    <main className="relative mx-auto my-8 flex max-w-5xl flex-col gap-8 px-4">
+      <AdminRecordShortcutLink
+        moduleName={blog.name}
+        id={post.id}
+        title={post.title}
+      />
       <article className="flex flex-col gap-8">
         <header className="flex max-w-4xl flex-col gap-4">
           <Link

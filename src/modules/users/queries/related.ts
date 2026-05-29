@@ -7,15 +7,15 @@ import { projects, userProjects } from "@/modules/projects/tables";
 import { uniqueRelatedLinks } from "@/modules/siteContent";
 
 type RelatedQueryOptions = {
-  preview?: boolean;
+  draft?: boolean;
 };
 
 export function listUserProjects(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadUserProjects(userId, options)
     : loadCachedUserProjects(userId);
 }
@@ -32,10 +32,10 @@ async function loadUserProjects(
   userId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(projects, options)
-    : listWhere(projects);
+    : await listWhere(projects);
   const rows = await deps.db
     .select({
       slug: projects.slug,

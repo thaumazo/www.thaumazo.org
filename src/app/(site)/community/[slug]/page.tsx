@@ -1,5 +1,6 @@
 import UserIcon from "@heroicons/react/24/outline/UserCircleIcon";
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -8,12 +9,11 @@ import Social from "@/components/Social";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
 import { getCommunityUser } from "@/modules/users/queries";
-import { createMetadataLoader, isPreview } from "@kenstack/admin";
+import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<unknown>;
 };
 
 function Tags({ title, values }: { title: string; values: string[] }) {
@@ -75,25 +75,19 @@ function ProfileImage({
 
 export const generateMetadata = createMetadataLoader(getCommunityUser);
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <CommunityUserPage slug={slug} searchParams={searchParams} />
+      <CommunityUserPage slug={slug} />
     </Suspense>
   );
 }
 
-async function CommunityUserPage({
-  slug,
-  searchParams,
-}: {
-  slug: string;
-  searchParams: PageProps["searchParams"];
-}) {
-  const preview = await isPreview(searchParams);
-  const user = await getCommunityUser(slug, { preview });
+async function CommunityUserPage({ slug }: { slug: string }) {
+  const draft = (await draftMode()).isEnabled;
+  const user = await getCommunityUser(slug, { draft });
 
   if (!user) {
     notFound();
@@ -102,7 +96,7 @@ async function CommunityUserPage({
   const projects = await listProjects({
     userId: user.id,
     order: "recent",
-    preview,
+    draft,
   });
 
   return (

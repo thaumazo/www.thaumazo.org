@@ -54,7 +54,6 @@ const config = defineModule({
         publishedAt: organizations.publishedAt,
       },
     },
-    preview: "/organizations/${slug}",
   },
 });
 

@@ -7,8 +7,8 @@ import { pageWhere } from "@kenstack/admin/queries";
 import { deps } from "@app/deps";
 import { services } from "../tables";
 
-export function getService(slug: string, options: { preview?: boolean } = {}) {
-  return options.preview ? loadService(slug, options) : loadCachedService(slug);
+export function getService(slug: string, options: { draft?: boolean } = {}) {
+  return options.draft ? loadService(slug, options) : loadCachedService(slug);
 }
 
 async function loadCachedService(slug: string) {
@@ -19,7 +19,7 @@ async function loadCachedService(slug: string) {
   return loadService(slug);
 }
 
-async function loadService(slug: string, options: { preview?: boolean } = {}) {
+async function loadService(slug: string, options: { draft?: boolean } = {}) {
   const visibility = await pageWhere(services, options);
   const [service] = await deps.db
     .select({

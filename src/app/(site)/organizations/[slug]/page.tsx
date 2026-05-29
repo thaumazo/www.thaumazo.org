@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -11,43 +12,36 @@ import {
 } from "@/modules/organizations/queries";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
-import { createMetadataLoader, isPreview } from "@kenstack/admin";
+import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<unknown>;
 };
 
 export const generateMetadata = createMetadataLoader(getOrganization);
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <OrganizationPage slug={slug} searchParams={searchParams} />
+      <OrganizationPage slug={slug} />
     </Suspense>
   );
 }
 
-async function OrganizationPage({
-  slug,
-  searchParams,
-}: {
-  slug: string;
-  searchParams: PageProps["searchParams"];
-}) {
-  const preview = await isPreview(searchParams);
-  const organization = await getOrganization(slug, { preview });
+async function OrganizationPage({ slug }: { slug: string }) {
+  const draft = (await draftMode()).isEnabled;
+  const organization = await getOrganization(slug, { draft });
 
   if (!organization) {
     notFound();
   }
 
   const [liaisons, projects] = await Promise.all([
-    listOrganizationUsers(organization.id, "liaison", { preview }),
-    listProjects({ organizationId: organization.id, order: "recent", preview }),
+    listOrganizationUsers(organization.id, "liaison", { draft }),
+    listProjects({ organizationId: organization.id, order: "recent", draft }),
   ]);
 
   return (

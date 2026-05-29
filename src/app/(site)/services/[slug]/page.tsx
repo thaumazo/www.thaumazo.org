@@ -1,16 +1,16 @@
 import Image from "next/image";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import Back from "@/components/Back";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getService, listServiceUsers } from "@/modules/services/queries";
-import { createMetadataLoader, isPreview } from "@kenstack/admin";
+import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<unknown>;
 };
 
 function ServiceImage({
@@ -42,31 +42,25 @@ function ServiceImage({
 
 export const generateMetadata = createMetadataLoader(getService);
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
   return (
     <Suspense fallback={null}>
-      <ServicePage slug={slug} searchParams={searchParams} />
+      <ServicePage slug={slug} />
     </Suspense>
   );
 }
 
-async function ServicePage({
-  slug,
-  searchParams,
-}: {
-  slug: string;
-  searchParams: PageProps["searchParams"];
-}) {
-  const preview = await isPreview(searchParams);
-  const service = await getService(slug, { preview });
+async function ServicePage({ slug }: { slug: string }) {
+  const draft = (await draftMode()).isEnabled;
+  const service = await getService(slug, { draft });
 
   if (!service) {
     notFound();
   }
 
-  const liaisons = await listServiceUsers(service.id, "liaison", { preview });
+  const liaisons = await listServiceUsers(service.id, "liaison", { draft });
 
   return (
     <>

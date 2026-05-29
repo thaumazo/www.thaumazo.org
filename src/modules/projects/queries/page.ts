@@ -7,8 +7,8 @@ import { pageWhere } from "@kenstack/admin/queries";
 import { deps } from "@app/deps";
 import { projects } from "../tables";
 
-export function getProject(slug: string, options: { preview?: boolean } = {}) {
-  return options.preview ? loadProject(slug, options) : loadCachedProject(slug);
+export function getProject(slug: string, options: { draft?: boolean } = {}) {
+  return options.draft ? loadProject(slug, options) : loadCachedProject(slug);
 }
 
 async function loadCachedProject(slug: string) {
@@ -19,7 +19,7 @@ async function loadCachedProject(slug: string) {
   return loadProject(slug);
 }
 
-async function loadProject(slug: string, options: { preview?: boolean } = {}) {
+async function loadProject(slug: string, options: { draft?: boolean } = {}) {
   const visibility = await pageWhere(projects, options);
   const [project] = await deps.db
     .select({

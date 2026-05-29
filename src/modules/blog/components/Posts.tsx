@@ -1,22 +1,25 @@
 import Image from "next/image";
 import NextLink from "next/link";
+import { draftMode } from "next/headers";
 import { ArrowRight } from "lucide-react";
 
-import { getSearchParam, isPreview } from "@kenstack/admin";
 import { AdminShortcutLink } from "@kenstack/admin/components/PageControls";
+import { getSearchParam } from "@kenstack/admin/lib/searchParams";
 import { blog } from "@/modules/blog";
 import { loadBlogList } from "@/modules/blog/queries";
 
 export async function Posts({
-  searchParams,
+  searchParams = {},
 }: {
-  searchParams: Promise<unknown>;
+  searchParams?: unknown | Promise<unknown>;
 }) {
-  const query = await searchParams;
-  const preview = await isPreview(query);
+  const [query, { isEnabled: draft }] = await Promise.all([
+    searchParams,
+    draftMode(),
+  ]);
   const tag = getSearchParam(query, "tag");
   const posts = await loadBlogList({
-    preview,
+    draft,
     tag,
   });
   const adminLink = (
@@ -48,10 +51,6 @@ export async function Posts({
             const searchParams = new URLSearchParams();
             if (tag) {
               searchParams.set("tag", tag);
-            }
-
-            if (preview) {
-              searchParams.set("preview", "");
             }
 
             const query = searchParams.toString();

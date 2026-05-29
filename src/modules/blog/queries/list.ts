@@ -2,23 +2,23 @@ import { selectImageSubquery, tags } from "@kenstack/db/tables";
 import { and, desc, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
-import { listWhere, pageWhere } from "@kenstack/admin/queries";
+import { listWhere } from "@kenstack/admin/queries";
 import { deps } from "@app/deps";
 import { blog, blog_tags } from "../tables";
 
 type ListBlogsOptions = {
-  preview?: boolean;
+  draft?: boolean;
   tag?: string;
 };
 
 export async function loadBlogList(options: ListBlogsOptions = {}) {
-  const { preview = false, tag } = options;
+  const { draft = false, tag } = options;
 
-  if (!preview) {
+  if (!draft) {
     return loadCachedRows({ tag });
   }
 
-  return loadRows({ preview, tag });
+  return loadRows({ draft, tag });
 }
 
 async function loadCachedRows({
@@ -33,7 +33,7 @@ async function loadCachedRows({
   return loadRows({ tag });
 }
 
-async function loadRows({ preview = false, tag }: ListBlogsOptions = {}) {
+async function loadRows({ draft = false, tag }: ListBlogsOptions = {}) {
   const blogListSelect = {
     id: blog.id,
     title: blog.title,
@@ -42,9 +42,7 @@ async function loadRows({ preview = false, tag }: ListBlogsOptions = {}) {
     publishedAt: blog.publishedAt,
     image: selectImageSubquery(blog.image, "square"),
   };
-  const visibility = preview
-    ? await pageWhere(blog, { preview })
-    : listWhere(blog);
+  const visibility = await listWhere(blog, { draft });
 
   if (tag) {
     return deps.db

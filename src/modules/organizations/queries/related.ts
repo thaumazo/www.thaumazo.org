@@ -9,7 +9,7 @@ import { users } from "@/modules/users/tables";
 import { userOrganizations } from "../tables";
 
 type RelatedQueryOptions = {
-  preview?: boolean;
+  draft?: boolean;
 };
 
 const userLabel = {
@@ -36,8 +36,8 @@ export function listOrganizationUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadOrganizationUsers(organizationId, relationship, options)
     : loadCachedOrganizationUsers(organizationId, relationship);
 }
@@ -58,10 +58,10 @@ async function loadOrganizationUsers(
   relationship: string,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(users, options)
-    : listWhere(users);
+    : await listWhere(users);
   const rows = await deps.db
     .select(userLabel)
     .from(userOrganizations)
@@ -85,8 +85,8 @@ export function listOrganizationProjects(
   organizationId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  return preview
+  const { draft = false } = options;
+  return draft
     ? loadOrganizationProjects(organizationId, options)
     : loadCachedOrganizationProjects(organizationId);
 }
@@ -103,10 +103,10 @@ async function loadOrganizationProjects(
   organizationId: number,
   options: RelatedQueryOptions = {},
 ) {
-  const { preview = false } = options;
-  const visibility = preview
+  const { draft = false } = options;
+  const visibility = draft
     ? await pageWhere(projects, options)
-    : listWhere(projects);
+    : await listWhere(projects);
   const rows = await deps.db
     .select({
       slug: projects.slug,

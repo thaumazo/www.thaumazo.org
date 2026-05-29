@@ -8,16 +8,16 @@ import { blog } from "../tables";
 import { loadBlogTags } from "./tags";
 
 type BlogQueryOptions = {
-  preview?: boolean;
+  draft?: boolean;
 };
 
 export async function loadBlogPage(
   slug: string,
   options: BlogQueryOptions = {},
 ) {
-  const { preview = false } = options;
+  const { draft = false } = options;
 
-  if (!preview) {
+  if (!draft) {
     return loadCachedRows(slug);
   }
 

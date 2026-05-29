@@ -17,7 +17,7 @@
     "format": "prettier -w ./src"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.654.0",
@@ -73,6 +73,6 @@
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sass": "^1.79.2",
-    "typescript": "^5.7.3"
+    "typescript": "^6.0.3"
   }
 }

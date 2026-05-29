@@ -21,6 +21,8 @@ export async function listCommunityUsers() {
   cacheLife("hours");
   cacheTag("community");
 
+  const visibility = await listWhere(users);
+
   const rows = await deps.db
     .select({
       id: users.id,
@@ -35,7 +37,7 @@ export async function listCommunityUsers() {
       roles: users.communityRoles,
     })
     .from(users)
-    .where(listWhere(users))
+    .where(visibility)
     .orderBy(asc(users.title));
 
   return rows.map((row) => ({

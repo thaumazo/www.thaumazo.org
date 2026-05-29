@@ -11,6 +11,8 @@ export async function listServices() {
   cacheLife("hours");
   cacheTag("services");
 
+  const visibility = await listWhere(services);
+
   return deps.db
     .select({
       id: services.id,
@@ -20,6 +22,6 @@ export async function listServices() {
       description: services.description,
     })
     .from(services)
-    .where(listWhere(services))
+    .where(visibility)
     .orderBy(asc(services.title));
 }

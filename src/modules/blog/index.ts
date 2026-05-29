@@ -29,6 +29,5 @@ export const blog = defineModule({
         },
       },
     },
-    preview: `/blog/${"${slug}"}`,
   },
 });
