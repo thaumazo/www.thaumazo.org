@@ -12,6 +12,7 @@ import {
 } from "@/modules/organizations/queries";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
+import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
@@ -49,7 +50,12 @@ async function OrganizationPage({ slug }: { slug: string }) {
       <div className="mx-auto max-w-3xl">
         <Back />
       </div>
-      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+      <main className="relative mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <AdminRecordShortcutLink
+          moduleName="organizations"
+          id={organization.id}
+          title={organization.title}
+        />
         <div className="flex items-center gap-4">
           {organization.image && (
             <Image

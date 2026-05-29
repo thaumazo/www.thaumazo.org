@@ -12,6 +12,7 @@ import {
   listProjectOrganizations,
   listProjectUsers,
 } from "@/modules/projects/queries";
+import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
@@ -79,7 +80,12 @@ async function ProjectPage({ slug }: { slug: string }) {
       <div className="mx-auto max-w-3xl">
         <Back />
       </div>
-      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+      <main className="relative mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <AdminRecordShortcutLink
+          moduleName="projects"
+          id={project.id}
+          title={project.title}
+        />
         <h1 className="text-left text-2xl">{project.title}</h1>
 
         {(project.location || project.startDate) && (

@@ -9,6 +9,7 @@ import Social from "@/components/Social";
 import ExpandableProjectCards from "@/modules/projects/components/ExpandableProjectCards";
 import { listProjects } from "@/modules/projects/queries";
 import { getCommunityUser } from "@/modules/users/queries";
+import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
 
@@ -104,7 +105,12 @@ async function CommunityUserPage({ slug }: { slug: string }) {
       <div className="mx-auto max-w-3xl">
         <Back />
       </div>
-      <main className="mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+      <main className="relative mx-auto my-8 flex max-w-3xl flex-col gap-4 px-4">
+        <AdminRecordShortcutLink
+          moduleName="users"
+          id={user.id}
+          title={user.title}
+        />
         <h1 className="text-left text-2xl">{user.title}</h1>
 
         <div className="flow-root">

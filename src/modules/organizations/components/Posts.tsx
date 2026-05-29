@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import { AdminShortcutLink } from "@kenstack/admin/components/PageControls";
 import { listOrganizations } from "@/modules/organizations/queries";
 
 function OrgMeta({
@@ -39,62 +40,68 @@ export default async function Posts() {
   const posts = await listOrganizations();
 
   return (
-    <div className="mx-auto my-8 grid max-w-3xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3">
-      {posts.map(({ title, slug, image, description, sdgs, kind }) => {
-        const link = "/organizations/" + slug;
-        const organizationKinds = kind.filter(Boolean).slice(0, 1);
-        const organizationSdgs = sdgs.filter(Boolean).slice(0, 4);
-        const organizationSdgsLabel = organizationSdgs.join(", ");
+    <div className="relative mx-auto my-8 max-w-3xl px-4">
+      <AdminShortcutLink
+        href="/admin/organizations"
+        label="Edit Organizations"
+      />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map(({ title, slug, image, description, sdgs, kind }) => {
+          const link = "/organizations/" + slug;
+          const organizationKinds = kind.filter(Boolean).slice(0, 1);
+          const organizationSdgs = sdgs.filter(Boolean).slice(0, 4);
+          const organizationSdgsLabel = organizationSdgs.join(", ");
 
-        return (
-          <Link
-            key={slug}
-            className="group flex w-full flex-col overflow-hidden rounded border border-stone-200 bg-white transition hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-950 dark:hover:border-stone-700 dark:hover:bg-stone-900"
-            href={link}
-          >
-            <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
-              {image ? (
-                <Image
-                  src={image.url}
-                  alt=""
-                  fill
-                  className="object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
-                  sizes="(min-width: 1024px) 224px, (min-width: 640px) 50vw, calc(100vw - 32px)"
-                />
-              ) : null}
-            </span>
-
-            <span className="flex flex-1 flex-col gap-2 p-3.5 text-center">
-              <span className="text-lg leading-tight text-stone-950 transition group-hover:text-stone-700 dark:text-stone-50 dark:group-hover:text-stone-100">
-                <span className="text-wrap">{title}</span>
+          return (
+            <Link
+              key={slug}
+              className="group flex w-full flex-col overflow-hidden rounded border border-stone-200 bg-white transition hover:border-stone-300 hover:bg-stone-50 dark:border-stone-800 dark:bg-stone-950 dark:hover:border-stone-700 dark:hover:bg-stone-900"
+              href={link}
+            >
+              <span className="relative block aspect-[3/2] bg-gray-100 dark:bg-gray-800">
+                {image ? (
+                  <Image
+                    src={image.url}
+                    alt=""
+                    fill
+                    className="object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
+                    sizes="(min-width: 1024px) 224px, (min-width: 640px) 50vw, calc(100vw - 32px)"
+                  />
+                ) : null}
               </span>
 
-              {description && (
-                <span className="line-clamp-2 text-sm leading-5 text-gray-700 dark:text-gray-300">
-                  {description}
+              <span className="flex flex-1 flex-col gap-2 p-3.5 text-center">
+                <span className="text-lg leading-tight text-stone-950 transition group-hover:text-stone-700 dark:text-stone-50 dark:group-hover:text-stone-100">
+                  <span className="text-wrap">{title}</span>
                 </span>
-              )}
 
-              <span className="mt-auto hidden flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-1 sm:flex">
-                {organizationKinds.length > 0 && (
-                  <span className="flex flex-wrap items-center gap-1">
-                    {organizationKinds.map((value) => (
-                      <OrgMeta key={value}>{value}</OrgMeta>
-                    ))}
+                {description && (
+                  <span className="line-clamp-2 text-sm leading-5 text-gray-700 dark:text-gray-300">
+                    {description}
                   </span>
                 )}
-                {organizationSdgsLabel && (
-                  <span className="flex flex-wrap items-center gap-1">
-                    <OrgMeta label="SDGs" tone="green">
-                      {organizationSdgsLabel}
-                    </OrgMeta>
-                  </span>
-                )}
+
+                <span className="mt-auto hidden flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-1 sm:flex">
+                  {organizationKinds.length > 0 && (
+                    <span className="flex flex-wrap items-center gap-1">
+                      {organizationKinds.map((value) => (
+                        <OrgMeta key={value}>{value}</OrgMeta>
+                      ))}
+                    </span>
+                  )}
+                  {organizationSdgsLabel && (
+                    <span className="flex flex-wrap items-center gap-1">
+                      <OrgMeta label="SDGs" tone="green">
+                        {organizationSdgsLabel}
+                      </OrgMeta>
+                    </span>
+                  )}
+                </span>
               </span>
-            </span>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
