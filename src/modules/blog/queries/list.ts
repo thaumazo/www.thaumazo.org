@@ -1,4 +1,4 @@
-import { selectImageSubquery, tags } from "@kenstack/db/tables";
+import { selectMediaSubquery, tags } from "@kenstack/db/tables";
 import { and, desc, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
@@ -40,7 +40,7 @@ async function loadRows({ draft = false, tag }: ListBlogsOptions = {}) {
     slug: blog.slug,
     description: blog.description,
     publishedAt: blog.publishedAt,
-    image: selectImageSubquery(blog.image, "square"),
+    image: selectMediaSubquery(blog.image, "square"),
   };
   const visibility = await listWhere(blog, { draft });
 

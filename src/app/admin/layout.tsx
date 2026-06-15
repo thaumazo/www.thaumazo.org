@@ -1,6 +1,5 @@
 import Sidebar from "@kenstack/admin/Sidebar";
 import QueryProvider from "@kenstack/context/QueryProvider";
-import admin from "@/modules/admin";
 import AccountMenu from "@/components/AccountMenu";
 import Image from "next/image";
 
@@ -22,7 +21,6 @@ export default function AdminLayout({
             priority
           />
         }
-        admin={admin}
         accountMenu={<AccountMenu fallback={null} />}
       >
         {children}

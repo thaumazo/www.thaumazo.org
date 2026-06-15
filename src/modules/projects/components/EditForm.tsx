@@ -2,7 +2,7 @@
 
 import {
   CheckboxList,
-  DateField,
+  DateTimeField,
   ImageField,
   InputField,
   MarkdownField,
@@ -52,8 +52,8 @@ export default function ProjectForm() {
             ogImage: true,
           }}
         />
-        <DateField name="startDate" label="Start Date" />
-        <DateField name="endDate" label="End Date" />
+        <DateTimeField name="startDate" label="Start Date" />
+        <DateTimeField name="endDate" label="End Date" />
         <InputField label="Location" name="location" />
         <StatusField
           name="status"

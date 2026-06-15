@@ -1,5 +1,7 @@
 import { Main, Container } from "@/components";
-import Form from "@kenstack/auth/components/ResetPassword";
+import ResetPasswordForm from "@kenstack/auth/components/ResetPassword";
+import { resetPasswordPageRouteOptions } from "@kenstack/auth/pageRoute";
+import { pageRoute } from "@kenstack/pageRoute";
 
 import { loadMeta } from "@kenstack/admin/pageEditor";
 const slug = "reset-password";
@@ -8,12 +10,7 @@ const defaultValues = {
 };
 export const generateMetadata = () => loadMeta(slug, { defaultValues });
 
-export default async function page({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string>>;
-}) {
-  return (
+export default pageRoute(resetPasswordPageRouteOptions, ({ search }) => (
     <Container>
       <Main
         slug={slug}
@@ -21,8 +18,7 @@ export default async function page({
         className="mx-auto mt-10 w-full max-w-3xl px-4 text-center [&_.markdown]:text-left [&_h1]:text-center"
       />
       <div className="mx-auto mt-4 flex w-full max-w-3xl justify-center px-4 [&_form]:w-full">
-        <Form searchParams={searchParams} />
+        <ResetPasswordForm token={search.token} />
       </div>
     </Container>
-  );
-}
+));

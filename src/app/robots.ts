@@ -2,13 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { deps } from "@app/deps";
 
-const disallowedPaths = [
-  "/admin/",
-  "/api/",
-  "/forgot-password",
-  "/login",
-  "/reset-password",
-];
+const disallowedPaths = ["/admin", "/api/"];
 
 const blockedCrawlers = [
   "360Spider",

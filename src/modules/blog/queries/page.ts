@@ -1,10 +1,10 @@
-import { selectImageSubquery } from "@kenstack/db/tables";
-import { and, eq } from "drizzle-orm";
+import { selectMediaSubquery } from "@kenstack/db/tables";
+import { and, asc, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
 import { pageWhere } from "@kenstack/admin/queries";
 import { deps } from "@app/deps";
-import { blog } from "../tables";
+import { blog, blog_media } from "../tables";
 import { loadBlogTags } from "./tags";
 
 type BlogQueryOptions = {
@@ -40,12 +40,12 @@ async function loadRow(slug: string, options: BlogQueryOptions = {}) {
       title: blog.title,
       slug: blog.slug,
       publishedAt: blog.publishedAt,
-      image: selectImageSubquery(blog.image, "original"),
+      image: selectMediaSubquery(blog.image, "original"),
       description: blog.description,
       content: blog.content,
       seoTitle: blog.seoTitle,
       seoDescription: blog.seoDescription,
-      ogImage: selectImageSubquery(blog.ogImage, "original"),
+      ogImage: selectMediaSubquery(blog.ogImage, "original"),
     })
     .from(blog)
     .where(and(visibility, eq(blog.slug, slug)))
@@ -55,8 +55,26 @@ async function loadRow(slug: string, options: BlogQueryOptions = {}) {
     return null;
   }
 
+  const [media, tags] = await Promise.all([
+    loadBlogMedia(row.id),
+    loadBlogTags(row.id),
+  ]);
+
   return {
     ...row,
-    tags: await loadBlogTags(row.id),
+    media,
+    tags,
   };
+}
+
+async function loadBlogMedia(blogId: number) {
+  const rows = await deps.db
+    .select({
+      media: selectMediaSubquery(blog_media.mediaId, "original"),
+    })
+    .from(blog_media)
+    .where(eq(blog_media.tableId, blogId))
+    .orderBy(asc(blog_media.sortOrder));
+
+  return rows.flatMap(({ media }) => (media ? [media] : []));
 }

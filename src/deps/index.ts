@@ -2,6 +2,7 @@ import { createDeps } from "@kenstack/deps";
 import EmailCont, { attachments } from "@/email/Email";
 
 import * as tables from "@/tables";
+import { modules } from "@/modules";
 
 const siteUrl =
   process.env.VERCEL_ENV === "production"
@@ -12,6 +13,7 @@ const siteUrl =
 
 export const deps = createDeps({
   tables,
+  modules,
   siteUrl,
   email: {
     EmailCont,

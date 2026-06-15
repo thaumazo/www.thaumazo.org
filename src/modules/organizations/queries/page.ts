@@ -1,4 +1,4 @@
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import { and, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
@@ -34,7 +34,7 @@ async function loadOrganization(
       id: organizations.id,
       title: organizations.title,
       slug: organizations.slug,
-      image: selectImageSubquery(organizations.image, "original"),
+      image: selectMediaSubquery(organizations.image, "original"),
       description: organizations.description,
       content: organizations.content,
       url: organizations.url,

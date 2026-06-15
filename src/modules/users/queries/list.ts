@@ -1,4 +1,4 @@
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import { asc } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
@@ -31,7 +31,7 @@ export async function listCommunityUsers() {
       givenName: users.givenName,
       familyName: users.familyName,
       email: users.email,
-      image: selectImageSubquery(users.avatar, "square"),
+      image: selectMediaSubquery(users.avatar, "square"),
       description: users.description,
       content: users.content,
       roles: users.communityRoles,

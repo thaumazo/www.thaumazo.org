@@ -1,4 +1,4 @@
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import { and, asc, desc, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
@@ -17,7 +17,7 @@ const projectListSelect = {
   id: projects.id,
   title: projects.title,
   slug: projects.slug,
-  image: selectImageSubquery(projects.image, "square"),
+  image: selectMediaSubquery(projects.image, "square"),
   description: projects.description,
   location: projects.location,
   status: projects.status,

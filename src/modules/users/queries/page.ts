@@ -1,4 +1,4 @@
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import { and, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
@@ -47,7 +47,7 @@ async function loadCommunityUser(
       givenName: users.givenName,
       familyName: users.familyName,
       email: users.email,
-      image: selectImageSubquery(users.avatar, "original"),
+      image: selectMediaSubquery(users.avatar, "original"),
       description: users.description,
       content: users.content,
       linkedin: users.linkedin,

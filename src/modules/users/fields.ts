@@ -36,7 +36,7 @@ const communityRolesSchema = z
   );
 
 export const communityRoleOptions = communityRoleValues.map(
-  (value): [string, string] => [value, value],
+  (value) => ({ value, label: value }),
 );
 
 export const fields = defineFields({

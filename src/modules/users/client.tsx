@@ -2,21 +2,13 @@
 
 import { defineClient } from "@kenstack/admin";
 import MetaDates from "@kenstack/admin/components/MetaDates";
+import VisibilityStatus from "@kenstack/admin/List/VisibilityStatus";
 import Avatar from "@kenstack/components/Avatar";
-import type { SelectedImage } from "@kenstack/db/tables";
 import Link from "next/link";
 import EditForm from "./components/EditForm";
 import { fields } from "./fields";
-import type { users } from "./tables";
 
-type UserListFields = Pick<
-  typeof users.$inferSelect,
-  "email" | "familyName" | "givenName"
-> & {
-  avatar?: SelectedImage | null;
-};
-
-export const client = defineClient<UserListFields>({
+export const client = defineClient({
   admin: {
     fields,
     listItems: [
@@ -38,7 +30,9 @@ export const client = defineClient<UserListFields>({
       ],
       [
         (row) => {
-          const name = [row.givenName, row.familyName].filter(Boolean).join(" ");
+          const name = [row.givenName, row.familyName]
+            .filter(Boolean)
+            .join(" ");
 
           return (
             <div className="flex min-w-0 flex-col">
@@ -50,9 +44,10 @@ export const client = defineClient<UserListFields>({
           );
         },
       ],
+      [(row) => row.email, { className: "hidden self-center sm:block" }],
       [
-        (row) => row.email,
-        { className: "hidden self-center sm:block" },
+        (row) => <VisibilityStatus item={row} />,
+        { className: "flex items-center justify-end", column: "auto" },
       ],
     ],
     EditForm,

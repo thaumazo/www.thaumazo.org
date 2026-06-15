@@ -1,7 +1,7 @@
 import { HandHeart } from "lucide-react";
 
 import { defineModule } from "@kenstack/admin";
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
@@ -39,7 +39,7 @@ const config = defineModule({
       },
       select: {
         title: services.title,
-        image: selectImageSubquery(services.image, "square"),
+        image: selectMediaSubquery(services.image, "square"),
         publishedAt: services.publishedAt,
       },
     },

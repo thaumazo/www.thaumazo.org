@@ -22,7 +22,7 @@ export const organizationKindValues = [
 ] as const;
 
 export const organizationKindOptions = organizationKindValues.map(
-  (value): [string, string] => [value, value],
+  (value) => ({ value, label: value }),
 );
 
 export { sdgNameOptions, sdgOptions };

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import * as z from "zod";
 
 import Back from "@/components/Back";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -9,10 +9,7 @@ import { getService, listServiceUsers } from "@/modules/services/queries";
 import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
-
-type PageProps = {
-  params: Promise<{ slug: string }>;
-};
+import { pageRoute } from "@kenstack/pageRoute";
 
 function ServiceImage({
   image,
@@ -43,15 +40,14 @@ function ServiceImage({
 
 export const generateMetadata = createMetadataLoader(getService);
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
-
-  return (
-    <Suspense fallback={null}>
-      <ServicePage slug={slug} />
-    </Suspense>
-  );
-}
+export default pageRoute(
+  {
+    params: z.object({
+      slug: z.string(),
+    }),
+  },
+  ({ params }) => <ServicePage slug={params.slug} />,
+);
 
 async function ServicePage({ slug }: { slug: string }) {
   const draft = (await draftMode()).isEnabled;

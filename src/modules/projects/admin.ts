@@ -1,7 +1,7 @@
 import { FolderKanban } from "lucide-react";
 
 import { defineModule } from "@kenstack/admin";
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
@@ -74,7 +74,7 @@ const config = defineModule({
       },
       select: {
         title: projects.title,
-        image: selectImageSubquery(projects.image, "square"),
+        image: selectMediaSubquery(projects.image, "square"),
         publishedAt: projects.publishedAt,
       },
     },

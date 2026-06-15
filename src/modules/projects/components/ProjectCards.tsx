@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import type { SelectedImage } from "@kenstack/db/tables";
+import type { SelectedMedia } from "@kenstack/db/tables";
 
 export type ProjectCardData = {
   title: string;
   slug: string;
-  image: SelectedImage | null;
+  image: SelectedMedia | null;
   description: string;
   location: string;
   sdgs: string[];

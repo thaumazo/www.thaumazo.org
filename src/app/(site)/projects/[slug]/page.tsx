@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import * as z from "zod";
 
 import Back from "@/components/Back";
 import DateRange from "@/components/DateRange";
@@ -15,10 +15,7 @@ import {
 import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
 import { createMetadataLoader } from "@kenstack/admin/queries";
 import Markdown from "@kenstack/components/Markdown";
-
-type PageProps = {
-  params: Promise<{ slug: string }>;
-};
+import { pageRoute } from "@kenstack/pageRoute";
 
 function dateValue(date: Date | null) {
   return date ? date.toISOString() : null;
@@ -52,15 +49,14 @@ function ProjectImage({
 
 export const generateMetadata = createMetadataLoader(getProject);
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
-
-  return (
-    <Suspense fallback={null}>
-      <ProjectPage slug={slug} />
-    </Suspense>
-  );
-}
+export default pageRoute(
+  {
+    params: z.object({
+      slug: z.string(),
+    }),
+  },
+  ({ params }) => <ProjectPage slug={params.slug} />,
+);
 
 async function ProjectPage({ slug }: { slug: string }) {
   const draft = (await draftMode()).isEnabled;

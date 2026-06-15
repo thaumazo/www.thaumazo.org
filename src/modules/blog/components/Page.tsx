@@ -2,35 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
-import { Suspense } from "react";
 import { ArrowLeft } from "lucide-react";
 
 import Markdown from "@kenstack/components/Markdown";
-import { getSearchParam } from "@kenstack/admin/lib/searchParams";
 import { AdminRecordShortcutLink } from "@kenstack/admin/components/PageControls";
+import { Slideshow } from "@/components/Slideshow";
 import { blog } from "@/modules/blog";
 import { loadBlogPage } from "@/modules/blog/queries";
 
-type BlogPostPageProps = {
-  params: Promise<{ slug: string }>;
-  searchParams?: unknown | Promise<unknown>;
-};
-
-export function BlogPostPage(props: BlogPostPageProps) {
-  return (
-    <Suspense fallback={null}>
-      <BlogPostLoader {...props} />
-    </Suspense>
-  );
-}
-
-async function BlogPostLoader({ params, searchParams }: BlogPostPageProps) {
-  const [{ slug }, query] = await Promise.all([params, searchParams]);
-
-  return <BlogPost slug={slug} tag={getSearchParam(query, "tag")} />;
-}
-
-async function BlogPost({
+export async function BlogPostPage({
   slug,
   tag,
 }: {
@@ -45,6 +25,8 @@ async function BlogPost({
   if (!post) {
     notFound();
   }
+
+  const slideshowSlides = post.media.filter((media) => media.kind !== "file");
 
   return (
     <main className="relative mx-auto my-8 flex max-w-5xl flex-col gap-8 px-4">
@@ -85,8 +67,13 @@ async function BlogPost({
             </p>
           ) : null}
         </header>
-        <div className="max-w-4xl">
-          {post.image ? (
+        <div className="flex max-w-5xl flex-col gap-8">
+          {slideshowSlides.length > 0 ? (
+            <Slideshow
+              ariaLabel={`${post.title} slideshow`}
+              slides={slideshowSlides}
+            />
+          ) : post.image ? (
             <figure
               className={
                 post.content
@@ -112,7 +99,7 @@ async function BlogPost({
           ) : null}
           {post.content ? (
             <Markdown
-              className="markdown text-justify"
+              className="markdown max-w-4xl text-justify"
               content={post.content}
             />
           ) : null}

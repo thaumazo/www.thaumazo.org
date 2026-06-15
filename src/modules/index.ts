@@ -7,7 +7,7 @@ import { contact } from "./contact";
 
 import type { DefinedAdmin } from "@kenstack/admin";
 
-export const admin = {
+export const modules = {
   users,
   blog,
   projects,
@@ -15,5 +15,3 @@ export const admin = {
   services,
   contact,
 } satisfies DefinedAdmin;
-
-export default admin;

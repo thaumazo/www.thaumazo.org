@@ -4,20 +4,15 @@ import { draftMode } from "next/headers";
 import { ArrowRight } from "lucide-react";
 
 import { AdminShortcutLink } from "@kenstack/admin/components/PageControls";
-import { getSearchParam } from "@kenstack/admin/lib/searchParams";
 import { blog } from "@/modules/blog";
 import { loadBlogList } from "@/modules/blog/queries";
 
 export async function Posts({
-  searchParams = {},
+  tag,
 }: {
-  searchParams?: unknown | Promise<unknown>;
+  tag?: string;
 }) {
-  const [query, { isEnabled: draft }] = await Promise.all([
-    searchParams,
-    draftMode(),
-  ]);
-  const tag = getSearchParam(query, "tag");
+  const { isEnabled: draft } = await draftMode();
   const posts = await loadBlogList({
     draft,
     tag,

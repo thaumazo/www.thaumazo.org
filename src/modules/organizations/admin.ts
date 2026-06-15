@@ -1,7 +1,7 @@
 import { Building2 } from "lucide-react";
 
 import { defineModule } from "@kenstack/admin";
-import { selectImageSubquery } from "@kenstack/db/tables";
+import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
@@ -50,7 +50,7 @@ const config = defineModule({
       },
       select: {
         title: organizations.title,
-        image: selectImageSubquery(organizations.image, "square"),
+        image: selectMediaSubquery(organizations.image, "square"),
         publishedAt: organizations.publishedAt,
       },
     },

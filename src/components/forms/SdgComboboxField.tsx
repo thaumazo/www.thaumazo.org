@@ -20,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import type { ControllerRenderProps, FieldValues, Path } from "react-hook-form";
 
-export type SdgOption = [value: string, label: string];
+export type SdgOption = { value: string; label: string };
 
 type SdgComboboxFieldProps = FieldProps & {
   options: SdgOption[];
@@ -47,11 +47,11 @@ function SdgComboboxControl({
   const [open, setOpen] = useState(false);
   const selectedValues = getSelectedValues(field.value);
   const optionByValue = useMemo(
-    () => new Map(options.map(([value, label]) => [value, { label, value }])),
+    () => new Map(options.map((option) => [option.value, option])),
     [options],
   );
   const availableOptions = options.filter(
-    ([value]) => !selectedValues.includes(value),
+    (option) => !selectedValues.includes(option.value),
   );
 
   function addValue(value: string) {
@@ -89,21 +89,21 @@ function SdgComboboxControl({
             <CommandInput placeholder="Search SDGs..." />
             <CommandList>
               <CommandEmpty>No SDGs found.</CommandEmpty>
-              {availableOptions.map(([value, label]) => (
+              {availableOptions.map((option) => (
                 <CommandItem
-                  key={value}
-                  value={label}
+                  key={option.value}
+                  value={option.label}
                   onSelect={() => {
-                    addValue(value);
+                    addValue(option.value);
                   }}
                 >
                   <Check className="size-4 opacity-0" />
                   <img
-                    src={`/images/sdgs/${value}.svg`}
+                    src={`/images/sdgs/${option.value}.svg`}
                     alt=""
                     className="size-6 shrink-0"
                   />
-                  <span>{label}</span>
+                  <span>{option.label}</span>
                 </CommandItem>
               ))}
             </CommandList>

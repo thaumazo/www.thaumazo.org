@@ -1,6 +1,5 @@
 import { Main } from "@/components/Main";
 import { contact } from "@/modules/contact";
-import { client as contactClient } from "@/modules/contact/client";
 import { loadMeta } from "@kenstack/admin/pageEditor";
 import ModuleSettingsControl from "@kenstack/admin/moduleSettings/Control";
 
@@ -23,11 +22,7 @@ export default async function ContactPage() {
         className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
       />
       <div className="mx-auto mt-4 flex max-w-3xl justify-center px-4">
-        <ModuleSettingsControl
-          name={contact.name}
-          title="Contact Form Settings"
-          client={contactClient.settings}
-        >
+        <ModuleSettingsControl module={contact} title="Contact Form Settings">
           <ContactForm />
         </ModuleSettingsControl>
       </div>

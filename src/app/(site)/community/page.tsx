@@ -1,5 +1,6 @@
 import { Main } from "@/components";
 import { loadMeta } from "@kenstack/admin/pageEditor";
+import Progress from "@kenstack/components/Progress";
 import { Suspense } from "react";
 
 import Posts from "@/modules/users/components/Posts";
@@ -20,7 +21,7 @@ export default async function CommunityPage() {
         defaultValues={defaultValues}
         className="mx-auto mt-14 max-w-3xl px-4 text-center [&_.markdown]:text-justify [&_h1]:text-center"
       />
-      <Suspense fallback={null}>
+      <Suspense fallback={<Progress className="my-16" />}>
         <Posts />
       </Suspense>
     </>

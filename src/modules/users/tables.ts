@@ -1,10 +1,15 @@
-import { defineUsersTable } from "@kenstack/modules/users/tables";
-import { metaColumns } from "@kenstack/admin/table";
+import {
+  userColumns,
+  userTableExtraConfig,
+} from "@kenstack/modules/users/tables";
+import { defineTable, metaColumns } from "@kenstack/admin/table";
 import { sql } from "drizzle-orm";
 import { index, text, uniqueIndex } from "drizzle-orm/pg-core";
 
-export const users = defineUsersTable({
+export const users = defineTable({
+  name: "users",
   columns: {
+    ...userColumns,
     ...metaColumns,
     title: text("title").notNull().default(""),
     slug: text("slug").notNull().default(""),
@@ -17,6 +22,7 @@ export const users = defineUsersTable({
       .default(sql`'{}'`),
   },
   extraConfig: (t) => [
+    ...userTableExtraConfig(t),
     index("users_published_at_idx")
       .on(t.publishedAt)
       .where(sql`${t.deletedAt} IS NULL`),

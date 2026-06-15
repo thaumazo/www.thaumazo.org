@@ -51,36 +51,36 @@ export const projectKindValues = [
   "Project Partners",
 ] as const;
 
-export const sdgOptions = sdgValues.map((value): [string, string] => [
+export const sdgOptions = sdgValues.map((value) => ({
   value,
-  value,
-]);
+  label: value,
+}));
 
-export const sdgNameOptions: [string, string][] = [
-  ["1", "1 No Poverty"],
-  ["2", "2 Zero Hunger"],
-  ["3", "3 Good Health and Well-Being"],
-  ["4", "4 Quality Education"],
-  ["5", "5 Gender Equality"],
-  ["6", "6 Clean Water and Sanitation"],
-  ["7", "7 Affordable and Clean Energy"],
-  ["8", "8 Decent Work and Economic Growth"],
-  ["9", "9 Industry, Innovation and Infrastructure"],
-  ["10", "10 Reduced Inequalities"],
-  ["11", "11 Sustainable Cities and Communities"],
-  ["12", "12 Responsible Consumption and Production"],
-  ["13", "13 Climate Action"],
-  ["14", "14 Life Below Water"],
-  ["15", "15 Life on Land"],
-  ["16", "16 Peace, Justice and Strong Institutions"],
-  ["17", "17 Partnerships for the Goals"],
+export const sdgNameOptions = [
+  { value: "1", label: "1 No Poverty" },
+  { value: "2", label: "2 Zero Hunger" },
+  { value: "3", label: "3 Good Health and Well-Being" },
+  { value: "4", label: "4 Quality Education" },
+  { value: "5", label: "5 Gender Equality" },
+  { value: "6", label: "6 Clean Water and Sanitation" },
+  { value: "7", label: "7 Affordable and Clean Energy" },
+  { value: "8", label: "8 Decent Work and Economic Growth" },
+  { value: "9", label: "9 Industry, Innovation and Infrastructure" },
+  { value: "10", label: "10 Reduced Inequalities" },
+  { value: "11", label: "11 Sustainable Cities and Communities" },
+  { value: "12", label: "12 Responsible Consumption and Production" },
+  { value: "13", label: "13 Climate Action" },
+  { value: "14", label: "14 Life Below Water" },
+  { value: "15", label: "15 Life on Land" },
+  { value: "16", label: "16 Peace, Justice and Strong Institutions" },
+  { value: "17", label: "17 Partnerships for the Goals" },
 ];
 
 export const projectStatusOptions = projectStatusValues.map(
-  (value): [string, string] => [value, value],
+  (value) => ({ value, label: value }),
 );
 export const projectKindOptions = projectKindValues.map(
-  (value): [string, string] => [value, value],
+  (value) => ({ value, label: value }),
 );
 
 export const fields = defineFields({
