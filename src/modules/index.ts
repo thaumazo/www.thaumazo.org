@@ -9,7 +9,7 @@ import siteSettings from "@kenstack/modules/siteSettings";
 import type { DefinedAdmin } from "@kenstack/admin";
 
 export const modules = {
-  siteSettings,
+  "site-settings": siteSettings,
   users,
   blog,
   projects,
