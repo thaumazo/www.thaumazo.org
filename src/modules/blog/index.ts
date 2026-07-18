@@ -1,19 +1,17 @@
 import { NotebookPen } from "lucide-react";
 
-import { defineModule } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin/server";
 import {
   mediaListField,
   serverFields,
   tagField as serverTagField,
 } from "@kenstack/fields/server";
-import { client } from "./client";
 import { fields } from "./fields";
 import { blog as blogTable, blog_media, blog_tags } from "./tables";
 
 export const blog = defineModule({
   name: "blog",
   icon: NotebookPen,
-  client,
   basePath: "/blog",
   admin: {
     table: blogTable,

@@ -14,7 +14,5 @@ export default pageRoute(
       tag: z.string().trim().optional().catch(undefined),
     }),
   },
-  ({ params, search }) => (
-    <BlogPostPage slug={params.slug} tag={search.tag} />
-  ),
+  ({ params, search }) => <BlogPostPage slug={params.slug} tag={search.tag} />,
 );

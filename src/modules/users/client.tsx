@@ -1,6 +1,6 @@
 "use client";
 
-import { defineClient } from "@kenstack/admin";
+import { defineClient } from "@kenstack/admin/client";
 import MetaDates from "@kenstack/admin/components/MetaDates";
 import VisibilityStatus from "@kenstack/admin/List/VisibilityStatus";
 import Avatar from "@kenstack/components/Avatar";

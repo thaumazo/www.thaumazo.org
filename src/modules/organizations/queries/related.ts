@@ -115,10 +115,7 @@ async function loadOrganizationProjects(
     .from(projectOrganizations)
     .innerJoin(projects, eq(projectOrganizations.projectId, projects.id))
     .where(
-      and(
-        eq(projectOrganizations.organizationId, organizationId),
-        visibility,
-      ),
+      and(eq(projectOrganizations.organizationId, organizationId), visibility),
     )
     .orderBy(asc(projects.title));
 

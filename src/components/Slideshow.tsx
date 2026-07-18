@@ -10,7 +10,7 @@ import {
 } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@kenstack/components/Button";
 import { cn } from "@/lib/utils";
 
 type SlideshowSlide = {

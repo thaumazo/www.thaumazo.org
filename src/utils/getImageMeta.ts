@@ -10,7 +10,7 @@ export type ImageResult = null | {
 
 const cache = new Map();
 export default async function getImageSize(
-  imagePath: string
+  imagePath: string,
 ): Promise<ImageResult> {
   if (cache.has(imagePath)) {
     return cache.get(imagePath);

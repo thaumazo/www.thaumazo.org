@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Logo from "@/components/Logo";
-import { Button } from "@/components/ui/button";
+import { Button } from "@kenstack/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 

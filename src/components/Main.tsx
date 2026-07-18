@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Markdown from '@kenstack/components/Markdown';
-import { type ImageResult } from '@/utils/getImageMeta';
+import Image from "next/image";
+import Markdown from "@kenstack/components/Markdown";
+import { type ImageResult } from "@/utils/getImageMeta";
 
 export default function MainOG({
   title,
@@ -32,7 +32,7 @@ export default function MainOG({
   );
 }
 
-import { cn } from '@kenstack/lib/utils';
+import { cn } from "@kenstack/lib/utils";
 
 import {
   PageEditor,
@@ -40,7 +40,7 @@ import {
   type DefaultValues,
   TextEdit,
   MarkdownEdit,
-} from '@kenstack/admin/pageEditor';
+} from "@kenstack/admin/pageEditor";
 
 type MainProps = {
   slug: string;
@@ -51,7 +51,7 @@ type MainProps = {
 
 export function Main({ slug, defaultValues, className, children }: MainProps) {
   return (
-    <main className={cn('flex flex-col gap-4', className)}>
+    <main className={cn("flex flex-col gap-4", className)}>
       <PageEditor slug={slug} defaultValues={defaultValues}>
         <PageEditorSettings />
         <TextEdit tag="h1" name="title" className="text-4xl" />

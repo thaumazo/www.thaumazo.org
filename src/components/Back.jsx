@@ -9,9 +9,9 @@ export default function Back() {
   return (
     <Link
       href={pathname.replace(/\/[^/]+$/, "")}
-      className="flex items-center gap-1 my-2"
+      className="my-2 flex items-center gap-1"
     >
-      <ChevronLeftIcon className="w-4 h-4" />
+      <ChevronLeftIcon className="h-4 w-4" />
       Back
     </Link>
   );

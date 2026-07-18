@@ -1,6 +1,6 @@
 "use client";
 
-import { defineClient } from "@kenstack/admin";
+import { defineClient } from "@kenstack/admin/client";
 import { fields } from "./fields";
 import EditForm from "./components/EditForm";
 

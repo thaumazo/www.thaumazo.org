@@ -21,11 +21,7 @@ export async function loadBlogList(options: ListBlogsOptions = {}) {
   return loadRows({ draft, tag });
 }
 
-async function loadCachedRows({
-  tag,
-}: {
-  tag?: string;
-}) {
+async function loadCachedRows({ tag }: { tag?: string }) {
   "use cache";
   cacheLife("hours");
   cacheTag("blog", ...(tag ? [`blog:tag:${tag}`] : []));

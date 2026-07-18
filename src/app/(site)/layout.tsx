@@ -7,7 +7,11 @@ import { Suspense } from "react";
 
 export const generateMetadata = loadSiteSettingsMetadata;
 
-export default async function SiteLayout({ children }: { children: ReactNode }) {
+export default async function SiteLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <SiteShell>
       <Suspense fallback={<Progress className="my-16" />}>{children}</Suspense>

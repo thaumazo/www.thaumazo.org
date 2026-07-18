@@ -1,9 +1,8 @@
 import { UsersRound } from "lucide-react";
 
-import { defineModule } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin/server";
 import roles from "@app/deps/roles";
 
-import { client } from "./client";
 import { communityRoleOptions, fields } from "./fields";
 import { users } from "./tables";
 
@@ -11,7 +10,6 @@ const config = defineModule({
   name: "users",
   title: "Users",
   icon: UsersRound,
-  client,
   admin: {
     fields,
     table: users,

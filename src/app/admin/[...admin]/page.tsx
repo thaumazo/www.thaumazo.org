@@ -1,3 +1,3 @@
-import { createAdminPage } from "@kenstack/admin/Server";
+import { createAdminPage } from "@kenstack/admin/AdminPage";
 
 export default createAdminPage();

@@ -1,13 +1,15 @@
-import { defineTable, metaColumns } from "@kenstack/admin/table";
+import { defineTable } from "@kenstack/admin/table";
 import { sql } from "drizzle-orm";
-import { text, integer, index, uniqueIndex } from "drizzle-orm/pg-core";
+import { text, integer, uniqueIndex } from "drizzle-orm/pg-core";
 
 import { defineMediaList, defineTags } from "@kenstack/db/tables";
 
 export const blog = defineTable({
   name: "blog",
+  publicId: false,
+  publish: true,
+  seo: true,
   columns: {
-    ...metaColumns,
     title: text("title").notNull().default(""),
     slug: text("slug").notNull().default(""),
     image: integer("image"),
@@ -15,10 +17,6 @@ export const blog = defineTable({
     content: text().notNull().default(""),
   },
   extraConfig: (t) => [
-    index("blog_published_at_idx")
-      .on(t.publishedAt)
-      .where(sql`${t.deletedAt} IS NULL`),
-
     uniqueIndex("blog_slug_unique")
       .on(t.slug)
       .where(sql`${t.deletedAt} IS NULL`),

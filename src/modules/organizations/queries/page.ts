@@ -2,7 +2,7 @@ import { selectMediaSubquery } from "@kenstack/db/tables";
 import { and, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 
-import { metaSelect } from "@kenstack/admin";
+import { metaSelect } from "@kenstack/admin/metadata";
 import { pageWhere } from "@kenstack/admin/queries";
 import { deps } from "@app/deps";
 import { organizations } from "../tables";

@@ -4,6 +4,8 @@ import EmailCont, { attachments } from "@/email/Email";
 import * as tables from "@/tables";
 import { modules } from "@/modules";
 
+export { tables };
+
 const siteUrl =
   process.env.VERCEL_ENV === "production"
     ? "https://thaumazo.org"

@@ -1,6 +1,5 @@
 import roles from "@app/deps/roles";
-import { metaFieldOptions } from "@kenstack/admin";
-import { defineFields } from "@kenstack/fields";
+import { defineFields } from "@kenstack/admin/fields";
 import {
   checkboxListField,
   emailField,
@@ -35,48 +34,52 @@ const communityRolesSchema = z
     ),
   );
 
-export const communityRoleOptions = communityRoleValues.map(
-  (value) => ({ value, label: value }),
-);
+export const communityRoleOptions = communityRoleValues.map((value) => ({
+  value,
+  label: value,
+}));
 
 export const fields = defineFields({
-  givenName: textField({
-    zod: z.string().min(1, "Given name is required"),
-    searchable: true,
-    list: true,
-    filter: true,
-  }),
-  familyName: textField({
-    zod: z.string().min(1, "Family name is required"),
-    searchable: true,
-    list: true,
-    filter: true,
-  }),
-  email: emailField({
-    searchable: true,
-    list: true,
-    filter: true,
-  }),
-  avatar: imageField({ list: "square" }),
-  roles: checkboxListField({ options: roles }),
-  title: textField({
-    searchable: true,
-  }),
-  slug: slugField({
-    searchable: true,
-  }),
-  ...metaFieldOptions,
-  description: textareaField({
-    searchable: true,
-  }),
-  content: markdownField({
-    searchable: true,
-  }),
-  linkedin: textField({
-    zod: z.url().or(z.literal("")),
-  }),
-  communityRoles: checkboxListField({
-    options: communityRoleOptions,
-    zod: communityRolesSchema,
-  }),
+  publish: true,
+  seo: true,
+  fields: {
+    givenName: textField({
+      zod: z.string().min(1, "Given name is required"),
+      searchable: true,
+      list: true,
+      filter: true,
+    }),
+    familyName: textField({
+      zod: z.string().min(1, "Family name is required"),
+      searchable: true,
+      list: true,
+      filter: true,
+    }),
+    email: emailField({
+      searchable: true,
+      list: true,
+      filter: true,
+    }),
+    avatar: imageField({ list: "square" }),
+    roles: checkboxListField({ options: roles }),
+    title: textField({
+      searchable: true,
+    }),
+    slug: slugField({
+      searchable: true,
+    }),
+    description: textareaField({
+      searchable: true,
+    }),
+    content: markdownField({
+      searchable: true,
+    }),
+    linkedin: textField({
+      zod: z.url().or(z.literal("")),
+    }),
+    communityRoles: checkboxListField({
+      options: communityRoleOptions,
+      zod: communityRolesSchema,
+    }),
+  },
 });

@@ -1,23 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Check, ChevronsUpDown, X } from "lucide-react";
+import { X } from "lucide-react";
 
+import { Badge } from "@kenstack/components/Badge";
+import { Button } from "@kenstack/components/Button";
 import Field, { type FieldProps } from "@kenstack/forms/Field";
-import { Button } from "@kenstack/components/ui/button";
 import {
-  Command,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@kenstack/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@kenstack/components/ui/popover";
-import { cn } from "@/lib/utils";
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@kenstack/forms/controls/Combobox";
 import type { ControllerRenderProps, FieldValues, Path } from "react-hook-form";
 
 export type SdgOption = { value: string; label: string };
@@ -45,6 +41,7 @@ function SdgComboboxControl({
   placeholder: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [keywords, setKeywords] = useState("");
   const selectedValues = getSelectedValues(field.value);
   const optionByValue = useMemo(
     () => new Map(options.map((option) => [option.value, option])),
@@ -54,12 +51,13 @@ function SdgComboboxControl({
     (option) => !selectedValues.includes(option.value),
   );
 
-  function addValue(value: string) {
-    if (selectedValues.includes(value)) {
+  function addValue(option: SdgOption | null) {
+    if (!option || selectedValues.includes(option.value)) {
       return;
     }
 
-    field.onChange([...selectedValues, value]);
+    field.onChange([...selectedValues, option.value]);
+    setKeywords("");
     setOpen(false);
   }
 
@@ -69,47 +67,35 @@ function SdgComboboxControl({
 
   return (
     <div className="space-y-2">
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            type="button"
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            className="w-full justify-between"
-          >
-            <span className="text-muted-foreground truncate">
-              {placeholder}
-            </span>
-            <ChevronsUpDown className="size-4 opacity-50" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-(--radix-popover-trigger-width) p-0">
-          <Command>
-            <CommandInput placeholder="Search SDGs..." />
-            <CommandList>
-              <CommandEmpty>No SDGs found.</CommandEmpty>
-              {availableOptions.map((option) => (
-                <CommandItem
-                  key={option.value}
-                  value={option.label}
-                  onSelect={() => {
-                    addValue(option.value);
-                  }}
-                >
-                  <Check className="size-4 opacity-0" />
-                  <img
-                    src={`/images/sdgs/${option.value}.svg`}
-                    alt=""
-                    className="size-6 shrink-0"
-                  />
-                  <span>{option.label}</span>
-                </CommandItem>
-              ))}
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
+      <Combobox
+        items={availableOptions}
+        open={open}
+        inputValue={keywords}
+        value=""
+        autoHighlight
+        onInputValueChange={setKeywords}
+        onOpenChange={setOpen}
+        onValueChange={(_value, option) => {
+          addValue(option);
+        }}
+      >
+        <ComboboxInput placeholder={placeholder} showClear className="w-full" />
+        <ComboboxContent>
+          <ComboboxEmpty>No SDGs found.</ComboboxEmpty>
+          <ComboboxList>
+            {(option: SdgOption) => (
+              <ComboboxItem key={option.value} value={option}>
+                <img
+                  src={`/images/sdgs/${option.value}.svg`}
+                  alt=""
+                  className="size-6 shrink-0"
+                />
+                <span>{option.label}</span>
+              </ComboboxItem>
+            )}
+          </ComboboxList>
+        </ComboboxContent>
+      </Combobox>
 
       {selectedValues.length > 0 && (
         <div className="flex flex-wrap gap-2">
@@ -121,12 +107,10 @@ function SdgComboboxControl({
             }
 
             return (
-              <span
+              <Badge
                 key={value}
-                className={cn(
-                  "inline-flex max-w-full items-center gap-2 rounded border border-gray-200 bg-gray-50 px-2 py-1 text-sm text-gray-800",
-                  "dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100",
-                )}
+                variant="secondary"
+                className="max-w-full gap-2 pr-1 text-sm"
               >
                 <img
                   src={`/images/sdgs/${option.value}.svg`}
@@ -134,17 +118,19 @@ function SdgComboboxControl({
                   className="size-5 shrink-0"
                 />
                 <span className="truncate">{option.label}</span>
-                <button
+                <Button
                   type="button"
-                  className="rounded p-0.5 text-gray-500 transition hover:bg-gray-200 hover:text-gray-950 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
+                  variant="ghost"
+                  size="icon-xs"
+                  className="size-5"
                   aria-label={`Remove ${option.label}`}
                   onClick={() => {
                     removeValue(value);
                   }}
                 >
                   <X className="size-3.5" />
-                </button>
-              </span>
+                </Button>
+              </Badge>
             );
           })}
         </div>

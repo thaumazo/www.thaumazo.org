@@ -3,27 +3,26 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-// import NextLink from "next/link";
 import Link from "next/link";
 
 import MenuIcon from "@kenstack/icons/Menu";
 import CloseIcon from "@kenstack/icons/Close";
-// import { useUserInfo } from "@/context/userInfo";
-// import AccountItems from "@/components/AccountMenu/Items";
-// import LogoutButton from "@/components/AccountMenu/LogoutButton";
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@kenstack/components/Popover";
 
 export default function MobileNavigation({ navigation }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger className="group cursor-pointer md:hidden">
+      <PopoverTrigger
+        aria-label="Toggle navigation"
+        className="group cursor-pointer md:hidden"
+      >
         <MenuIcon className="inline size-10 group-data-[state=open]:hidden" />
         <CloseIcon className="inline size-10 group-data-[state=closed]:hidden" />
       </PopoverTrigger>

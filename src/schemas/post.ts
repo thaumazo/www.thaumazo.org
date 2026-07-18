@@ -39,8 +39,8 @@ const postSchema = pageSchema.extend({
           "16",
           "17",
         ],
-        { message: "SDG's must be a string ranging from 1 to 17" }
-      )
+        { message: "SDG's must be a string ranging from 1 to 17" },
+      ),
     )
     .nullish(),
   location: z.string().nullish(),

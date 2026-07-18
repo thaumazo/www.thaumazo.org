@@ -18,7 +18,7 @@ type WithProcessedImage<T> = Omit<T, "image" | "content"> & {
 
 export default async function loadMD<S extends z.ZodObject = typeof pageSchema>(
   localPath: string,
-  schema?: S
+  schema?: S,
 ): Promise<false | WithProcessedImage<z.infer<S>>> {
   const usedSchema = (schema ?? pageSchema) as S;
   const matterResult = await load(localPath);
@@ -31,7 +31,7 @@ export default async function loadMD<S extends z.ZodObject = typeof pageSchema>(
   const result = usedSchema.strict().safeParse(matterResult?.data);
   if (!result.success) {
     throw Error(
-      `Validation error in: ${localPath}:\n${z.prettifyError(result.error)}`
+      `Validation error in: ${localPath}:\n${z.prettifyError(result.error)}`,
     );
   }
   const data = result.data;

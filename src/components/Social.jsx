@@ -14,9 +14,9 @@ export default function Social({ linkedin = null }) {
       {linkedin && (
         <a
           href={linkedin}
-          className="inline-flex justify-center items-center w-8 h-8 rounded bg-gray-800 dark:bg-gray-200"
+          className="inline-flex h-8 w-8 items-center justify-center rounded bg-gray-800 dark:bg-gray-200"
         >
-          <IoLogoLinkedin className="w-4 h-4 text-white dark:text-black" />
+          <IoLogoLinkedin className="h-4 w-4 text-white dark:text-black" />
         </a>
       )}
     </div>

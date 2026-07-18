@@ -1,5 +1,4 @@
-import { metaFieldOptions } from "@kenstack/admin";
-import { defineFields } from "@kenstack/fields";
+import { defineFields } from "@kenstack/admin/fields";
 import {
   checkboxListField,
   dateTimeField,
@@ -76,35 +75,40 @@ export const sdgNameOptions = [
   { value: "17", label: "17 Partnerships for the Goals" },
 ];
 
-export const projectStatusOptions = projectStatusValues.map(
-  (value) => ({ value, label: value }),
-);
-export const projectKindOptions = projectKindValues.map(
-  (value) => ({ value, label: value }),
-);
+export const projectStatusOptions = projectStatusValues.map((value) => ({
+  value,
+  label: value,
+}));
+export const projectKindOptions = projectKindValues.map((value) => ({
+  value,
+  label: value,
+}));
 
 export const fields = defineFields({
-  ...metaFieldOptions,
-  title: textField({
-    list: true,
-    zod: z.string().min(1, "Please enter a title"),
-    searchable: true,
-  }),
-  slug: slugField(),
-  image: imageField({ list: "square" }),
-  description: textareaField({ searchable: true }),
-  content: markdownField({ searchable: true }),
-  tags: tagField(),
-  url: textField({ zod: z.url().or(z.literal("")) }),
-  location: textField({ searchable: true }),
-  startDate: dateTimeField({ filter: true }),
-  endDate: dateTimeField({ filter: true }),
-  status: textField({
-    default: "Proposed",
-    zod: z.enum(projectStatusValues),
-  }),
-  kind: checkboxListField({ options: projectKindOptions }),
-  sdgs: checkboxListField({ options: sdgNameOptions }),
-  liaisons: relationshipField(),
-  organizations: relationshipField(),
+  publish: true,
+  seo: true,
+  fields: {
+    title: textField({
+      list: true,
+      zod: z.string().min(1, "Please enter a title"),
+      searchable: true,
+    }),
+    slug: slugField(),
+    image: imageField({ list: "square" }),
+    description: textareaField({ searchable: true }),
+    content: markdownField({ searchable: true }),
+    tags: tagField(),
+    url: textField({ zod: z.url().or(z.literal("")) }),
+    location: textField({ searchable: true }),
+    startDate: dateTimeField({ filter: true }),
+    endDate: dateTimeField({ filter: true }),
+    status: textField({
+      default: "Proposed",
+      zod: z.enum(projectStatusValues),
+    }),
+    kind: checkboxListField({ options: projectKindOptions }),
+    sdgs: checkboxListField({ options: sdgNameOptions }),
+    liaisons: relationshipField(),
+    organizations: relationshipField(),
+  },
 });

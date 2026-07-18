@@ -1,20 +1,18 @@
 import { HandHeart } from "lucide-react";
 
-import { defineModule } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin/server";
 import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
   tagField,
 } from "@kenstack/fields/server";
-import client from "./client";
 import { fields } from "./fields";
 import { relationships } from "./relationships";
 import { services, serviceTags } from "./tables";
 
 const config = defineModule({
   name: "services",
-  client,
   title: "Services",
   icon: HandHeart,
   admin: {

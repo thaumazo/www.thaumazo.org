@@ -40,10 +40,7 @@ export function listServiceUsers(
     : loadCachedServiceUsers(serviceId, relationship);
 }
 
-async function loadCachedServiceUsers(
-  serviceId: number,
-  relationship: string,
-) {
+async function loadCachedServiceUsers(serviceId: number, relationship: string) {
   "use cache";
   cacheLife("hours");
   cacheTag("services", "community");

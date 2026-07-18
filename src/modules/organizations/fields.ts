@@ -1,5 +1,4 @@
-import { metaFieldOptions } from "@kenstack/admin";
-import { defineFields } from "@kenstack/fields";
+import { defineFields } from "@kenstack/admin/fields";
 import {
   checkboxListField,
   imageField,
@@ -21,28 +20,30 @@ export const organizationKindValues = [
   "Project Partners",
 ] as const;
 
-export const organizationKindOptions = organizationKindValues.map(
-  (value) => ({ value, label: value }),
-);
+export const organizationKindOptions = organizationKindValues.map((value) => ({
+  value,
+  label: value,
+}));
 
 export { sdgNameOptions, sdgOptions };
 
 export const fields = defineFields({
-  ...metaFieldOptions,
-  title: textField({
-    list: true,
-    zod: z.string().min(1, "Please enter a title"),
-    searchable: true,
-  }),
-  slug: slugField(),
-  image: imageField({ list: "square" }),
-  description: textareaField({ searchable: true }),
-  content: markdownField({ searchable: true }),
-  tags: tagField(),
-  url: textField({ zod: z.url().or(z.literal("")) }),
-  kind: checkboxListField({ options: organizationKindOptions }),
-  sdgs: checkboxListField({ options: sdgNameOptions }),
-  // members: { kind: "relationship" },
-  liaisons: relationshipField(),
-  // projects: { kind: "relationship" },
+  publish: true,
+  seo: true,
+  fields: {
+    title: textField({
+      list: true,
+      zod: z.string().min(1, "Please enter a title"),
+      searchable: true,
+    }),
+    slug: slugField(),
+    image: imageField({ list: "square" }),
+    description: textareaField({ searchable: true }),
+    content: markdownField({ searchable: true }),
+    tags: tagField(),
+    url: textField({ zod: z.url().or(z.literal("")) }),
+    kind: checkboxListField({ options: organizationKindOptions }),
+    sdgs: checkboxListField({ options: sdgNameOptions }),
+    liaisons: relationshipField(),
+  },
 });

@@ -45,10 +45,7 @@ export function listProjectUsers(
     : loadCachedProjectUsers(projectId, relationship);
 }
 
-async function loadCachedProjectUsers(
-  projectId: number,
-  relationship: string,
-) {
+async function loadCachedProjectUsers(projectId: number, relationship: string) {
   "use cache";
   cacheLife("hours");
   cacheTag("projects", "community");
@@ -187,7 +184,9 @@ export function listRelatedProjectsForOrganization(
     : loadCachedRelatedProjectsForOrganization(organizationId);
 }
 
-async function loadCachedRelatedProjectsForOrganization(organizationId: number) {
+async function loadCachedRelatedProjectsForOrganization(
+  organizationId: number,
+) {
   "use cache";
   cacheLife("hours");
   cacheTag("organizations", "projects");

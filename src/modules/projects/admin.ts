@@ -1,13 +1,12 @@
 import { FolderKanban } from "lucide-react";
 
-import { defineModule } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin/server";
 import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
   tagField,
 } from "@kenstack/fields/server";
-import client from "./client";
 import {
   fields,
   projectKindOptions,
@@ -19,7 +18,6 @@ import { projects, projectTags } from "./tables";
 
 const config = defineModule({
   name: "projects",
-  client,
   title: "Projects",
   icon: FolderKanban,
   admin: {

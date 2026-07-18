@@ -1,5 +1,4 @@
-import { metaFieldOptions } from "@kenstack/admin";
-import { defineFields } from "@kenstack/fields";
+import { defineFields } from "@kenstack/admin/fields";
 import {
   imageField,
   markdownField,
@@ -12,16 +11,19 @@ import {
 import * as z from "zod";
 
 export const fields = defineFields({
-  ...metaFieldOptions,
-  title: textField({
-    list: true,
-    zod: z.string().min(1, "Please enter a title"),
-    searchable: true,
-  }),
-  slug: slugField(),
-  image: imageField({ list: "square" }),
-  description: textareaField({ searchable: true }),
-  content: markdownField({ searchable: true }),
-  tags: tagField(),
-  liaisons: relationshipField(),
+  publish: true,
+  seo: true,
+  fields: {
+    title: textField({
+      list: true,
+      zod: z.string().min(1, "Please enter a title"),
+      searchable: true,
+    }),
+    slug: slugField(),
+    image: imageField({ list: "square" }),
+    description: textareaField({ searchable: true }),
+    content: markdownField({ searchable: true }),
+    tags: tagField(),
+    liaisons: relationshipField(),
+  },
 });

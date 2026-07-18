@@ -7,11 +7,7 @@ import { AdminShortcutLink } from "@kenstack/admin/components/PageControls";
 import { blog } from "@/modules/blog";
 import { loadBlogList } from "@/modules/blog/queries";
 
-export async function Posts({
-  tag,
-}: {
-  tag?: string;
-}) {
+export async function Posts({ tag }: { tag?: string }) {
   const { isEnabled: draft } = await draftMode();
   const posts = await loadBlogList({
     draft,

@@ -1,24 +1,16 @@
-import {
-  defineRelationship,
-  defineTable,
-  metaColumns,
-} from "@kenstack/admin/table";
+import { defineRelationship, defineTable } from "@kenstack/admin/table";
 import { defineTags } from "@kenstack/db/tables";
 import { organizations } from "@/modules/organizations/tables";
 import { users } from "@/modules/users/tables";
 import { sql } from "drizzle-orm";
-import {
-  index,
-  integer,
-  text,
-  timestamp,
-  uniqueIndex,
-} from "drizzle-orm/pg-core";
+import { integer, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
 
 export const projects = defineTable({
   name: "projects",
+  publicId: false,
+  publish: true,
+  seo: true,
   columns: {
-    ...metaColumns,
     title: text("title").notNull().default(""),
     slug: text("slug").notNull().default(""),
     image: integer("image"),
@@ -39,9 +31,6 @@ export const projects = defineTable({
       .default(sql`'{}'`),
   },
   extraConfig: (t) => [
-    index("projects_published_at_idx")
-      .on(t.publishedAt)
-      .where(sql`${t.deletedAt} IS NULL`),
     uniqueIndex("projects_slug_unique")
       .on(t.slug)
       .where(sql`${t.deletedAt} IS NULL`),

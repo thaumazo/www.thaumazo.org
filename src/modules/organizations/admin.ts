@@ -1,20 +1,18 @@
 import { Building2 } from "lucide-react";
 
-import { defineModule } from "@kenstack/admin";
+import { defineModule } from "@kenstack/admin/server";
 import { selectMediaSubquery } from "@kenstack/db/tables";
 import {
   relationshipField,
   serverFields,
   tagField,
 } from "@kenstack/fields/server";
-import client from "./client";
 import { fields, organizationKindOptions, sdgNameOptions } from "./fields";
 import { relationships } from "./relationships";
 import { organizations, organizationTags } from "./tables";
 
 const config = defineModule({
   name: "organizations",
-  client,
   title: "Organizations",
   icon: Building2,
   admin: {
