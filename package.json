@@ -11,6 +11,7 @@
     "dev": "next dev --turbo",
     "build": "next build --webpack",
     "build:vercel": "npm run db:migrate && npm run build",
+    "bundle:report": "node ./kenstack/src/admin/scripts/check-bundle.mjs --report",
     "db:generate": "node ./kenstack/src/db/scripts/drizzle.mjs generate",
     "db:migrate": "drizzle-kit migrate",
     "start": "next start",
